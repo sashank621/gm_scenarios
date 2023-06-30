@@ -1,0 +1,18 @@
+{
+  "repository": "simulated_data_generation_scenarios/test/",
+  "template_yaml_path": "resources/unit_tests/yaml_parsing/templates/perm_generator_test_template.scn.yaml",
+  "destination_dir": "resources/unit_tests/yaml_parsing/expected_outputs/expected1",
+  "sign_list": [
+    "STOP_USA_CAD",
+    "YIELD_USA_01",
+    "SPEEDLIMIT_USA:60",
+    "SPEEDLIMIT_USA:35",
+    "STOPAHEAD_USA",
+    "YIELDAHEAD_USA_02"
+  ],
+  "num_yaw_perms": 3,
+  "num_weather_perms": 2,
+  "yaw_change_std": 0.5,
+  "yaw_change_max": 1.2,
+  "random_seed": 468
+}

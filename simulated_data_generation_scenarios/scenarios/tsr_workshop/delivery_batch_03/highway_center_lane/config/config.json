@@ -1,0 +1,32 @@
+{
+    "repository": "closed_loop_scenarios",
+    "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_batch_03/golden_scenes_tsr_3/golden_highway_center_tsr_3_8mb_target.scn.yaml",
+    "destination_dir": "scenarios/Datagen_TSR_delivery/delivery_batch_03/highway_center_lane",
+    "destination_filename": "highway_center_lane",
+    "sign_list": [
+        "MAXKMH_CAD_BLACK_01:30",
+        "MAXKMH_CAD_BLACK_01:40",
+        "MAXKMH_CAD_BLACK_01:50",
+        "MAXKMH_CAD_BLACK_01:60",
+        "MAXKMH_CAD_BLACK_01:70",
+        "MAXKMH_CAD_BLACK_01:80",
+        "MAXKMH_CAD_BLACK_01:90",
+        "MAXKMH_CAD_BLACK_01:100",
+        "MAXKMH_CAD_BLACK_01:110",
+        "MAXKMH_CAD:50",
+        "MAXKMH_CAD:30",
+        "SPEEDLIMIT_USA:5",
+        "MAX_CAD:30"
+    ],
+    "num_yaw_perms": 3,
+    "num_weather_perms": 5,
+    "yaw_change_std": 0.2,
+    "yaw_change_max": 0.5,
+    "post_permutations": [
+        "MESH_7FT",
+        "MESH_7_5FT",
+        "MESH_8FT",
+        "MESH_8_5FT",
+        "MESH_9FT"
+    ]
+}

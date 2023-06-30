@@ -1,0 +1,44 @@
+v2_api_basic:
+  channels:
+  - name: map_horizon_lane_sensor
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: LANE_SENSOR
+vehicle:
+  sensors:
+    lane_sensors:
+    - deferred_parallel_processing: true
+      include_road_edges_as_boundaries: true
+      lane_boundary_point_ordering: SOURCE_ORDER
+      metadata_size_checking: STRICT_METADATA_CHECKING
+      name: map_horizon_lane_sensor
+      remove_similar_lane_boundaries:
+        enable: false
+      report_empty: MAYBE_BOUNDARIES
+      report_lane_pairing: ALL_LANES_REPORT_LANE_PAIRING
+      reported_lines: BOUNDARIES_AND_CENTER
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 1.393
+          py: 0
+          pz: 0.5
+          rpy:
+            pitch: 0.0
+            roll: 0.0
+            yaw: 0.0
+        rectangle_fov:
+          x_max: $map_horizon_forward_detection_range
+          x_min: '!math "-$map_horizon_backward_detection_range"'
+          y_max: $map_horizon_sides_detection_range
+          y_min: '!math "-$map_horizon_sides_detection_range"'
+      stitching:
+        enable: false
+      subsegment_handling_version: SUBSEGMENT_HANDLING_SNAP_WITH_GAP
+      version:
+        major_version: 0
+        minor_version: 1
+      visualize_road: false

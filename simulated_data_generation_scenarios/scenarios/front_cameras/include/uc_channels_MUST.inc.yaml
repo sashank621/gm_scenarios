@@ -1,0 +1,566 @@
+global_variables:
+- name: surround_sensor_max_detection_range
+  value: 350.0
+- name: camera_short_range_max_detection_range
+  value: 50.0
+- name: cameras_max_detection_range
+  value: 250.0
+- name: radar_front_far_max_detection_range
+  value: 180.0
+- name: radar_front_near_max_detection_range
+  value: 50.0
+- name: lane_sensors_max_front_detection_range
+  value: 50.0
+- name: lane_sensors_max_side_detection_range
+  value: 50.0
+- name: map_attributes_max_detection_range
+  value: 240.0
+- name: tcd_max_detection_range
+  value: 240.0
+- name: traffic_sign_max_detection_range
+  value: 240.0
+- name: map_horizon_backward_detection_range
+  value: 200
+- name: map_horizon_forward_detection_range
+  value: 2000
+- name: map_horizon_sides_detection_range
+  value: 1000
+v2_api_basic:
+  channels:
+  - name: simian_time
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TIME
+  - name: simian_controls
+    sink:
+      type: SIMIAN
+    source:
+      type: VEHICLE_STACK
+    type: CONTROLS
+  - name: simian_behavior_predicted_control
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: CONTROLS
+  - name: simian_pose
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: POSE
+  - name: simian_stack_state
+    sink:
+      type: SIMIAN
+    source:
+      type: VEHICLE_STACK
+    type: STACK_STATE
+  - name: simian_trip_agent
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRIP_AGENT
+  - name: simian_triggers
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRIGGER
+  - name: localization_sensor
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: LOCALIZATION_SENSOR
+  - name: surround_actors
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_left_short_range
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_right_short_range
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_rear_left
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_rear_center
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_rear_right
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_front_wide_view
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: front_camera_tcd
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRAFFIC_LIGHTS
+  - name: front_camera_traffic_sign
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRAFFIC_SIGN_SENSOR
+  - name: terrain_sensor
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TERRAIN_SENSOR
+  - name: front_camera_map_attributes
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: MAP_SENSOR
+  - name: surround_tcd
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRAFFIC_LIGHTS
+  - name: surround_traffic_sign
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TRAFFIC_SIGN_SENSOR
+  - name: surround_map_attributes
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: MAP_SENSOR
+  - name: camera_front_narrow_view
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: camera_g1_8mb_image_extwide_front_ws
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: CAMERA
+  - name: camera_g1_8mb_image_narrow_front_ws
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: CAMERA
+  - name: radar_front_long_range_object___far___SOURCE
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: radar_front_long_range_object___near___SOURCE
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: ACTORS
+  - name: simian_time_end
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: TIME
+  interfaces:
+  - name: default
+  sources:
+  - stack:
+      name: default
+vehicle:
+  sensors:
+    actor_sensors:
+    - name: surround_actors
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 1.393
+          py: 0
+          pz: 0.5
+          rpy:
+            pitch: 0.0
+            roll: 0.0
+            yaw: 0.0
+        sector_fov:
+          distance_far: $surround_sensor_max_detection_range
+          distance_near: 0
+          pitch_length: 1.5493287769953665
+          pitch_start: -0.7794640439406676
+          yaw_length: 6.283185307179586
+          yaw_start: -0.0
+    - name: camera_left_short_range
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.2008145817115365
+          py: 1.1680920450686325
+          pz: 1.1603210771749504
+          rpy:
+            pitch: 0.8952816214060335
+            roll: 9.546771189241208e-05
+            yaw: 1.5604807109810497
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 1.5493287769953665
+          pitch_start: -0.7794640439406676
+          yaw_length: 3.300068549670878
+          yaw_start: -1.6397368322486718
+    - name: camera_right_short_range
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.1852305587861265
+          py: -1.0513904775426437
+          pz: 1.0653091874232687
+          rpy:
+            pitch: 0.8742510550760199
+            roll: 0.09385845483128612
+            yaw: -1.650355017223548
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 1.543569190463785
+          pitch_start: -0.7684684696531033
+          yaw_length: 3.307922531304853
+          yaw_start: -1.6468926821818493
+    - name: camera_rear_left
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.2113659268508736
+          py: 1.119143468483971
+          pz: 1.1296239379856852
+          rpy:
+            pitch: 0.008946713803768892
+            roll: 0.02079121913986878
+            yaw: 2.705173848044492
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 0.5790041451230786
+          pitch_start: -0.29311041886705
+          yaw_length: 1.0737784282083105
+          yaw_start: -0.5337040402531443
+    - name: camera_rear_center
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: -1.0828801176442113
+          py: 0.07322468782528252
+          pz: 1.5946637809348054
+          rpy:
+            pitch: 0.15241590420190493
+            roll: -0.0005021295075796708
+            yaw: 3.1270974495825556
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 0.5782765327952776
+          pitch_start: -0.2931048616345498
+          yaw_length: 1.072684178876487
+          yaw_start: -0.5360037952106773
+    - name: camera_rear_right
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.1331959352120187
+          py: -1.1648781816150515
+          pz: 1.1866404773912456
+          rpy:
+            pitch: 0.03971573653950156
+            roll: 0.0010101397857352858
+            yaw: -2.876689070126415
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 0.5816659772781081
+          pitch_start: -0.29156125827149293
+          yaw_length: 1.078843045939796
+          yaw_start: -0.5392082251466938
+    - name: camera_front_wide_view
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 0.8611257732223909
+          pitch_start: -0.41954109788113364
+          yaw_length: 1.780700568766369
+          yaw_start: -0.8858111835987322
+    - name: camera_front_narrow_view
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 2.255812317267427
+          py: 0.3434305487190518
+          pz: 1.5143393947476027
+          rpy:
+            pitch: 0.00501781839273328
+            roll: -0.020929225618077918
+            yaw: -0.032263429846304974
+        sector_fov:
+          distance_far: $cameras_max_detection_range
+          distance_near: 0.0
+          pitch_length: 0.24248568949689836
+          pitch_start: -0.12598167473717561
+          yaw_length: 0.4795647061183972
+          yaw_start: -0.23872430664951882
+    - name: radar_front_long_range_object___far___SOURCE
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 3.513
+          py: 0.286
+          pz: 0.25
+          rpy:
+            pitch: -0.0
+            roll: 0.0
+            yaw: 0.0
+        sector_fov:
+          distance_far: $radar_front_far_max_detection_range
+          distance_near: 2.0
+          pitch_length: 0.17453292519943295
+          pitch_start: -0.08726646259971647
+          yaw_length: 0.3141592653589793
+          yaw_start: -0.15707963267948966
+    - name: radar_front_long_range_object___near___SOURCE
+      sensor_filters:
+      - actor_percent_occlusion:
+          mode: LINE
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 3.513
+          py: 0.286
+          pz: 0.25
+          rpy:
+            pitch: -0.0
+            roll: 0.0
+            yaw: 0.0
+        sector_fov:
+          distance_far: $radar_front_near_max_detection_range
+          distance_near: 0.25
+          pitch_length: 0.17453292519943295
+          pitch_start: -0.08726646259971647
+          yaw_length: 1.5707963267948966
+          yaw_start: -0.7853981633974483
+    localization_sensors:
+    - mount:
+        px: 1.393
+        py: 0
+        pz: 0.5
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: 0
+      name: localization_sensor
+      raw: {}
+      sensor_output:
+        reporting_frame: VEHICLE
+    map_sensors:
+    - map_features:
+      - CROSSWALK
+      - STOP_LINE
+      - REGION
+      name: front_camera_map_attributes
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $map_attributes_max_detection_range
+          distance_near: 0.0
+          yaw_length: 1.780700568766369
+          yaw_start: -0.8858111835987322
+    - map_features:
+      - CROSSWALK
+      - STOP_LINE
+      - REGION
+      name: surround_map_attributes
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $map_attributes_max_detection_range
+          distance_near: 0.0
+          yaw_length: 6.283185307179586
+          yaw_start: 0
+    terrain_sensors:
+    - name: terrain_sensor
+      step_size: 1.0
+      vertical_search_distance: 2.0
+      wheel_origins: {}
+    traffic_light_sensors:
+    - name: front_camera_tcd
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $tcd_max_detection_range
+          distance_near: 0.0
+          yaw_length: 1.780700568766369
+          yaw_start: -0.8858111835987322
+    - name: surround_tcd
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $tcd_max_detection_range
+          distance_near: 0.0
+          yaw_length: 6.283185307179586
+          yaw_start: 0
+    traffic_sign_sensors:
+    - name: front_camera_traffic_sign
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $traffic_sign_max_detection_range
+          distance_near: 0.0
+          yaw_length: 1.780700568766369
+          yaw_start: -0.8858111835987322
+    - name: surround_traffic_sign
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        sector_fov:
+          distance_far: $traffic_sign_max_detection_range
+          distance_near: 0.0
+          yaw_length: 6.283185307179586
+          yaw_start: 0

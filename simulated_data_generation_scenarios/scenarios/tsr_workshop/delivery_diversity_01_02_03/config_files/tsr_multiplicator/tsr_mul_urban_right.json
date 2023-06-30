@@ -1,0 +1,189 @@
+{
+    "template_yaml_path": "/home/yzc210/projects/uc_workspace/ultracruise/closed_loop_scenarios/scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/clean_routes/clean_urban_right.scn.yaml",
+    "destination_dir": "/home/yzc210/projects/uc_workspace/ultracruise/closed_loop_scenarios/scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/diversity_golden_scenes",
+    "destination_name": "golden_diversity_urban_right",
+    "left_list": [
+        [
+            12,
+            -9.2,
+            0.07
+        ],
+        [
+            3,
+            0,
+            0
+        ],
+        [
+            3,
+            0,
+            0
+        ],
+        [
+            4,
+            0,
+            0
+        ],
+        [
+            5,
+            0,
+            0
+        ],
+        [
+            5.5,
+            0,
+            0
+        ],
+        [
+            5,
+            0,
+            0
+        ],
+        [
+            10.5,
+            0,
+            0
+        ],
+        [
+            9.0,
+            0,
+            0
+        ],
+        [
+            9.0,
+            0,
+            0
+        ],
+        [
+            15.0,
+            0,
+            0
+        ],
+        [
+            15.0,
+            0,
+            0
+        ],
+        [
+            15.0,
+            0,
+            0
+        ],
+        [
+            38.0,
+            -0.2,
+            0
+        ],
+        [
+            60.0,
+            0.2,
+            0
+        ]
+    ],
+    "right_list": [
+        [
+            19,
+            3.5,
+            0.07
+        ],
+        [
+            1.5,
+            -0.5,
+            0
+        ],
+        [
+            3.5,
+            -1,
+            0
+        ],
+        [
+            18.0,
+            0.5,
+            -0.01
+        ],
+        [
+            20,
+            -0.9,
+            0
+        ],
+        [
+            40.0,
+            0.3,
+            0
+        ]
+    ],
+    "sign_template_dict": {
+        "static_obstacle": {
+            "custom_model_description": {
+                "sign_configuration": {
+                    "preset": "STOP_USA_CAD",
+                    "post": "MESH_7FT"
+                }
+            },
+            "id": 1,
+            "initial_state": {
+                "pose_spec": {
+                    "px": 0,
+                    "py": 0,
+                    "rpy": {
+                        "pitch": 0,
+                        "roll": 0,
+                        "yaw": 0
+                    }
+                }
+            },
+            "model": {
+                "static": {
+                    "height": 1.134,
+                    "point": [
+                        {
+                            "x": -0.018,
+                            "y": -0.406
+                        },
+                        {
+                            "x": -0.018,
+                            "y": 0.406
+                        },
+                        {
+                            "x": 0.018,
+                            "y": 0.406
+                        },
+                        {
+                            "x": 0.018,
+                            "y": -0.406
+                        }
+                    ]
+                }
+            },
+            "scaling": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "spectral_static_model": "CUSTOM_SIGN",
+            "type": "UNKNOWN_UNMOVABLE"
+        }
+    },
+    "ego_dict": {
+        "initial_position": {
+            "point": {
+                "utm": {
+                    "x": 500005.73251713364,
+                    "y": 4500000.073350752,
+                    "z": 0
+                }
+            },
+            "heading": 0.7850000000785671
+        },
+        "initial_velocity_mps": 15,
+        "behaviors": [
+            {
+                "smooth_lane_keeping": {
+                    "params": {
+                        "distance": 500
+                    },
+                    "constant_velocity": null
+                }
+            }
+        ]
+    }
+}

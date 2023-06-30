@@ -1,0 +1,66 @@
+traffic_signs:
+- lanes:
+  - '1793'
+  - '1794'
+  - '1795'
+  name: SIGN_1796
+  pose:
+    px: 671475.8678685173
+    py: 3559779.6615421847
+    pz: 50.281
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1793'
+  - '1794'
+  - '1795'
+  name: SIGN_1800
+  pose:
+    px: 671461.2488439917
+    py: 3559775.4236251474
+    pz: 50.919
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2305'
+  - '2306'
+  name: SIGN_2324
+  pose:
+    px: 670631.4310875484
+    py: 3559796.3522493457
+    pz: 36.759
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes:
+  - '2817'
+  name: SIGN_2817
+  pose:
+    px: 670824.8036633211
+    py: 3560228.187807257
+    pz: 40.091
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2817'
+  name: SIGN_2838
+  pose:
+    px: 670477.2399735225
+    py: 3559882.693260609
+    pz: 32.664
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2817'
+  name: SIGN_2841
+  pose:
+    px: 670484.6349848285
+    py: 3559878.519905326
+    pz: 32.748
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP

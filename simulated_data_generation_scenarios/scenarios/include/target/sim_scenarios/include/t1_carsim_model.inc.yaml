@@ -1,0 +1,5 @@
+extra_data:
+  vehicle_dynamics_model: t1_integrated_vd_model
+  vehicle_config: VIN_Obj_Simulation
+  velToTorqueLUT: /vehicle_configuration/T1_velToTorque_LUT.csv
+  svm_config: /vehicle_configuration/T1_svm_config.yaml

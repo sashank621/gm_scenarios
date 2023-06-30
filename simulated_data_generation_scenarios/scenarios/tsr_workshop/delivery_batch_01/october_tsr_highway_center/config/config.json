@@ -1,0 +1,29 @@
+{
+  "repository": "closed_loop_scenarios",
+  "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_tsr_october/golden_scenes_tsr_1/golden_highway_center_tsr_8mb_target.scn.yaml",
+  "destination_dir": "scenarios/Datagen_TSR_delivery/permutations",
+  "destination_filename": "highway_center_lane.scn.yaml",
+  "sign_list":[
+    "STOP",
+    "YIELD",
+    "SIGN_80_MPH",
+    "SIGN_75_MPH",
+    "SIGN_70_MPH",
+    "SIGN_65_MPH",
+    "SIGN_60_MPH",
+    "SIGN_55_MPH",
+    "SIGN_50_MPH",
+    "SIGN_45_MPH",
+    "SIGN_40_MPH",
+    "SIGN_35_MPH",
+    "SIGN_30_MPH",
+    "SIGN_25_MPH",
+    "SIGN_20_MPH",
+    "SIGN_15_MPH",
+    "SIGN_10_MPH"
+  ],
+  "num_yaw_perms": 3,
+  "num_weather_perms": 5,
+  "yaw_change_std": 0.2,
+  "yaw_change_max": 0.5
+}

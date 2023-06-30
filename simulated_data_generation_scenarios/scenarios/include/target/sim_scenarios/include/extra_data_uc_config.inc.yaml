@@ -1,0 +1,12 @@
+include:
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/extra_data_noise_config.inc.yaml
+extra_data:
+   uc_config_path: ""
+   sync_mode: "sim_clock"
+   plugins: "simulation/resources/sim_scenarios/include/python_box/no_perception.inc.yaml"
+   enable_noise: "true"
+integration_options:
+  time_synchronization_mode: BETWEEN_CONVERT_FROM_SIMIAN_CALLS
+  actor_reporting_version:
+    minor: 1
+  

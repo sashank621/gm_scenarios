@@ -1,0 +1,46 @@
+include:
+- file: scenario://workspace/datagen/lvm_golden_scene/include/fisheye.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/vehicle_shape.inc.yaml
+metadata:
+  name: parking_lot_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: applied_gm@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 10s
+spectral:
+  enable: true
+  environment:
+    weather: CLEARNOON
+
+map:
+  key: parking_lot
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+extra_data:
+  simian_driver: 'true'
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 596928.5930016707
+          y: 4133080.5773647856
+      heading: 1.7223551916730222
+    initial_velocity_mps: 2.5
+    behaviors:
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 596926.6278169903
+            y: 4133094.690523877
+            heading: 1.6940000000000002
+            tangent_distance: 3
+        constant_velocity:

@@ -1,0 +1,48 @@
+{
+    "repository": "simulated_data_generation_scenarios",
+    "template_yaml_path": "test/resources/unit_tests/yaml_parsing/templates/perm_generator_dilution_test_template.scn.yaml",
+    "destination_dir": "test/resources/unit_tests/yaml_parsing/destination",
+    "destination_filename": "diversity_yaml_generator",
+    "timestamp_destination": false,
+    "total_num_of_scenes": 250,
+    "tsr_dilution": 0.25,
+    "sign_type_perm": {
+        "sign_type_dist": {
+            "AXLEWEIGHTLIMITTONS_USA": 1,
+            "CURVESPEEDKMH_USA": 1,
+            "CURVESPEEDMPH_USA": 1,
+            "EXITMPH2_USA": 1,
+            "EXITMPH_USA": 1,
+            "EXITNUMBER_USA": 1,
+            "EXITSPEEDMPH_USA": 1,
+            "MAXIMUMTONS_USA": 1,
+            "MAXMPHORANGE_USA": 1
+        }
+    },
+    "time_of_day_dist": {
+        "900": 1,
+        "1150": 1,
+        "1400": 1,
+        "1650": 1,
+        "1900": 1
+    },
+    "sign_yaw_perm": {
+        "yaw_change_std": 0.3,
+        "yaw_change_max": 0.5
+    },
+    "batch_distributions": {
+        "other": {
+            "type": "weather",
+            "value": "clear",
+            "weight": 1
+        }
+    },
+    "post_height_dist": {
+        "MESH_7FT": 1,
+        "MESH_7_5FT": 1,
+        "MESH_8FT": 1,
+        "MESH_8_5FT": 1,
+        "MESH_9FT": 1
+    },
+    "random_seed": 872599
+}

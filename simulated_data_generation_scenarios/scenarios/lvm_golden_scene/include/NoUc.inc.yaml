@@ -1,0 +1,13 @@
+experiment:
+  perception_flow: ""
+
+default:
+  module_manager: NullModuleManager
+  plugins:
+    - SimulationDump
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+  before_start: []
+  after_stop: [
+    OnStopModuleStatusPlugin,
+  ]

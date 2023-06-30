@@ -1,0 +1,100 @@
+traffic_lights:
+  blocks:
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_187694059_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_red
+      - bulb_state_name: STATE_ON
+        name: BULB_187694059_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187694059_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_187694059_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_187694059
+   - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187694059
+    id_str: 187694059_red
+    lanes:
+    - '187554049'
+    - '187554050'
+    - '187554051'
+    - '187554052'
+    name: BULB_187694059_red
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 331849.50582444563
+          y: 4712686.203188149
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187694059
+    id_str: 187694059_yellow
+    lanes:
+    - '187554049'
+    - '187554050'
+    - '187554051'
+    - '187554052'
+    name: BULB_187694059_yellow
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 331849.50582444563
+          y: 4712686.203188149
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187694059
+    id_str: 187694059_green
+    lanes:
+    - '187554049'
+    - '187554050'
+    - '187554051'
+    - '187554052'
+    name: BULB_187694059_green
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 331849.50582444563
+          y: 4712686.203188149
+          z: 8 

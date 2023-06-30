@@ -1,0 +1,171 @@
+spectral:
+  enable: true
+  use_spectral_instance: true
+  disable_thumbnail: true # Disable thumbnail generation
+  spectral_instances:
+  - name: spectral_instance_0
+    gpu_device_id: 0 # use GPU with ID 0
+    sensor_names:
+      - CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_rgb
+      - CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_semantic
+      - LIDAR_POINT_CLOUD_VLP32_LF
+  - name: spectral_instance_1
+    gpu_device_id: 1 # use GPU with ID 1
+    sensor_names:
+      - CAMERA_4MB_IMAGE_NARROW_FRONT_WS_rgb
+      - CAMERA_4MB_IMAGE_NARROW_FRONT_WS_semantic
+
+      
+vehicle:
+  sensors:
+    sensor_models:
+ #------------------------Camera 1------------------------------
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        name: CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_rgb
+        standard_params:
+          field_of_view:
+            az: 1.4050218067328895
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        name: CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_semantic
+        standard_params:
+          field_of_view:
+            az: 1.4050218067328895
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: SEMANTIC_SEGMENTATION
+ #------------------------Camera 2------------------------------
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.255812317267427
+          py: 0.3434305487190518
+          pz: 1.5143393947476027
+          rpy:
+            pitch: 0.00501781839273328
+            roll: -0.020929225618077918
+            yaw: -0.032263429846304974
+        name: CAMERA_4MB_IMAGE_NARROW_FRONT_WS_rgb
+        standard_params:
+          field_of_view:
+            az: 0.4795647061183972
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.255812317267427
+          py: 0.3434305487190518
+          pz: 1.5143393947476027
+          rpy:
+            pitch: 0.00501781839273328
+            roll: -0.020929225618077918
+            yaw: -0.032263429846304974
+        name: CAMERA_4MB_IMAGE_NARROW_FRONT_WS_semantic
+        standard_params:
+          field_of_view:
+            az: 0.4795647061183972
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: SEMANTIC_SEGMENTATION
+ #------------------------Lidar v32------------------------------
+
+    - lidar_model:
+        format:
+          data: ROS_TOPIC
+          intensity:
+            log_scale: false
+            quantization: 8.0
+            range:
+              max: 0.5
+              min: 0.01
+            units: REFLECTIVITY_SCALED
+          semantic_segmentation: true
+        library:
+          model: ultra_puck
+          vendor: velodyne
+        mount:
+          px: 2.2570254310199194
+          py: 0.06889827872316044
+          pz: 1.8492424663375406
+          rpy:
+            pitch: 0.01551154813950585
+            roll: -0.005232587718811766
+            yaw: -0.018355149344242785
+        name: LIDAR_POINT_CLOUD_VLP32_LF
+        standard_params:
+          detector_params:
+            range:
+              max: 90
+              min: 0
+          frame_rate: 5.0
+          points_per_second: 597504

@@ -1,0 +1,5 @@
+plugins:
+- postprocess_plugin:
+    name: "DatagenIngestion"
+    plugin_server_name: "python_server"
+    config: {} 

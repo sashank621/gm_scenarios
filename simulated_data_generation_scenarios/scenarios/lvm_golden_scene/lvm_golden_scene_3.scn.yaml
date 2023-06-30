@@ -1,0 +1,79 @@
+include:
+- file: scenario://workspace/datagen/lvm_golden_scene/include/fisheye.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/vehicle_shape.inc.yaml
+metadata:
+  name: parking_lot_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: applied_gm@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 10s
+spectral:
+  enable: true
+  label_requests:
+  - request_name: parking
+    parking_space:
+      search_radius: 150.0
+  - request_name: semantic_images
+    semantic_image: {}
+  environment:
+    weather: CLEARNOON
+map:
+  key: parking_lot
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+extra_data:
+  simian_driver: 'true'
+  VIN_identifier: VIN_Simulation_En7
+  labels_as_proto: 'true'
+  tlv_time_shift_type: current_time
+  enable_label_writing: /data/simulations/maor_tlvs/lvm_golden_scene_v2/lvm_golden_scene_3/output.zip
+  override_tlvs_output_path: /data/simulations/maor_tlvs/lvm_golden_scene_v2/lvm_golden_scene_3
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 596990.4112625136
+          y: 4133116.8069766015
+      heading: 1.6795435077898218
+    initial_velocity_mps: 5
+    behaviors:
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 596988.89827324
+            y: 4133130.923627861
+            heading: 1.6940000000000002
+            tangent_distance: 3
+        constant_velocity:
+    - stop:
+        deceleration: 7.0
+        persist_after_complete: false
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 596992.1108705689
+            y: 4133127.1845931215
+            heading: 0.12840383898706706
+            tangent_distance: 1.5595066920213687
+          - x: 596993.8522031675
+            y: 4133127.40827646
+            heading: 0.12366973341538902
+            tangent_distance: 0.1
+        motion_profile:
+          phases:
+          - ramp_velocity:
+              target: -5
+              duration: 5
+        reverse: true
+    - stop:
+        persist_after_complete: true

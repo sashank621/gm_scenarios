@@ -1,0 +1,20 @@
+map:
+  key: "sunnyvale"
+
+trip_agent:
+  behavior:
+    - generate_route:
+        start: { utm: { x: 587316.81, y: 4141172.35 }}
+        dest:  { utm: { x: 586948.74, y: 4141171.12 }}
+
+projection_settings:
+  utm:
+    zone: 10
+    north: true
+
+agents:
+  - ego:
+      initial_position:
+        point: { utm: { x: 587258.06, y: 4140945.57 }}
+        heading: -1.828
+      initial_velocity_mps: 0.0

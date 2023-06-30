@@ -1,0 +1,4 @@
+extra_data:
+  vehicle_dynamics_model: legacy_model
+  vehicle_config: VIN_Obj_Simulation
+  velToTorqueLUT: /vehicle_configuration/T1_velToTorque_LUT.csv

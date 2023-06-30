@@ -1,0 +1,1198 @@
+include:
+- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+# - file: scenario://workspace/include/rear_camera_include_test.inc.yaml
+- file: scenario://workspace/include/annotations_pg.inc.yaml
+- file: scenario://workspace/include/TLV_pg.inc.yaml
+# - file: scenario://workspace/include/validation_pg.inc.yaml
+# - file: scenario://workspace/include/Ingestion_pg.inc.yaml
+metadata:
+  name: version_release_regression_test
+  scenario_version: v0.96
+  author_email: daniel.prigan@gm.com
+  description: "scenario to compare (regression stability) for simain/spectral/gm-spectral version release"
+sim_end:
+  until:
+  - timeout: {secs: 7.0s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+  environment:
+    instance_level_labeling: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 500291.58798537264, y: 4500281.113101757}}
+      start: {utm: {x: 500091.84435919434, y: 4500083.471803297}}
+      
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500092.3, y: 4500083.471803297}}
+      heading: 0.8
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 500283.0124794349
+              y: 4500272.825160537
+        - point:
+            utm:
+              x: 500291.58798537264
+              y: 4500281.113101757
+    initial_velocity_mps: 30
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 1
+    initial_state:
+      heading: !math "(3.14/180)*(-135)"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*0"
+          y: !math "4500113.47+10*1+(-10)*0"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 2
+    initial_state:
+      heading: !math "(3.14/180)*(-135)"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*1"
+          y: !math "4500113.47+10*1+(-10)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 3
+    initial_state:
+      heading: !math "(3.14/180)*45"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*2"
+          y: !math "4500113.47+10*1+(-10)*2"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_MOTORCYCLE_STREET
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 4
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500091.85+40*1+20*1"
+          y: !math "4500123.47+40*1+(-20)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEMI_TRUCK_CAB
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 5
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500101.85+40*1+5*1"
+          y: !math "4500113.47+40*1+(-5)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_ROAD_BICYCLE
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 6
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500111.85+40*1+5*1"
+          y: !math "4500103.47+40*1+(-5)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 7
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*0"
+        py: !math "4500113.47+30*2-2.5*0"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: YIELD
+    id: 8
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*1"
+        py: !math "4500113.47+30*2-2.5*1"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_10_MPH
+    id: 9
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*2"
+        py: !math "4500113.47+30*2-2.5*2"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_30_MPH
+    id: 10
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*3"
+        py: !math "4500113.47+30*2-2.5*3"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_50_MPH
+    id: 11
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*4"
+        py: !math "4500113.47+30*2-2.5*4"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_80_MPH
+    id: 12
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*5"
+        py: !math "4500113.47+30*2-2.5*5"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: NO_PASSING_ZONE
+    id: 13
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*6"
+        py: !math "4500113.47+30*2-2.5*6"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 14
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*7"
+        py: !math "4500113.47+30*2-2.5*7"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_80_MPH
+    id: 15
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*2+2.5*8"
+        py: !math "4500113.47+30*2-2.5*8"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 16
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*0"
+        py: !math "4500113.47+30*3-2.5*0"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(0)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 17
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*1"
+        py: !math "4500113.47+30*3-2.5*1"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-45)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 18
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*2"
+        py: !math "4500113.47+30*3-2.5*2"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-90)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 19
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*3"
+        py: !math "4500113.47+30*3-2.5*3"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-120)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 20
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*4"
+        py: !math "4500113.47+30*3-2.5*4"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-130)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 21
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*5"
+        py: !math "4500113.47+30*3-2.5*5"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(-150)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 22
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*6"
+        py: !math "4500113.47+30*3-2.5*6"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(90)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 23
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*7"
+        py: !math "4500113.47+30*3-2.5*7"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(135)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 24
+    initial_state:
+      pose_spec:
+        px: !math "500101.85+30*3+2.5*8"
+        py: !math "4500113.47+30*3-2.5*8"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "(3.14/180)*(180)"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 0
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: 2
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*0"
+          y: !math "4500113.47+30*4-2.5*0"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-135)"
+    type: PEDESTRIAN
+    id: 25
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 1
+        top_color:
+          r: 0.0
+          g: 1.0
+          b: 0.0
+        bottom_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        idle_state: 1
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*1"
+          y: !math "4500113.47+30*4-2.5*1"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-155)"
+    type: PEDESTRIAN
+    id: 26
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 2
+        top_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        bottom_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        idle_state: 0
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*2"
+          y: !math "4500113.47+30*4-2.5*2"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-135)"
+    type: PEDESTRIAN
+    id: 27
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 3
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 1.0
+          b: 0.0
+        idle_state: 5
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*3"
+          y: !math "4500113.47+30*4-2.5*3"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-75)"
+    type: PEDESTRIAN
+    id: 28
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 8
+        top_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        bottom_color:
+          r: 0.0
+          g: 1.0
+          b: 0.0
+        idle_state: 4
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*4"
+          y: !math "4500113.47+30*4-2.5*4"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-135)"
+    type: PEDESTRIAN
+    id: 29
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 9
+        top_color:
+          r: 0.0
+          g: 1.0
+          b: 0.0
+        bottom_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        idle_state: 3
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*5"
+          y: !math "4500113.47+30*4-2.5*5"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-95)"
+    type: PEDESTRIAN
+    id: 30
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 10
+        top_color:
+          r: 1.0
+          g: 1.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 1.0
+          b: 1.0
+        idle_state: 2
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*6"
+          y: !math "4500113.47+30*4-2.5*6"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-135)"
+    type: PEDESTRIAN
+    id: 31
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 11
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 1.0
+        bottom_color:
+          r: 1.0
+          g: 1.0
+          b: 0.0
+        idle_state: 1
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*7"
+          y: !math "4500113.47+30*4-2.5*7"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-105)"
+    type: PEDESTRIAN
+    id: 32
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 12
+        top_color:
+          r: 1.0
+          g: 1.0
+          b: 1.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 0.0
+        idle_state: 0
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500101.85+30*4+2.5*8"
+          y: !math "4500113.47+30*4-2.5*8"
+          z: 0
+      speed_mps: 1.5
+      heading: !math "(3.14/180)*(-135)"
+    type: PEDESTRIAN
+    id: 33

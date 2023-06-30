@@ -1,0 +1,407 @@
+traffic_signs:
+- lanes:
+  - '257'
+  name: SIGN_257
+  pose:
+    px: 670384.7137927937
+    py: 3560469.2659797375
+    pz: 39.049
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_258
+  pose:
+    px: 670529.520106433
+    py: 3560619.2850381513
+    pz: 36.101
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_259
+  pose:
+    px: 670529.5636565764
+    py: 3560619.3877991037
+    pz: 35.708
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_260
+  pose:
+    px: 670697.8539737051
+    py: 3560574.2460653977
+    pz: 35.989
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_261
+  pose:
+    px: 670697.8513956841
+    py: 3560574.1750454027
+    pz: 35.519
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_263
+  pose:
+    px: 670618.6511264362
+    py: 3560429.9655983
+    pz: 34.649
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '257'
+  name: SIGN_264
+  pose:
+    px: 670554.2524047883
+    py: 3560367.9282114273
+    pz: 33.742
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '769'
+  - '770'
+  name: SIGN_769
+  pose:
+    px: 670347.7642772468
+    py: 3560447.611982512
+    pz: 39.914
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1282
+  pose:
+    px: 670302.0045176337
+    py: 3560460.435625517
+    pz: 44.91
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1284
+  pose:
+    px: 670288.8931007406
+    py: 3560480.9184489725
+    pz: 40.807
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1286
+  pose:
+    px: 670266.2563362664
+    py: 3560475.718717195
+    pz: 40.304
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1294
+  pose:
+    px: 670020.9305404164
+    py: 3560473.44589481
+    pz: 41.026
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1300
+  pose:
+    px: 670008.5033952701
+    py: 3560358.9158459147
+    pz: 39.79
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1281'
+  name: SIGN_1301
+  pose:
+    px: 669972.5297039046
+    py: 3560050.534397019
+    pz: 30.77
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1537'
+  - '1538'
+  name: SIGN_1537
+  pose:
+    px: 669938.1087812535
+    py: 3560043.80613049
+    pz: 32.051
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1793'
+  - '1794'
+  name: SIGN_1797
+  pose:
+    px: 669531.3402762795
+    py: 3560011.8441878
+    pz: 25.985
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1793'
+  - '1794'
+  name: SIGN_1799
+  pose:
+    px: 669444.7861205749
+    py: 3559806.5961238705
+    pz: 24.042
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '1793'
+  - '1794'
+  name: SIGN_1800
+  pose:
+    px: 669451.835093891
+    py: 3559802.7979670414
+    pz: 23.233
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes:
+  - '1793'
+  - '1794'
+  name: SIGN_1801
+  pose:
+    px: 669423.3045306234
+    py: 3559717.8135012323
+    pz: 22.869
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2561'
+  - '2562'
+  name: SIGN_2561
+  pose:
+    px: 669389.6390775221
+    py: 3559583.3020163886
+    pz: 23.49
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2817'
+  - '2818'
+  name: SIGN_2817
+  pose:
+    px: 669360.1812095637
+    py: 3559461.781894614
+    pz: 24.624
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '2817'
+  - '2818'
+  name: SIGN_2818
+  pose:
+    px: 669360.2978909437
+    py: 3559428.111304475
+    pz: 24.418
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes:
+  - '3329'
+  name: SIGN_3330
+  pose:
+    px: 669788.6002355083
+    py: 3559131.394472548
+    pz: 41.459
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3329'
+  name: SIGN_3331
+  pose:
+    px: 669788.5983491968
+    py: 3559131.39444099
+    pz: 41.093
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3329'
+  name: SIGN_3332
+  pose:
+    px: 669886.5840105538
+    py: 3559086.804393227
+    pz: 41.961
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3329'
+  name: SIGN_3336
+  pose:
+    px: 669967.9140605007
+    py: 3559054.3992572874
+    pz: 41.305
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3329'
+  name: SIGN_3338
+  pose:
+    px: 669962.8067713613
+    py: 3559082.089795115
+    pz: 40.793
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3841
+  pose:
+    px: 670026.736726626
+    py: 3559207.9079337576
+    pz: 35.96
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3843
+  pose:
+    px: 670079.0303164767
+    py: 3559339.39375143
+    pz: 36.299
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3844
+  pose:
+    px: 670079.0394356146
+    py: 3559338.905942737
+    pz: 35.821
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3846
+  pose:
+    px: 670177.7160099053
+    py: 3559531.6050954578
+    pz: 32.444
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3852
+  pose:
+    px: 670307.2664474784
+    py: 3559928.231946437
+    pz: 30.899
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3853
+  pose:
+    px: 670317.5705107702
+    py: 3559924.92485538
+    pz: 29.503
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '3841'
+  - '3842'
+  name: SIGN_3854
+  pose:
+    px: 670317.5328804725
+    py: 3559924.9186786474
+    pz: 30.572
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '4353'
+  name: SIGN_4353
+  pose:
+    px: 670572.5813822071
+    py: 3560329.191534432
+    pz: 33.407
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '4353'
+  name: SIGN_4354
+  pose:
+    px: 670572.5755375014
+    py: 3560329.2025262397
+    pz: 32.873
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '6401'
+  name: SIGN_6401
+  pose:
+    px: 670589.4670893212
+    py: 3560344.4825766133
+    pz: 33.413
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '6401'
+  name: SIGN_6402
+  pose:
+    px: 670589.4238024275
+    py: 3560344.4763036463
+    pz: 32.897
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes:
+  - '6401'
+  name: SIGN_6404
+  pose:
+    px: 670583.8049114014
+    py: 3560338.3366112607
+    pz: 33.105
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY

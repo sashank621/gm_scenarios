@@ -1,0 +1,38 @@
+{
+    "repository": "closed_loop_scenarios",
+    "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_batch_02/golden_scenes_tsr_2/golden_urban_right_tsr_2_8mb_target.scn.yaml",
+    "destination_dir": "scenarios/Datagen_TSR_delivery/delivery_batch_02/urban_right_lane",
+    "destination_filename": "urban_right_lane",
+    "sign_list": [
+        "YIELD_USA_01",
+        "YIELD_USA_02",
+        "YIELD_USA_03",
+        "SPEEDLIMIT_USA:85",
+        "MAXKMH_CAD:60",
+        "MAXKMH_CAD:70",
+        "MAXKMH_CAD:80",
+        "MAXKMH_CAD:90",
+        "MAXKMH_CAD:100",
+        "MAXKMH_CAD:110",
+        "MAXKMH_CAD:120",
+        "MAX_CAD:40",
+        "MAX_CAD:50",
+        "MAX_CAD:60",
+        "MAX_CAD:70",
+        "MAX_CAD:80",
+        "MAX_CAD:90",
+        "MAX_CAD:100",
+        "MAX_CAD:110"
+    ],
+    "num_yaw_perms": 3,
+    "num_weather_perms": 5,
+    "yaw_change_std": 0.2,
+    "yaw_change_max": 0.5,
+    "post_permutations": [
+        "MESH_7FT",
+        "MESH_7_5FT",
+        "MESH_8FT",
+        "MESH_8_5FT",
+        "MESH_9FT"
+    ]
+}

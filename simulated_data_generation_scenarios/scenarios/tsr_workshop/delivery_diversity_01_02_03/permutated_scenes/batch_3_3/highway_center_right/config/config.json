@@ -1,0 +1,68 @@
+{
+    "repository": "closed_loop_scenarios",
+    "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/diversity_golden_scenes/golden_diversity_highway_center_right.scn.yaml",
+    "destination_dir": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/permutated_scenes/batch_3_3/highway_center_right",
+    "destination_filename": "batch_3_3_highway_center_right",
+    "parent_dir_prefix": "hcr33",
+    "timestamp_destination": false,
+    "total_num_of_scenes": 50,
+    "sign_type_perm": {
+        "sign_type_dist": {
+            "MAXKMH_CAD_BLACK_01:30": 10,
+            "MAXKMH_CAD_BLACK_01:45": 5,
+            "MAXKMH_CAD_BLACK_01:55": 15,
+            "MAXKMH_CAD_BLACK_01:60": 10,
+            "MAXKMH_CAD_BLACK_01:75": 10,
+            "MAXKMH_CAD_BLACK_01:85": 15,
+            "MAXKMH_CAD_BLACK_01:100": 5,
+            "MAXKMH_CAD_BLACK_01:110": 5
+        }
+    },
+    "sign_yaw_perm": {
+        "yaw_change_std": 0.3,
+        "yaw_change_max": 0.5
+    },
+    "batch_distributions": {
+        "cloudy": {
+            "type": "weather",
+            "value": "cloudy",
+            "weight": 9
+        },
+        "fog_light": {
+            "type": "weather",
+            "value": "fog_light",
+            "weight": 9
+        },
+        "fog_medium": {
+            "type": "weather",
+            "value": "fog_medium",
+            "weight": 5
+        },
+        "rain_light": {
+            "type": "weather",
+            "value": "rain_light",
+            "weight": 9
+        },
+        "rain_medium": {
+            "type": "weather",
+            "value": "rain_medium",
+            "weight": 5
+        },
+        "snow_light": {
+            "type": "weather",
+            "value": "snow_light",
+            "weight": 8
+        },
+        "snow_medium": {
+            "type": "weather",
+            "value": "snow_medium",
+            "weight": 5
+        }
+    },
+    "post_height_dist": {
+        "MESH_7FT": 1,
+        "MESH_7_5FT": 1,
+        "MESH_8FT": 1
+    },
+    "random_seed": 724893
+}

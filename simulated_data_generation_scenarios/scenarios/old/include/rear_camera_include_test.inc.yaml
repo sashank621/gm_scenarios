@@ -1,0 +1,86 @@
+spectral:
+  label_requests:
+  - request_name: semantic_images
+    semantic_image: {}
+  - request_name: actor_2d
+    bounding_box_2d:
+      object_type: ALL_ACTORS
+  - request_name: traffic_sign_2d
+    bounding_box_2d:
+      object_type: TRAFFIC_SIGN_FACES
+  - request_name: actor_3d
+    bounding_box_3d:
+      object_type: ALL_ACTORS
+  - request_name: traffic_sign_3d
+    bounding_box_3d:
+      object_type: TRAFFIC_SIGN_FACES
+vehicle:
+  sensors:
+    sensor_models:
+ #------------------------Camera 1------------------------------
+    - camera_model:
+        fidelity:
+          enable_cubemap: true
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: -1.339050817908156
+          py: 0.0
+          pz: 1.232050804798476
+          rpy:
+            pitch: 0.5235987774905182
+            roll: 0.0
+            yaw: 3.141592653589793
+        name: CAMERA_YSAT_2MP_IMAGE_FISHEYE_LIFT_GATE_rgb
+        standard_params:
+          field_of_view:
+            az: 3.4033920413889427
+            el: 2.600540585471551
+          frame_rate: 10
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection: EQUIDISTANT
+          sensor_params:
+            resolution:
+              x: 1620
+              y: 1280
+            type: VISIBLE
+  #------------------------Lidar v32------------------------------
+
+    - lidar_model:
+        format:
+          data: ROS_TOPIC
+          intensity:
+            log_scale: false
+            quantization: 8.0
+            range:
+              max: 0.5
+              min: 0.01
+            units: REFLECTIVITY_SCALED
+          semantic_segmentation: true
+        library:
+          model: ultra_puck
+          vendor: velodyne
+        mount:
+          px: 2.2570254310199194
+          py: 0.06889827872316044
+          pz: 1.8492424663375406
+          rpy:
+            pitch: 0.01551154813950585
+            roll: -0.005232587718811766
+            yaw: -0.018355149344242785
+        name: LIDAR_POINT_CLOUD_VLP32_LF
+        standard_params:
+          detector_params:
+            range:
+              max: 90
+              min: 0
+          frame_rate: 20.0
+          points_per_second: 597504
+            
+  

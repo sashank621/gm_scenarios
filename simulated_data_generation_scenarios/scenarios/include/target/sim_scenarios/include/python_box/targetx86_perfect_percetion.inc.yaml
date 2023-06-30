@@ -1,0 +1,123 @@
+experiment:
+  perception_flow: "debug_flow/perception_simulation_MOT_360_MLT.yml"
+  target_mot_configuration: "./install/config/mot_config.json"
+  target_mlt_configuration: "./install/config/mlt_config_acp4.json"
+  target_lim_configuration: "./bin/../../localization/localizationInputManipulator/config/lim_conf.json"
+  target_svm_configuration: "./bin/../../localization/senseVehicleMotion/config/svm_conf.json"
+  semantic_localization: "./bin/../../localization/semanticLocalization/config/sl_sim_conf.json"
+  target_perceptionMapAssociation_configuration: "./bin/../../localization/perceptionMapAssociation/config/pma_conf.json"
+  target_scene_static_configuration: "./bin/../../localization/sceneProvider/config/scst_conf.json"
+  target_actorProvider_configuration: "./bin/../../localization/actorProvider/config/ap_conf.json"
+  target_MAP_Services_configuration: "./config/SE_MI_1000_MILES_config_route_fixed_ENU_origin.json"
+
+default:
+  module_manager: Targetx86ModuleManager
+  module_start_time: 5
+  affinity: sim
+  simulated_clock_enabled: enable
+  modules:
+    - ActorProvider
+    - Pose
+    - SceneStatic
+    - SemanticLocalization
+    - PerceptionMapAssociation
+    - IntersectionROI
+    - MapServices
+    - Planner
+    - ControlClient    
+    - SenseVehicleMotion
+    - SvmConvertorModule
+    - FmsClient
+    - LocalizationStateMonitor
+
+  modules_stop_order:
+    - ActorProvider
+    - Pose
+    - SceneStatic
+    - SemanticLocalization
+    - SenseVehicleMotion
+    - PerceptionMapAssociation
+    - MapServices
+    - Planner
+    - IntersectionROI
+    - ControlClient
+    - SvmConvertorModule
+    - FmsClient
+    - LocalizationStateMonitor
+
+  plugins:
+    - SimPubSubRecordPlugin:
+        pb_recorder_path: sim_config/pb_recorder/recorder_config.json
+        timestamp_format: 'NTP'
+    - NoiseHandlerPlugin:
+        enable_noise: !parameterised ${python_box_enable_noise}
+        noise_config:  !parameterised ${python_box_noise_config}
+    - SimulationDump
+    - AraLoggerDaemonPlugin
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+    - CleanStackPlugin
+    - CollectPerformanceMetricsPlugin:
+        cpu: True
+        gpu: True
+        pid: True
+    
+    - RatesCheckerPlugin:
+        logs_folder_name: uc_logs
+        process_pattern: '*state_perceptio*'
+        channel: UC_SYSTEM_t_PERCEIVED_ROAD_GEOMETRY
+        min_expected_rate: 10.0
+        error_level: Failed
+        sim_clock_multiplier: 0.01
+    - RatesCheckerPlugin:
+        logs_folder_name: uc_logs
+        process_pattern: '*MOT_main*'
+        channel: UC_SYSTEM_t_PERCEIVED_OBJECT_DATA
+        min_expected_rate: 10.0
+        error_level: Failed
+        sim_clock_multiplier: 0.01
+    - RatesCheckerPlugin:
+        logs_folder_name: uc_logs
+        process_pattern: '*SMLC_main*'
+        channel: UC_SYSTEM_t_HOST_SEMANTIC_POSE
+        min_expected_rate: 100.0
+        error_level: Failed
+        sim_clock_multiplier: 0.01
+    - RatesCheckerPlugin:
+        logs_folder_name: uc_logs
+        process_pattern: '*subdivision_pla*'
+        channel: UC_SYSTEM_t_TRAJECTORY_PLAN
+        min_expected_rate: 5.0
+        error_level: Failed
+        sim_clock_multiplier: 0.01
+  
+    - ArtifactCollectorPlugin:
+        source_folder: /tmp/uc_logs/
+        output_folder_name: uc_logs
+    - ArtifactCollectorPlugin:
+        source_folder: /tmp/logs/
+        output_folder_name: ara_logs
+    - ArtifactCollectorPlugin:
+        source_folder: /tmp/stdout_logs/
+        output_folder_name: stdout_logs
+    - ArtifactCollectorPlugin:
+        source_folder: /tmp/profiling/
+        output_folder_name: profiling
+    - ArtifactCollectorPlugin:
+        source_folder: logs
+        output_folder_name: perception_logs
+    - ArtifactFolderDeletePlugin:
+        output_folders: [pubsub]
+
+  before_start: [
+    SimTasksetAffinityPlugin,
+    SimPubSubRecordPlugin,
+    NoiseHandlerPlugin
+  ]
+  after_stop: [
+    OnStopModuleStatusPlugin,
+    NoiseHandlerPlugin,
+    SimPubSubRecordPlugin,
+    SimTasksetAffinityPlugin
+    CleanStackPlugin
+  ]

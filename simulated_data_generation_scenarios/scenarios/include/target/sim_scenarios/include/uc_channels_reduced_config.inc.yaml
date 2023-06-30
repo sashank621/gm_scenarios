@@ -1,0 +1,151 @@
+v2_api_basic:
+  interfaces:
+  - name: default
+  sources:
+  - stack:
+      name: default
+  channels:
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_time"
+    type: TIME
+  - source: {type: VEHICLE_STACK}
+    sink: {type: SIMIAN}
+    name: "simian_controls"
+    type: CONTROLS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_behavior_predicted_control"
+    type: CONTROLS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_pose"
+    type: POSE
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "localization_sensor"
+    type: LOCALIZATION_SENSOR
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "surround_actors"
+    type: ACTORS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_trip_agent"
+    type: TRIP_AGENT
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "surround_traffic_sign"
+    type: TRAFFIC_SIGN_SENSOR
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "front_camera_traffic_sign"
+    type: TRAFFIC_SIGN_SENSOR
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "front_camera_lane_sensor"
+    type: LANE_SENSOR
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_time_end"
+    type: TIME
+vehicle:
+  shape:
+    front_edge_to_center: 3.85
+    back_edge_to_center: 1.11
+    left_edge_to_center: 1.07
+    right_edge_to_center: 1.07
+    height: 1.478
+  external: {}    
+  sensors:
+    localization_sensors:
+    - name: localization_sensor
+      mount:
+        px: 1.0
+        py: 0
+        pz: 0.0
+        rpy:
+          roll: 0.0
+          pitch: 0.0
+          yaw: 0.0
+      differentiation: FIRST_ORDER_BACKWARD_DIFFERENCE
+    traffic_sign_sensors:
+      - name: front_camera_traffic_sign
+        sensor_view:
+          mount:
+            px: 0.25
+            py: 0.0
+            pz: 0.0
+            rpy:
+              roll: 0
+              pitch: 0
+              yaw: 0
+          sector_fov:
+            distance_near: 0.0
+            distance_far: 45.0
+            yaw_start: !math "-pi / 4"  # 45 degrees to the right
+            yaw_length: !math "pi / 2"  # 90 degrees counter-clockwise (top-down view)
+        sensor_output:
+          reporting_frame: MAP
+      - name: surround_traffic_sign
+        sensor_view:
+          mount:
+            px: 0.25
+            py: 0.0
+            pz: 0.0
+            rpy:
+              roll: 0
+              pitch: 0
+              yaw: 0
+          sector_fov:
+            distance_near: 0.0
+            distance_far: 45.0
+            yaw_start: 0
+            yaw_length: !math "2 * pi"
+        sensor_output:
+          reporting_frame: MAP
+    actor_sensors:
+    - name: surround_actors
+      sensor_output:
+        reporting_frame: MAP
+      sensor_view:
+        mount:
+          px: 1.393
+          py: 0
+          pz: 0
+          rpy:
+            pitch: 0.0
+            roll: 0.0
+            yaw: 0.0
+        sector_fov:
+          distance_far: 350
+          distance_near: 0
+          yaw_length: 6.283185307179586
+          yaw_start: -0.0
+      sensor_filters:
+        - actor_percent_occlusion: {}
+    lane_sensors:
+    - name: front_camera_lane_sensor
+      reported_lines: BOUNDARIES
+      sensor_view:
+        mount:
+          px: 1.4905955101484196
+          py: 0.15853721526051262
+          pz: 1.0136244650780397
+          rpy:
+            pitch: 0.022742997007432337
+            roll: 0.0032112400393771905
+            yaw: -0.0065699161529632726
+        rectangle_fov:
+          x_min: -5.0
+          x_max: 60
+          y_min: -20
+          y_max: 20
+      lane_sampling_distance: 2
+      sensor_output:
+        reporting_frame: VEHICLE
+      stitching:
+        enable: true
+      sensor_filters:
+      - virtual_lane_boundary_filter: {}
+      deferred_parallel_processing: true

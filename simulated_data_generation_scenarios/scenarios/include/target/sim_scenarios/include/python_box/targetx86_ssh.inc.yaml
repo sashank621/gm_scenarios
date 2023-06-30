@@ -1,0 +1,51 @@
+experiment:
+  perception_flow: "debug_flow/perception_simulation_MOT_360_MLT.yml"
+  target_mot_configuration: "../bin/test_data/perception_emb/config/config_manager/mot_config.json"
+  target_mlt_configuration: "../bin/test_data/perception_emb/config/config_manager/mlt_config_acp4.json"
+  target_lim_configuration: "../../localization/localizationInputManipulator/config/lim_conf.json"
+  target_svm_configuration: "../../localization/senseVehicleMotion/config/svm_conf.json"
+  semantic_localization: "../../localization/semanticLocalization/config/sl_conf.json"
+  target_perceptionMapAssociation_configuration: "../../localization/perceptionMapAssociation/config/pma_conf.json"
+  target_scene_static_configuration: "../../localization/sceneProvider/config/scst_conf.json"
+  target_actorProvider_configuration: "../../localization/actorProvider/config/ap_conf.json"
+  target_MAP_Services_configuration: "/home/escalade/projects/uc_workspace/ultracruise/map_data/config/m2_with_subdivision.json"
+
+environment:
+  VALIDATION_OL_ALTERNATIVE_ULTRACRUISE_WORKDIR: '/home/escalade/projects/uc_workspace/ultracruise/build_linux_release/install'
+
+default:
+  module_manager: Target_ssh_x86ModuleManager
+  module_start_time: 5
+  affinity: sim
+  simulated_clock_enabled: enable
+
+  plugins:
+    # - PubSubManagerOverEthernetPlugin
+    - SimPubSubRecordPlugin:
+        pb_recorder_path: sim_config/pb_recorder/recorder_config.json
+        timestamp_format: 'NTP'
+      # - PubSubRecordPlugin:
+      #   type: over_ssh
+      # - SimPubSubRecordPlugin:
+      #   pb_recorder_path: sim_config/pb_recorder/recorder_config_target_x86.json
+    - NoiseHandlerPlugin:
+        enable_noise: !parameterised ${python_box_enable_noise}
+        noise_config:  !parameterised ${python_box_noise_config}
+    - SimulationDump
+    - AraLoggerDaemonPlugin
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+    - CleanStackPlugin
+
+  before_start: [
+    SimTasksetAffinityPlugin,
+    SimPubSubRecordPlugin,
+    NoiseHandlerPlugin
+  ]
+  after_stop: [
+    OnStopModuleStatusPlugin,
+    NoiseHandlerPlugin,
+    SimPubSubRecordPlugin,
+    SimTasksetAffinityPlugin
+    CleanStackPlugin
+  ]

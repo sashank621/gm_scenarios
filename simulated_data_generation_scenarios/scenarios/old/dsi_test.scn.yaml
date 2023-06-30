@@ -1,0 +1,227 @@
+metadata:
+  name: dsi fpa test
+  scenario_version: v0.96
+  author_email: kim@applied.co
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 30s}
+map:
+  key: dsi
+projection_settings:
+  utm:
+    north: true
+    zone: 17
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 347605.2437851323, y: 4717080.189220666}}
+      start: {utm: {x: 347610.6119240486, y: 4717178.269332831}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 347612.1991352666, y: 4717176.346722121}}
+      heading: -1.6441548439402667
+    initial_velocity_mps: 3
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 100
+- obstacle:
+    behaviors:
+    - smooth_lane_keeping:
+        adaptive_cruise:
+          desired_time_gap: 5s
+          enforce_max_bounds: true
+          max_accel: 3
+          max_decel: 3
+          min_dist: 5
+        constant_velocity:
+        params:
+          distance: 100
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    initial_state:
+      point:
+        utm:
+          x: 347609.61563945113
+          y: 4717190.565561297
+      speed_mps: 7
+      heading: -1.6442794208903333
+    type: VEHICLE
+    id: 1
+include:
+- file: scenario://workspace/simian_examples/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/simian_examples/include/global_observers.inc.yaml
+v2_api_basic:
+  interfaces:
+  - name: default
+  sources:
+  - stack:
+      name: default
+  channels:
+  - source: {type: VEHICLE_STACK}
+    sink: {type: SIMIAN}
+    name: "simian_controls"
+    type: CONTROLS 
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_behavior_predicted_control"
+    type: CONTROLS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_pose"
+    type: POSE
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_time"
+    type: TIME
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "perceived_actors_1"
+    type: ACTORS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "perceived_actors_2"
+    type: ACTORS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "simian_trip_agent"
+    type: TRIP_AGENT
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "traffic_light_sensor_tcd"
+    type: TRAFFIC_LIGHTS
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "traffic_sign_sensor_tcd"
+    type: TRAFFIC_SIGN_SENSOR
+  - source: {type: SIMIAN}
+    sink: {type: VEHICLE_STACK}
+    name: "lane_sensor_prg"
+    type: LANE_SENSOR
+vehicle:
+  shape:
+    front_edge_to_center: 3.85
+    back_edge_to_center: 1.11
+    left_edge_to_center: 1.07
+    right_edge_to_center: 1.07
+    height: 1.478
+  sensors:
+    actor_sensors:
+    - name: perceived_actors_1
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 0.5
+          py: 0.0
+          pz: .75
+          rpy:
+            roll: 0.0
+        sector_fov:
+          distance_far: 30.0
+          yaw_start: !math "-0.25 * pi"
+          yaw_length: !math "0.5 * pi"
+          pitch_start: !math "-0.25 * pi"
+          pitch_length: !math "0.5 * pi"
+      sensor_output:
+        reporting_frame: MAP
+      visualize: true
+      sensor_filters:
+      - actor_occlusion:
+          mode: SPATIAL
+          distance_near: 0.0
+          distance_far: 1000.0
+          yaw_start: 0.0
+          yaw_length: 6.3 # >2pi, i.e. full 360-degree vision
+    - name: perceived_actors_2
+      sensor_view:
+        mode: SPATIAL
+        mount:
+          px: 0.5
+          py: 0.0
+          pz: .75
+          rpy:
+            roll: 0.0
+        sector_fov:
+          distance_far: 60.0
+          yaw_start: !math "-0.125 * pi"
+          yaw_length: !math "0.25 * pi"
+          pitch_start: !math "-0.125 * pi"
+          pitch_length: !math "0.25 * pi"
+      sensor_output:
+        reporting_frame: MAP
+      sensor_filters:
+      - actor_occlusion:
+          mode: SPATIAL
+          distance_near: 0.0
+          distance_far: 1000.0
+          yaw_start: 0.0
+          yaw_length: 6.3 # >2pi, i.e. full 360-degree vision
+    traffic_light_sensors:
+    - name: traffic_light_sensor_tcd
+      sensor_view:
+        mount:
+          px: 0.25
+          py: 0.0
+          pz: 0.0
+          rpy:
+            roll: 0
+            pitch: 0
+            yaw: 0
+        sector_fov:
+          distance_near: 0.0
+          distance_far: 45.0
+          yaw_start: !math "-pi / 4"  # 45 degrees to the right
+          yaw_length: !math "pi / 2"  # 90 degrees counter-clockwise (top-down view)
+      sensor_output:
+        reporting_frame: MAP
+    traffic_sign_sensors:
+    - name: traffic_sign_sensor_tcd
+      sensor_view:
+        mount:
+          px: 0.25
+          py: 0.0
+          pz: 0.0
+          rpy:
+            roll: 0
+            pitch: 0
+            yaw: 0
+        sector_fov:
+          distance_near: 0.0
+          distance_far: 45.0
+          yaw_start: !math "-pi / 4"  # 45 degrees to the right
+          yaw_length: !math "pi / 2"  # 90 degrees counter-clockwise (top-down view)
+      sensor_output:
+        reporting_frame: MAP
+    lane_sensors:
+    - name: lane_sensor_prg
+      sensor_view:
+        mount:
+          px: 0.25
+          py: 0.0
+          pz: 0.0
+          rpy:
+            roll: 0
+            pitch: 0
+            yaw: 0
+        sector_fov:
+          distance_near: 0.0
+          distance_far: 15.0
+          yaw_start: !math "-pi / 4"  # 45 degrees to the right
+          yaw_length: !math "pi / 2"  # 90 degrees counter-clockwise (top-down view)
+      sensor_output:
+        reporting_frame: MAP
+      stitching:
+        enable: true  # Optional, lane stitching is enabled by default

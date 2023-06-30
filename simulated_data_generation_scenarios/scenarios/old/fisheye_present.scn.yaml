@@ -1,0 +1,68 @@
+include:
+- file: scenario://workspace/include/data_gen_include_fish_eye.inc.yaml
+metadata:
+  name: fisheye_present
+  scenario_version: v0.96
+  author_email: ada.silberstein@gm.com
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 5s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+environment:
+  lane_degradation_factor: 0.5  #$lane_degradation # affect precentage = 0.8
+
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 500058.12896840775, y: 4500052.42809394}}
+      start: {utm: {x: 500008.39659426303, y: 4499997.080704008}}
+      
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500008.39659426303, y: 4499997.080704008}}
+      heading: 0.7850000000785671
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 500022.05256968364
+              y: 4500010.725809139
+        - point:
+            utm:
+              x: 500037.3229400018
+              y: 4500025.984024094
+        - point:
+            utm:
+              x: 500053.26208760607
+              y: 4500041.9104839815
+            
+    initial_velocity_mps: 9
+
+
+
+
+
+

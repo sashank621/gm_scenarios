@@ -1,0 +1,575 @@
+include:
+- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+#- file: scenario://workspace/ysat_fisheye_2-1m.inc.yaml
+#- file: scenario://workspace/updated_ysat_fisheye_2-1.inc.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+- file: scenario://workspace/include/annotations_pg.inc.yaml
+- file: scenario://workspace/include/TLV_pg.inc.yaml
+metadata:
+  name: category_type_and_ids_test
+  scenario_version: v0.96
+  author_email: daniel.prigan@gm.com
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 9s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+  environment:
+    # lane_degradation_factor: 0.5  #$lane_degradation # affect precentage = 0.8
+    instance_level_labeling: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 500291.58798537264, y: 4500281.113101757}}
+      start: {utm: {x: 500091.84435919434, y: 4500083.471803297}}
+      
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500092.3, y: 4500083.471803297}}
+      heading: 0.8
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 500283.0124794349
+              y: 4500272.825160537
+        - point:
+            utm:
+              x: 500291.58798537264
+              y: 4500281.113101757
+    initial_velocity_mps: 40
+- obstacle:
+    behaviors: []
+    id: 1
+    initial_state:
+      heading: -3.1854
+      point:
+        utm:
+          x: 500129.352927312
+          y: 4500110.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: TRUCK
+- obstacle:
+    behaviors: []
+    id: 2
+    initial_state:
+      heading: -3.1854
+      point:
+        utm:
+          x: 500119.352927312
+          y: 4500120.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    id: 3
+    initial_state:
+      heading: -1.614
+      point:
+        utm:
+          x: 500169.352927312
+          y: 4500150.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: TRAILER
+- obstacle:
+    behaviors: []
+    id: 4
+    initial_state:
+      heading: -1.614
+      point:
+        utm:
+          x: 500159.352927312
+          y: 4500160.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: MOTORCYCLE
+- obstacle:
+    behaviors: []
+    id: 5
+    initial_state:
+      heading: -0.043
+      point:
+        utm:
+          x: 500209.352927312
+          y: 4500190.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    id: 6
+    initial_state:
+      heading: -0.043
+      point:
+        utm:
+          x: 500199.352927312
+          y: 4500200.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    id: 7
+    initial_state:
+      heading: 1.614
+      point:
+        utm:
+          x: 500249.352927312
+          y: 4500230.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    id: 8
+    initial_state:
+      heading: 1.614
+      point:
+        utm:
+          x: 500239.352927312
+          y: 4500240.360807244
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_80_MPH
+    id: 9
+    initial_state:
+      pose_spec:
+        px: 500149.352927312
+        py: 4500130.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 10
+    initial_state:
+      pose_spec:
+        px: 500139.352927312
+        py: 4500140.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: YIELD
+    id: 11
+    initial_state:
+      pose_spec:
+        px: 500179.352927312
+        py: 4500180.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: NO_PASSING_ZONE
+    id: 12
+    initial_state:
+      pose_spec:
+        px: 500189.352927312
+        py: 4500170.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: PEDESTRIAN_CROSSING
+    id: 13
+    initial_state:
+      pose_spec:
+        px: 500219.352927312
+        py: 4500220.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_20_MPH
+    id: 14
+    initial_state:
+      pose_spec:
+        px: 500229.352927312
+        py: 4500210.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_15_MPH
+    id: 15
+    initial_state:
+      pose_spec:
+        px: 500259.352927312
+        py: 4500260.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: -1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 16
+    initial_state:
+      pose_spec:
+        px: 500269.352927312
+        py: 4500250.360807244
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: 1.614
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 0
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: 0
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 500289.352927312
+          y: 4500270.360807244
+          z: 0
+      speed_mps: 1.5
+      heading: 2.9
+    type: PEDESTRIAN
+    id: 17
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 0
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: 0
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 500279.352927312
+          y: 4500280.360807244
+          z: 0
+      speed_mps: 1.5
+      heading: 2.9
+    type: PEDESTRIAN
+    id: 18

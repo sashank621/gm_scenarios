@@ -1,0 +1,12 @@
+traffic_signs:
+- lanes:
+  - '188971265'
+  name: SIGN_999999999
+  pose:
+    px: 330737.39264029113
+    py: 4708573.113608068
+    pz: 2
+    rpy:
+      roll: 1.57079
+      yaw: 3.14
+  sign_type: TYPE_STOP

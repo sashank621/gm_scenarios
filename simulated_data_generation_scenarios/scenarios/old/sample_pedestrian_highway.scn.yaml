@@ -1,0 +1,642 @@
+include:
+- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+- file: scenario://workspace/include/annotations_pg.inc.yaml
+#- file: scenario://workspace/include/sensors_with_en9_ctm_2_cameras_4mb_1_lidar.scn.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+#- file: scenario://workspace/ysat_fisheye_2-1m.inc.yaml
+#- file: scenario://workspace/updated_ysat_fisheye_2-1.inc.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+metadata:
+  name: sample_pedestrian_highway
+  scenario_version: v0.96
+  author_email: daniel.prigan@gm.com
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 5s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+  environment:
+    # lane_degradation_factor: 0.5  #$lane_degradation # affect precentage = 0.8
+    instance_level_labeling: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+trip_agent:
+  behavior:
+  - generate_route:
+      start: {utm: {x: 500013, y: 4499996}}
+      dest: {utm: {x: 500268, y: 4500251}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500013, y: 4499996}}
+      heading: !math "pi / 4"
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point: {utm: {x: 500013, y: 4499996}}
+        - point: {utm: {x: 500268, y: 4500251}}
+    initial_velocity_mps: 9
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 0
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: LIGHT
+        idle_state: 1
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+0)/sqrt(2))+(0*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+0)/sqrt(2))+(0*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 1
+
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 1
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMLIGHT
+        idle_state: 2
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+0)/sqrt(2))+(1*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+0)/sqrt(2))+(1*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 2
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 2
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: DARK
+        idle_state: 3
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+0)/sqrt(2))+(2*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+0)/sqrt(2))+(2*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 3
+
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 3
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: DARK
+        idle_state: 0
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+12)/sqrt(2))+(0*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+12)/sqrt(2))+(0*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 4
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 4
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMDARK
+        idle_state: 1
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+12)/sqrt(2))+(1*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+12)/sqrt(2))+(1*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 5
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 5
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: LIGHT
+        idle_state: 2
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+12)/sqrt(2))+(2*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+12)/sqrt(2))+(2*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 6
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 6
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: DARK
+        idle_state: 3
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+24)/sqrt(2))+(0*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+24)/sqrt(2))+(0*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 7
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 7
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMDARK
+        idle_state: 0
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+24)/sqrt(2))+(1*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+24)/sqrt(2))+(1*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 8
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 8
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMDARK
+        idle_state: 1
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+24)/sqrt(2))+(2*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+24)/sqrt(2))+(2*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 9
+
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 9
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMLIGHT
+        idle_state: 2
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+40)/sqrt(2))+(0*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+40)/sqrt(2))+(0*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 10
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 10
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: MEDIUMDARK
+        idle_state: 3
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+40)/sqrt(2))+(1*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+40)/sqrt(2))+(1*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 11
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: 0
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        skin_color_preset: DARK
+        idle_state: 0
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: !math "500013+((4.8+40)/sqrt(2))+(2*2)*(-sqrt(2))"
+          y: !math "4499996+((4.8+40)/sqrt(2))+(2*2)*(sqrt(2))"
+          z: 0
+      speed_mps: 1.5
+      heading: -2.35619
+    type: PEDESTRIAN
+    id: 12
+
+# - obstacle:
+#     behaviors:
+#     - route_following:
+#         constant_velocity:
+#         minimum_attractor_distance: 2
+#         tangent_distance: 0.2
+#         waypoints:
+#         - point:
+#             utm:
+#               x: 500055.284986
+#               y: 4500038.28499
+#         - point:
+#             utm:
+#               x: 500045.284986
+#               y: 4500048.28499
+#     spectral_model: GENERIC_PEDESTRIAN
+#     spectral_asset:
+#       pedestrian_customization:
+#         pedestrian_selector: 0
+#         top_color:
+#           r: 1.0
+#           g: 0.0
+#           b: 0.0
+#         bottom_color:
+#           r: 0.0
+#           g: 0.0
+#           b: 1.0
+#         skin_color_preset: DARK
+#         idle_state: 0
+#     model:
+#       static:
+#         height: 1.65
+#         point:
+#         - x: 0.0
+#           y: 0.35
+#         - x: 0.2
+#           y: 0.25
+#         - x: 0.2
+#           y: -0.25
+#         - x: 0.0
+#           y: -0.35
+#         - x: -0.2
+#           y: -0.25
+#         - x: -0.2
+#           y: 0.25
+#     initial_state:
+#       point:
+#         utm:
+#           x: !math "500013+((4.8+55)/sqrt(2))+(0*2)*(-sqrt(2))"
+#           y: !math "4499996+((4.8+55)/sqrt(2))+(0*2)*(sqrt(2))"
+#           z: 0
+#       speed_mps: 1.5
+#       heading: -3.92699
+#     type: PEDESTRIAN
+#     id: 13
+
+
+# parameter_sweeps:
+# - list:
+#     values:
+#     - LIGHT
+#     - MEDIUMLIGHT
+#     - MEDIUM
+#     - MEDIUMDARK
+#     - DARK
+#     var: skin_color

@@ -1,0 +1,86 @@
+include:
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/extra_data_noise_config.inc.yaml
+scenario_configs:
+- config_key: sut
+  configs:
+  - config_value: proto_master
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/proto_master.inc.yaml
+  - config_value: localization_sandbox
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/loc_sb_map_sensor.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/localization_sandbox.inc.yaml
+  - config_value: planning_sandbox
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/loc_sb_map_sensor.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/planning_sandbox_rearch.inc.yaml
+  - config_value: proto_scene_fusion
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/proto_scene_fusion.inc.yaml
+  - config_value: proto_spectral_master
+    include:
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/proto_spectral_master.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/spectral_sensors_config.inc.yaml
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST_include_spectral_fm.inc.yaml
+  - config_value: proto_freeze_flow_round2
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/proto_freeze_flow_round2.inc.yaml
+  - config_value: sim_clock_and_profiler_test
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/sim_clock_and_profiler_test.inc.yaml
+  - config_value: target_acp4
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/target_acp4.inc.yaml
+  - config_value: target_sil_round3
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/target_sil_round3.inc.yaml
+  - config_value: target_sil_round3_perfect_perception
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/target_sil_round3_perfect_perception.inc.yaml
+  - config_value: no_uc
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/no_uc.inc.yaml
+  - config_value: no_uc_loc_sb
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/loc_sb_map_sensor.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/no_uc.inc.yaml
+## TODO: enable this when added to scenario config yaml the default values
+# - config_key: sensor_suite
+#   configs:
+#   - config_value: default
+#     include:
+#     - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+#   - config_value: default_and_loc_sb
+#     include:
+#     - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+#     - file: scenario://workspace/sim_scenarios/include/mapping.inc.yaml
+#   - config_value: default_and_free_space
+#     include:
+#     - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+#     - file: scenario://workspace/sim_scenarios/include/freespace.inc.yaml
+#   - config_value: spectral
+#     include:
+#     - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST_include_spectral_fm.inc.yaml
+#     - file: scenario://workspace/sim_scenarios/include/spectral_sensors_config.inc.yaml
+  - config_value: re_arc_sensors
+    include:
+    - file: scenario://workspace/sim_scenarios/include/uc_channels_MUST_re_arc.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/sut_configs/proto_master.inc.yaml
+
+extra_data:
+   sync_mode: "sim_clock"
+integration_options:
+  time_synchronization_mode: BETWEEN_CONVERT_FROM_SIMIAN_CALLS
+  actor_reporting_version:
+    minor: 1

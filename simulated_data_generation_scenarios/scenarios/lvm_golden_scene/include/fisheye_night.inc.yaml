@@ -1,0 +1,198 @@
+vehicle:
+  sensors:
+    sensor_models:
+      # - camera_model:
+      #     fidelity:
+      #       super_sampling: 2.0
+      #     format:
+      #       data: ROS_TOPIC
+      #     library:
+      #       model: generic
+      #       vendor: applied
+      #     mount:
+      #       px: 1.9671563176463
+      #       py: -0.10508203694231931
+      #       pz: 1.449129435472988
+      #       quaternion:
+      #         qw: 0.9999729608349087
+      #         qx: 0.0014560899872085075
+      #         qy: 0.002308262540907462
+      #         qz: 0.006828566837743851
+      #     name: camera_g1_8mb_image_extwide_front_ws
+      #     standard_params:
+      #       field_of_view:
+      #         az: 1.733425103990766
+      #         el: 0.7604397748443579
+      #       rendered_field_of_view: 2.154
+      #       frame_rate: 10
+      #       lens_params:
+      #         center_position:
+      #           x: 0.00135
+      #           y: -0.28821
+      #       sensor_params:
+      #         resolution:
+      #           x: 3946
+      #           y: 1408
+      #         type: VISIBLE
+      #       system_params:
+      #           data_type: UINT
+      #           gain: 1.0
+      #           gamma: 0.454545
+      #           white_balance: 5500
+      #           color_space: RGB
+      #           exposure:
+      #               auto_exposure: true
+      #               dynamic_range: {min: 4.0, max: 14.0}
+      #               speed: 5.0
+      #               range: 0.0
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 3.8256685871532827
+            py: -0.1257103338619156
+            pz: 0.6371482803443826
+            rpy:
+              pitch: 0.57629486218257
+              roll: -0.004429670738765581
+              yaw: -0.011883137842386116
+          name: camera_ysat_2mp_image_fisheye_grill_front
+          standard_params:
+            field_of_view:
+              az: 3.4676754097330877
+              el: 2.7394724753088946
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      #       # system_params:
+      #       #     data_type: UINT
+      #       #     gain: 1.0
+      #       #     gamma: 0.454545
+      #       #     white_balance: 5500
+      #       #     color_space: RGB
+      #       #     exposure:
+      #       #         auto_exposure: true
+      #       #         dynamic_range: {min: 4.0, max: 14.0}
+      #       #         speed: 5.0
+      #       #         range: 0.0
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: -0.9880335379699561
+            py: -0.20422293875113026
+            pz: 1.456787539950386
+            rpy:
+              pitch: 0.6236370373197399
+              roll: -0.013601163572779509
+              yaw: 3.1290101701223247
+          name: camera_ysat_2mp_image_fisheye_lift_gate
+          standard_params:
+            field_of_view:
+              az: 3.4674457146758786
+              el: 2.7402989935596738
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 2.158696115424293
+            py: 1.0451897161360582
+            pz: 1.1966068241457286
+            rpy:
+              pitch: 0.5238596618657292
+              roll: -0.010680606429742253
+              yaw: 1.6277487114411178
+          name: camera_ysat_2mp_image_fisheye_mirror_left
+          standard_params:
+            field_of_view:
+              az: 3.4737075717175876
+              el: 2.744066217009818
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 1.9344705843822108
+            py: -1.1921148571827749
+            pz: 1.1679604323236952
+            rpy:
+              pitch: 0.5201268404203552
+              roll: -0.006706423878313731
+              yaw: -1.6014802831704325
+          name: camera_ysat_2mp_image_fisheye_mirror_right
+          standard_params:
+            field_of_view:
+              az: 3.487975835234515
+              el: 2.756238455455769
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE

@@ -1,0 +1,287 @@
+include:
+- file: scenario://workspace/datagen/lvm_golden_scene/include/fisheye_night_v2.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/vehicle_shape.inc.yaml
+metadata:
+  name: parking_lot_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: applied_gm@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 10s
+spectral:
+  enable: true
+  label_requests:
+  - request_name: parking
+    parking_space:
+      search_radius: 150.0
+  - request_name: semantic_images
+    semantic_image: {}
+  environment:
+    instance_level_labeling: true
+    user_defined_weather:
+      atmosphere:
+        cloud_density: 0.1
+        fog_density: 0.01
+        precipitation: 0.0
+        scattered_light_scalar: 1.0
+      datetime:
+        date:
+          day: 21
+          month: 9
+        time_of_day: 0010
+        time_zone: -7.0
+      daylight_savings:
+        enable_daylight_savings: false
+        end_day: 1
+        end_month: 11
+        start_day: 8
+        start_month: 3
+        switch_hour: 128
+      location:
+        lat: 37.0
+        lng: -122.0
+      sun:
+        illuminance: 110000
+      world_surface:
+        amount_of_driving: 0.0
+        blend_snow: 0.0
+        puddle_spread: 0.0
+        snow_depth: 0.0
+        water_level: 0.0
+    weather: USER
+map:
+  key: parking_lot
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+extra_data:
+  simian_driver: 'true'
+  VIN_identifier: VIN_Simulation_En7
+  labels_as_proto: 'true'
+  tlv_time_shift_type: current_time
+  enable_label_writing: /data/simulations/maor_tlvs/lvm_golden_scene_v2/lvm_golden_scene_3_night_v2/output.zip
+  override_tlvs_output_path: /data/simulations/maor_tlvs/lvm_golden_scene_v2/lvm_golden_scene_3_night_v2
+vehicle:
+  spectral_asset:
+    vehicle_headlights:
+      intensity: 10000
+      high_beams: false
+      left_mount:
+        px: 3.8
+        py: 0.6
+        pz: 0.7
+        rpy:
+          pitch: !math "40 * pi / 180"
+          roll: 0.0
+          yaw: !math "5 * pi / 180"
+      right_mount:
+        px: 3.8
+        py: -0.6
+        pz: 0.7
+        rpy:
+          pitch: !math "40 * pi / 180"
+          roll: 0.0
+          yaw: !math "-5 * pi / 180"
+agents:
+- static_obstacle:
+    spectral_static_model: CUSTOM_SPOT_LIGHT
+    model:
+      static:
+        point:
+        - y: -0.05
+          x: -0.05
+        - y: 0.05
+          x: -0.05
+        - y: 0.05
+          x: 0.05
+        - y: -0.05
+          x: 0.05
+        height: 0.1
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0
+          pitch: 1.5707963267948966  # Pitched Down towards ground
+          yaw: 0.0
+        px: 596980
+        py: 4133130.12
+        pz: 15
+    custom_model_description:
+      spot_light_configuration:
+        intensity: 15000.0 # Lumens (Required)
+        intensity_units: LUMENS # LUMENS or CANDELAS
+        inner_cone_angle: !math "30.0 * pi/180" # radians
+        outer_cone_angle: !math "150.0 * pi/180" # radians
+        maximum_radius: 150.0 # meters
+        maximum_render_distance: 200.0 # meters
+        wavelength_channels: [VISIBLE]
+        color_srgb: false # color as sRGB or not
+        color:
+          r: 1.0
+          g: 1.0
+          b: 1.0
+    type: UNKNOWN_UNMOVABLE
+    id: 1
+- static_obstacle:
+    spectral_static_model: CUSTOM_SPOT_LIGHT
+    model:
+      static:
+        point:
+        - y: -0.05
+          x: -0.05
+        - y: 0.05
+          x: -0.05
+        - y: 0.05
+          x: 0.05
+        - y: -0.05
+          x: 0.05
+        height: 0.1
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0
+          pitch: 1.5707963267948966  # Pitched Down towards ground
+          yaw: 0.0
+        px: 596981
+        py: 4133120
+        pz: 15
+    custom_model_description:
+      spot_light_configuration:
+        intensity: 15000.0 # Lumens (Required)
+        intensity_units: LUMENS # LUMENS or CANDELAS
+        inner_cone_angle: !math "30.0 * pi/180" # radians
+        outer_cone_angle: !math "150.0 * pi/180" # radians
+        maximum_radius: 150.0 # meters
+        maximum_render_distance: 200.0 # meters
+        wavelength_channels: [VISIBLE]
+        color_srgb: false # color as sRGB or not
+        color:
+          r: 1.0
+          g: 1.0
+          b: 1.0
+    type: UNKNOWN_UNMOVABLE
+    id: 2
+- static_obstacle:
+    spectral_static_model: CUSTOM_SPOT_LIGHT
+    model:
+      static:
+        point:
+        - y: -0.05
+          x: -0.05
+        - y: 0.05
+          x: -0.05
+        - y: 0.05
+          x: 0.05
+        - y: -0.05
+          x: 0.05
+        height: 0.1
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0
+          pitch: 1.5707963267948966  # Pitched Down towards ground
+          yaw: 0.0
+        px: 596979
+        py: 4133140.6
+        pz: 15
+    custom_model_description:
+      spot_light_configuration:
+        intensity: 15000.0 # Lumens (Required)
+        intensity_units: LUMENS # LUMENS or CANDELAS
+        inner_cone_angle: !math "30.0 * pi/180" # radians
+        outer_cone_angle: !math "150.0 * pi/180" # radians
+        maximum_radius: 150.0 # meters
+        maximum_render_distance: 200.0 # meters
+        wavelength_channels: [VISIBLE]
+        color_srgb: false # color as sRGB or not
+        color:
+          r: 1.0
+          g: 1.0
+          b: 1.0
+    type: UNKNOWN_UNMOVABLE
+    id: 3
+- static_obstacle:
+    spectral_static_model: CUSTOM_SPOT_LIGHT
+    model:
+      static:
+        point:
+        - y: -0.05
+          x: -0.05
+        - y: 0.05
+          x: -0.05
+        - y: 0.05
+          x: 0.05
+        - y: -0.05
+          x: 0.05
+        height: 0.1
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0
+          pitch: 1.5707963267948966  # Pitched Down towards ground
+          yaw: 0.0
+        px: 597019.2
+        py: 4133124.2
+        pz: 15
+    custom_model_description:
+      spot_light_configuration:
+        intensity: 15000.0 # Lumens (Required)
+        intensity_units: LUMENS # LUMENS or CANDELAS
+        inner_cone_angle: !math "30.0 * pi/180" # radians
+        outer_cone_angle: !math "150.0 * pi/180" # radians
+        maximum_radius: 150.0 # meters
+        maximum_render_distance: 200.0 # meters
+        wavelength_channels: [VISIBLE]
+        color_srgb: false # color as sRGB or not
+        color:
+          r: 1.0
+          g: 1.0
+          b: 1.0
+    type: UNKNOWN_UNMOVABLE
+    id: 4
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 596990.4112625136
+          y: 4133116.8069766015
+      heading: 1.6795435077898218
+    initial_velocity_mps: 5
+    behaviors:
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 596988.89827324
+            y: 4133130.923627861
+            heading: 1.6940000000000002
+            tangent_distance: 3
+        constant_velocity:
+    - stop:
+        deceleration: 7.0
+        persist_after_complete: false
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 596992.1108705689
+            y: 4133127.1845931215
+            heading: 0.12840383898706706
+            tangent_distance: 1.5595066920213687
+          - x: 596993.8522031675
+            y: 4133127.40827646
+            heading: 0.12366973341538902
+            tangent_distance: 0.1
+        motion_profile:
+          phases:
+          - ramp_velocity:
+              target: -5
+              duration: 5
+        reverse: true
+    - stop:
+        persist_after_complete: true

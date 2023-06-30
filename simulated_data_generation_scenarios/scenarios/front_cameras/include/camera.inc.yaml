@@ -1,0 +1,69 @@
+vehicle:
+  sensors:
+    sensor_models: 
+      - camera_model:
+          fidelity:
+            super_sampling: 2.0
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 1.9671563176463
+            py: -0.10508203694231931
+            pz: 1.449129435472988
+            quaternion:
+              qw: 0.9999729608349087
+              qx: 0.0014560899872085075
+              qy: 0.002308262540907462
+              qz: 0.006828566837743851
+          name: camera_g1_8mb_image_extwide_front_ws
+          standard_params:
+            field_of_view:
+              az: 1.733425103990766
+              el: 0.7604397748443579
+            rendered_field_of_view: 2.154
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.00135
+                y: -0.28821
+            sensor_params:
+              resolution:
+                x: 3946
+                y: 1408
+              type: VISIBLE
+      - camera_model:
+          # fidelity:
+          #   super_sampling: 1.2
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 2.2583135388682463
+            py: -0.0818153690988163
+            pz: 1.4649917022423473
+            quaternion:
+              qw: 0.9998757422122109
+              qx: 0.0049235293295927535
+              qy: 0.01418551998166609
+              qz: -0.004798960030113791
+          name: camera_g1_8mb_image_narrow_front_ws
+          standard_params:
+            rendered_field_of_view: 0.5398811282264511
+            field_of_view:
+              az: 0.4882437467053002
+              el: 0.24348368685116903
+            frame_rate: 2
+            lens_params:
+              center_position:
+                x: 0.02693333333333333333333333333333
+                y: -0.05531614583333333333333333333333
+            sensor_params:
+              resolution:
+                x: 3900
+                y: 1920
+              type: VISIBLE

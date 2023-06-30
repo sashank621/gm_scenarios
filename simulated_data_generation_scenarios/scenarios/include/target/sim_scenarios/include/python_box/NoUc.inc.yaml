@@ -1,0 +1,21 @@
+experiment:
+  perception_flow: ""
+
+default:
+  module_manager: NullModuleManager
+  plugins:
+    - SimPubSubRecordPlugin:
+        pb_recorder_path: sim_config/pb_recorder/recorder_config.json  
+    - SimulationDump
+    - AraLoggerDaemonPlugin
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+    - CleanStackPlugin
+  before_start: [
+    SimPubSubRecordPlugin,
+  ]
+  after_stop: [
+    OnStopModuleStatusPlugin,
+    SimPubSubRecordPlugin,
+    CleanStackPlugin
+  ]

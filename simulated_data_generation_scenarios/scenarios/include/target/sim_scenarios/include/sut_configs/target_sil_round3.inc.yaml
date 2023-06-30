@@ -1,0 +1,4 @@
+extra_data:
+  uc_config_path: "sim_config/uc_config_MOT_MLT.yaml"
+  enable_noise: "true"
+  plugins: "simulation/resources/sim_scenarios/include/python_box/targetx86_perfect_percetion.inc.yaml"

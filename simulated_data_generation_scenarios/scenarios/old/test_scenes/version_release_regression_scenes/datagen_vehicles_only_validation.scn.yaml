@@ -1,0 +1,276 @@
+include:
+- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+# - file: scenario://workspace/include/rear_camera_include_test.inc.yaml
+# - file: scenario://workspace/include/annotations_pg.inc.yaml
+# - file: scenario://workspace/include/TLV_pg.inc.yaml
+metadata:
+  name: vehicle_only_regression_test
+  scenario_version: v0.96
+  author_email: daniel.prigan@gm.com
+  description: "scenario to compare (regression stability) for simain/spectral/gm-spectral version release"
+sim_end:
+  until:
+  - timeout: {secs: 7s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+  environment:
+    instance_level_labeling: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 500291.58798537264, y: 4500281.113101757}}
+      start: {utm: {x: 500091.84435919434, y: 4500083.471803297}}
+      
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500092.3, y: 4500083.471803297}}
+      heading: 0.8
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 500283.0124794349
+              y: 4500272.825160537
+        - point:
+            utm:
+              x: 500291.58798537264
+              y: 4500281.113101757
+    initial_velocity_mps: 10
+
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 1
+    initial_state:
+      heading: !math "(3.14/180)*(-135)"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*0"
+          y: !math "4500113.47+10*1+(-10)*0"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 2
+    initial_state:
+      heading: !math "(3.14/180)*(-135)"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*1"
+          y: !math "4500113.47+10*1+(-10)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEDAN
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 3
+    initial_state:
+      heading: !math "(3.14/180)*45"
+      point:
+        utm:
+          x: !math "500101.85+10*1+10*2"
+          y: !math "4500113.47+10*1+(-10)*2"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_MOTORCYCLE_STREET
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 4
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500091.85+40*1+20*1"
+          y: !math "4500123.47+40*1+(-20)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_SEMI_TRUCK_CAB
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 5
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500101.85+40*1+5*1"
+          y: !math "4500113.47+40*1+(-5)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_ROAD_BICYCLE
+    spectral_asset:
+      main_carpaint:
+        color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+          a: 0.2
+        metallic: 0.4
+        roughness: 0.7
+        clear_coat_roughness: 0.3
+        specular: 0.25
+        clear_coat: 0.75
+    id: 6
+    initial_state:
+      heading: !math "(3.14/180)*(-90)"
+      point:
+        utm:
+          x: !math "500111.85+40*1+5*1"
+          y: !math "4500103.47+40*1+(-5)*1"
+      speed_mps: 0
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    type: VEHICLE

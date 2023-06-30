@@ -1,0 +1,21 @@
+global_variables:
+- name: surround_sensor_max_detection_range
+  value: 350.0
+- name: camera_short_range_max_detection_range
+  value: 20.0
+- name: cameras_max_detection_range
+  value: 250.0
+- name: radar_front_far_max_detection_range
+  value: 180.0
+- name: radar_front_near_max_detection_range
+  value: 50.0
+- name: lane_sensors_max_front_detection_range
+  value: 100.0
+- name: lane_sensors_max_side_detection_range
+  value: 20.0
+- name: map_attributes_max_detection_range
+  value: 240.0
+- name: tcd_max_detection_range
+  value: 240.0
+- name: traffic_sign_max_detection_range
+  value: 240.0

@@ -1,0 +1,59 @@
+metadata:
+  name: gatagen_validation2
+  scenario_version: v0.96
+  author_email: ada.silberstein@gm.com
+  description: ""
+
+sim_end:
+  until:
+  - timeout: {secs: 60s}
+map:
+  key: sunnyvale_datagen
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 587270.3060838457, y: 4140959.6820927807}}
+      start: {utm: {x: 587313.765297345, y: 4140896.533822908}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 587313.765297345, y: 4140896.533822908}}
+      heading: 2.7302845325498764
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 587302.0485945721
+              y: 4140901.3367865686
+        - point:
+            utm:
+              x: 587282.6750924404
+              y: 4140908.213215801
+        - point:
+            utm:
+              x: 587266.2389430592
+              y: 4140918.026540768
+        - point:
+            utm:
+              x: 587264.6894682738
+              y: 4140937.565095742
+        - point:
+            utm:
+              x: 587267.8811321734
+              y: 4140950.1451758174

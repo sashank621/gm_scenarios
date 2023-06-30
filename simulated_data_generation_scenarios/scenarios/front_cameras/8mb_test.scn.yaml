@@ -1,0 +1,42 @@
+metadata:
+  name: 8mb_scenario
+  scenario_version: v0.96
+sim_end:
+  until:
+  - timeout: {secs: 2s}
+map:
+  key: test_tracks
+include:
+- file: scenario://workspace/datagen/front_cameras/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/spectral.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/camera.inc.yaml
+projection_settings:
+  utm:
+    north: true
+    zone: 17
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 280129.0970734057
+          y: 4717991.9108084375
+          z: 262.851
+      heading: 0.09834546101317487
+    initial_velocity_mps: 0
+    behaviors:
+    - smooth_lane_keeping:
+        params:
+          distance: 10
+        constant_velocity:
+# extra_data:
+#   datagen:
+#     write_tlvs:
+#       topics: 
+#         - "GPS_DATA_SERVICE"
+#         - "IMU_DATA_SERVICE"
+#         - "CAMERA_G1_8MB_IMAGE_EXTWIDE_FRONT_WS"
+#         - "CAMERA_G1_8MB_IMAGE_NARROW_FRONT_WS"
+#       path: "~/my_tlvs_folder/$"

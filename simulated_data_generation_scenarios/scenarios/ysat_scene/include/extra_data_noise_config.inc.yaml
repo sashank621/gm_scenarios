@@ -1,0 +1,85 @@
+extra_data:
+  noise_config:
+      PERCEIVED_ROAD_GEOMETRY: 
+        latency: 0
+        noise: false
+        use_cpp_framework: true
+        coverage: false
+        initParams: {}
+      IMUA: 
+        latency: 0
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      SIM_CAN_IMU_SIGNALS: 
+        latency: 0
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      PPS:
+        latency: 0
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        submodel: "2"
+        initParams: 
+          POS_STD: 1
+          X_Y_LAMBDA: 100
+          HEADING_STD: 0.5
+          HEADING_LAMBDA: 60
+      DETECTED_OBJECT_DATA_CAMERA_FRONT_WIDE_VIEW: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_FRONT_NARROW_VIEW: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_LEFT_SHORT_RANGE: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_RIGHT_SHORT_RANGE: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_REAR_LEFT: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_REAR_CENTER: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      DETECTED_OBJECT_DATA_CAMERA_REAR_RIGHT: 
+        latency: 150
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      LRR_FRONT_CENTER_SERVICE_POL: 
+        latency: 100
+        noise: true
+        use_cpp_framework: true
+        coverage: false
+        initParams: 
+      SIM_VEH_ODOM:
+        latency: 50
+        noise: false
+        use_cpp_framework: true
+        coverage: false
+        initParams: 

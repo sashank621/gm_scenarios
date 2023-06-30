@@ -1,0 +1,187 @@
+vehicle:
+  sensors:
+    sensor_models:
+
+# --------------------CAMERA 2------------------------------------------------
+    - camera_model:
+        fidelity:
+          super_sampling: 3.5
+        library:
+          vendor: applied
+          model: generic
+        name: CAMERA_1MB_IMAGE_LEFT_MIRROR_SIDE_FACING_rgb
+        mount:
+          px: 1.5
+          py: 1
+          pz: 2.5
+          rpy:
+            roll: 0.0
+            pitch: 0.0
+            yaw: !math "90* pi / 180"
+        standard_params:
+          frame_rate: 4
+          field_of_view: {az: !math "pi / 180 * 160"}
+          lens_params:
+            center_position: {x: 0.0, y: 0.0}
+            projection: EQUIDISTANT
+            # radial_distortion: [0.0, .092707337, 0.0, -0.006832512, 0.0, 0.008586066]
+          sensor_params:
+            resolution: {x: 1280, y: 718}
+            type: VISIBLE
+        format:
+          data: ROS_TOPIC
+    - camera_model:
+        fidelity:
+          super_sampling: 3.5
+        library:
+          vendor: applied
+          model: generic
+        name: CAMERA_1MB_IMAGE_LEFT_MIRROR_SIDE_FACING_semantic
+        mount:
+          px: 1.5
+          py: 1
+          pz: 2.5
+          rpy:
+            roll: 0.0
+            pitch: 0.0
+            yaw: !math "90* pi / 180"
+        standard_params:
+          frame_rate: 4
+          field_of_view: {az: !math "pi / 180 * 160"}
+          lens_params:
+            projection: EQUIDISTANT
+            center_position: {x: 0.0, y: 0.0}
+            # radial_distortion: [0.0, .092707337, 0.0, -0.006832512, 0.0, 0.008586066]
+          sensor_params:
+            resolution: {x: 1280, y: 718}
+            type: SEMANTIC_SEGMENTATION
+        format:
+          data: ROS_TOPIC
+# --------------------CAMERA 3------------------------------------------------
+#     - camera_model:
+#         library:
+#           vendor: applied
+#           model: generic
+#         name: CAMERA_2MB_IMAGE_RC_TOP_LIFT_GATE_rgb
+#         mount:
+#           px: -1
+#           py: 0
+#           pz: 2.0
+#           rpy:
+#             roll: 0.0
+#             pitch: 0.0
+#             yaw: -3.14
+#         standard_params:
+#           frame_rate: 10
+#           field_of_view: {az: !math "pi / 180 * 60"}
+#           lens_params:
+#             center_position: {x: 0.0, y: 0.0}
+#           sensor_params:
+#             resolution: {x: 1824, y: 940}
+#             type: VISIBLE
+#         format:
+#           data: ROS_TOPIC
+#     - camera_model:
+#         library:
+#           vendor: applied
+#           model: generic
+#         name: CAMERA_2MB_IMAGE_RC_TOP_LIFT_GATE_semantic
+#         mount:
+#           px: -1
+#           py: 0
+#           pz: 2.0
+#           rpy:
+#             roll: 0.0
+#             pitch: 0.0
+#             yaw: -3.14
+#         standard_params:
+#           frame_rate: 4
+#           field_of_view: {az: !math "pi / 180 * 60"}
+#           lens_params:
+#             center_position: {x: 0.0, y: 0.0}
+#           sensor_params:
+#             resolution: {x: 1824, y: 940}
+#             type: SEMANTIC_SEGMENTATION
+#         format:
+#           data: ROS_TOPIC
+
+# # --------------------LIDAR 1------------------------------------------------
+#     - lidar_model:
+#         library:
+#           vendor: velodyne
+#           model: ultra_puck
+#         name: LIDAR_POINT_CLOUD_VLP32_LF
+#         mount:
+#           px: 0.0
+#           py: 0.0
+#           pz: 2.4
+#           rpy:
+#             roll: 0.0
+#             pitch: 0.0
+#             yaw: 0.0
+#         standard_params:
+#           frame_rate: 20.0
+#           detector_params:
+#             range: {min: 0, max: 90}
+#         format:
+#           data: ROS_TOPIC
+#           semantic_segmentation: true
+#           intensity:
+#             quantization: 8.0
+#             units: REFLECTIVITY_SCALED
+#             log_scale: false
+#             range: {min: 0.01, max: 0.5}
+            
+# # --------------------LIDAR 2------------------------------------------------
+#     - lidar_model:
+#         library:
+#           vendor: cepton
+#           model: vista
+#         name: LIDAR_POINT_CLOUD_CEPTON
+#         mount:
+#           px: 0.0
+#           py: 0.0
+#           pz: 2.4
+#           rpy:
+#             roll: 0.0
+#             pitch: 0.0
+#             yaw: 0.0
+#         standard_params:
+#           frame_rate: 10.0
+#           detector_params:
+#             range: {min: 0, max: 90}
+#         format:
+#           data: ROS_TOPIC
+#           semantic_segmentation: true
+#           intensity:
+#             quantization: 8.0
+#             units: REFLECTIVITY_SCALED
+#             log_scale: false
+#             range: {min: 0.01, max: 0.5}            
+#     lane_marker_sensors:
+#     - name: Lane Sensor
+#       sensor_filters:
+#       - virtual_lane_boundary_filter: {}
+#       sensor_view:
+#         mount:
+#         sector_fov:
+#           distance_near: 1.0
+#           distance_far: 150.0
+#           yaw_start: !math "-pi"  # 180 degrees to the right
+#           yaw_length: !math "2*pi"  # 360 degrees counter-clockwise (top-down view)
+#       sensor_output:
+#         reporting_frame: MAP
+#       lane_stitching_distance: 0.2  # Merges lane segments within this tolerance
+#     actor_sensors:
+#     - name: Actor Sensor
+#       sensor_view:
+#         mount:
+#           rpy:
+#             yaw: 0
+#         sector_fov:
+#           distance_far: 200.0
+#           yaw_length: !math "2.0 * pi"
+#       sensor_output:
+#         reporting_frame: MAP
+#       sensor_filters:
+#       - actor_percent_occlusion: {}

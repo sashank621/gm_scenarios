@@ -1,0 +1,281 @@
+metadata:
+  name: oval_track_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: eli.alkhazov@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 30s
+include:
+- file: scenario://workspace/include/vehicle_external.inc.yaml
+- file: scenario://workspace/sample_for_target/include/EN7_quaternion.inc.yaml
+map:
+  key: test_tracks
+spectral:
+  enable: true
+projection_settings:
+  utm:
+    north: true
+    zone: 17
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 279877.0972269939
+          y: 4720487.251382905
+          z: 265.42150000000004
+      heading: -0.13231453517791225
+    initial_velocity_mps: 7
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 500
+- obstacle:
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 20
+    - lane_change:
+        constant_velocity:
+        relative_lane:
+          change_direction: RIGHT
+          lane_follow_distance: 10
+          num_lanes: 1
+          transition_distance: 15
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 1000
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    initial_state:
+      relative:
+        to:
+          ego: true
+        lane_relative_coordinates:
+          relative_lane: 2
+          s: -35.0
+          t: 0.0
+          lane_split_preference: LEFT
+      speed_mps: 10
+    spectral_model: GENERIC_SUV
+    type: VEHICLE
+    id: 1
+- obstacle:
+    model:
+      static:
+        height: 1.6449999809265137
+        point:
+        - x: 2.29124999046
+          y: 0.93
+        - x: 2.29124999046
+          y: -0.93
+        - x: -2.29124999046
+          y: -0.93
+        - x: -2.29124999046
+          y: 0.93
+    type: VEHICLE
+    id: 2
+    name: SUV-2
+    initial_state:
+      relative:
+        to:
+          ego: true
+        lane_relative_coordinates:
+          relative_lane: 0
+          s: 50.0
+          t: 0.0
+          lane_split_preference: FORWARD
+      speed_mps: 7
+    spectral_model: GENERIC_SEDAN
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 500
+- obstacle:
+    model:
+      static:
+        height: 1.959999918937683
+        point:
+        - x: 3.23699998856
+          y: 1.02799999714
+        - x: 3.23699998856
+          y: -1.02799999714
+        - x: -3.23699998856
+          y: -1.02799999714
+        - x: -3.23699998856
+          y: 1.02799999714
+    type: VEHICLE
+    id: 3
+    name: Pickup-3
+    initial_state:
+      relative:
+        to:
+          ego: true
+        lane_relative_coordinates:
+          relative_lane: -1.0
+          s: -30.0
+          t: 0.0
+          lane_split_preference: LEFT
+      speed_mps: 15
+    spectral_model: GENERIC_PICKUP_WHITE
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity:
+        params:
+          distance: 500
+    - stop:
+        deceleration: 1
+    - wait: {}
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 4
+    initial_state:
+      pose_spec:
+        px: 279917.812
+        py: 4720472.160
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "-0.2 + pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: YIELD
+    id: 5
+    initial_state:
+      pose_spec:
+        px: 279956.193
+        py: 4720464.652
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "-0.3 + pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_15_MPH
+    id: 6
+    initial_state:
+      pose_spec:
+        px: 279943.583
+        py: 4720486.169
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "-0.15 + pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STRAIGHT_OR_RIGHT_ONLY
+    id: 7
+    initial_state:
+      pose_spec:
+        px: 279971.339
+        py: 4720480.812
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "-0.1 + pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+trip_agent:
+  behavior:
+  - generate_route:
+      start:
+        utm:
+          x: 279877.0972269939
+          y: 4720487.251382905
+          z: 265.42150000000004
+      dest:
+        utm:
+          x: 280081.71255355055
+          y: 4720440.8717172025
+          z: 265.394

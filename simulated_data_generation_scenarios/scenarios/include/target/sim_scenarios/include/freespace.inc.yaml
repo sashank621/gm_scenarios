@@ -1,0 +1,31 @@
+v2_api_basic:
+  channels:
+  - name: polar_obstacle_sensor_for_free_space
+    sink:
+      type: VEHICLE_STACK
+    source:
+      type: SIMIAN
+    type: POLAR_OBSTACLE_SENSOR
+vehicle:
+  sensors:
+    polar_obstacle_sensors:
+    - detect_through_road_edges: {}
+      mount:
+        heading: -0.0009087966103769717
+        x: 2.2425063629974993
+        y: 0.3216280998601793
+      name: polar_obstacle_sensor_for_free_space
+      num_rays: 101
+      road_element_detection:
+        lane_boundary:
+          types:
+          - ROAD_EDGE
+      sector_fov:
+        distance_far: 50.0
+        # distance_near: 0.0 # TODO: ask for it from Applied
+        yaw_length: 1.7453292519943295
+        yaw_start: -0.8726646259971648
+      sensor_output:
+        reporting_frame: VEHICLE
+      visualization_options:
+        visualization_mode: ENABLED_LIVE

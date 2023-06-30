@@ -1,0 +1,330 @@
+{
+    "template_yaml_path": "/home/yzc210/projects/uc_workspace/ultracruise/closed_loop_scenarios/scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/clean_routes/clean_highway_center_left.scn.yaml",
+    "destination_dir": "/home/yzc210/projects/uc_workspace/ultracruise/closed_loop_scenarios/scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/diversity_golden_scenes",
+    "destination_name": "golden_diversity_highway_center_left",
+    "left_list": [
+        [
+            27,
+            -8.7,
+            0
+        ],
+        [
+            17.5,
+            0,
+            0
+        ],
+        [
+            28.5,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            -0.02
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ],
+        [
+            25,
+            0,
+            0
+        ]
+
+    ],
+    "right_list": [
+        [
+            25,
+            12.6,
+            0
+        ],
+        [
+            10,
+            0,
+            0
+        ],
+        [
+            11.8,
+            0,
+            0
+        ],
+        [
+            15.866,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            -0.02
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ],
+        [
+            16.6666,
+            0,
+            0
+        ]
+    ],
+    "sign_template_dict": {
+        "static_obstacle": {
+            "custom_model_description": {
+                "sign_configuration": {
+                    "preset": "STOP_USA_CAD",
+                    "post": "MESH_7FT"
+                }
+            },
+            "id": 1,
+            "initial_state": {
+                "pose_spec": {
+                    "px": 0,
+                    "py": 0,
+                    "rpy": {
+                        "pitch": 0,
+                        "roll": 0,
+                        "yaw": 0
+                    }
+                }
+            },
+            "model": {
+                "static": {
+                    "height": 1.134,
+                    "point": [
+                        {
+                            "x": -0.018,
+                            "y": -0.406
+                        },
+                        {
+                            "x": -0.018,
+                            "y": 0.406
+                        },
+                        {
+                            "x": 0.018,
+                            "y": 0.406
+                        },
+                        {
+                            "x": 0.018,
+                            "y": -0.406
+                        }
+                    ]
+                }
+            },
+            "scaling": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "spectral_static_model": "CUSTOM_SIGN",
+            "type": "UNKNOWN_UNMOVABLE"
+        }
+    },
+    "ego_dict": {
+        "initial_position": {
+            "point": {
+                "utm": {
+                    "x": 500005.73251713364,
+                    "y": 4500000.073350752,
+                    "z": 0
+                }
+            },
+            "heading": 0.7850000000785671
+        },
+        "initial_velocity_mps": 15,
+        "behaviors": [
+            {
+                "smooth_lane_keeping": {
+                    "params": {
+                        "distance": 500
+                    },
+                    "constant_velocity": null
+                }
+            }
+        ]
+    }
+}

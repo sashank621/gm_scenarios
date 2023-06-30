@@ -1,0 +1,143 @@
+vehicle:
+  sensors:
+    sensor_models:
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 3.8256685871532827
+            py: -0.1257103338619156
+            pz: 0.6371482803443826
+            rpy:
+              pitch: 0.57629486218257
+              roll: -0.004429670738765581
+              yaw: -0.011883137842386116
+          name: camera_ysat_2mp_image_fisheye_grill_front
+          standard_params:
+            field_of_view:
+              az: 3.4676754097330877
+              el: 2.7394724753088946
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: -0.9880335379699561
+            py: -0.20422293875113026
+            pz: 1.456787539950386
+            rpy:
+              pitch: 0.6236370373197399
+              roll: -0.013601163572779509
+              yaw: 3.1290101701223247
+          name: camera_ysat_2mp_image_fisheye_lift_gate
+          standard_params:
+            field_of_view:
+              az: 3.4674457146758786
+              el: 2.7402989935596738
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 2.158696115424293
+            py: 1.0451897161360582
+            pz: 1.1966068241457286
+            rpy:
+              pitch: 0.5238596618657292
+              roll: -0.010680606429742253
+              yaw: 1.6277487114411178
+          name: camera_ysat_2mp_image_fisheye_mirror_left
+          standard_params:
+            field_of_view:
+              az: 3.4737075717175876
+              el: 2.744066217009818
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE
+      - camera_model:
+          fidelity:
+            enable_cubemap: true
+          format:
+            data: ROS_TOPIC
+          library:
+            model: generic
+            vendor: applied
+          mount:
+            px: 1.9344705843822108
+            py: -1.1921148571827749
+            pz: 1.1679604323236952
+            rpy:
+              pitch: 0.5201268404203552
+              roll: -0.006706423878313731
+              yaw: -1.6014802831704325
+          name: camera_ysat_2mp_image_fisheye_mirror_right
+          standard_params:
+            field_of_view:
+              az: 3.487975835234515
+              el: 2.756238455455769
+            frame_rate: 10
+            lens_params:
+              center_position:
+                x: 0.0
+                y: 0.0
+              projection: EQUIDISTANT
+              radial_distortion_params:
+                coefficients: {}
+                units: RADIANS
+            sensor_params:
+              resolution:
+                x: 1620
+                y: 1280
+              type: VISIBLE

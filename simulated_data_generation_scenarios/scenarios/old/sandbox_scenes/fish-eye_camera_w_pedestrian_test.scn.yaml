@@ -1,0 +1,123 @@
+metadata:
+  name: fish-eye camera W pedestrian
+  scenario_version: v0.96
+  author_email: dorin.shani@gm.com
+  description: ""
+include:
+# - file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+# - file: scenario://workspace/include/annotations_pg.inc.yaml
+- file: scenario://workspace/include/rear_camera_include_test.inc.yaml
+sim_end:
+  until:
+  - timeout: {secs: 3.0s}
+map:
+  key: sunnyvale
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+spectral:
+  enable: true
+  environment:
+    weather: clearnoon
+    instance_level_labeling: true
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 587268.06, y: 4140945.063}}
+      start: {utm: {x: 587307.1215754786, y: 4140895.4987184396}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 587307.1215754786, y: 4140895.4987184396}}
+      heading: 2.746108912501393
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 587286.9646006542
+              y: 4140906.9080930115
+        - point:
+            utm:
+              x: 587265.4910007402
+              y: 4140919.9161391133
+        - point:
+            utm:
+              x: 587265.4910007402
+              y: 4140940.9767851825
+        - point:
+            utm:
+              x: 587270.3337098822
+              y: 4140959.477477043
+    initial_velocity_mps: 12
+- obstacle:
+    behaviors: []
+    name: Man-1
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587289.0373708447
+          y: 4140906.0868968526
+          z: 0
+      speed_mps: 1.5
+      heading: 2.816261355269787
+    type: PEDESTRIAN
+    id: 1
+- obstacle:
+    behaviors: []
+    name: Woman-2
+    model:
+      static:
+        height: 1.65
+        point:
+        - x: 0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587300.1966472638
+          y: 4140898.2864045477
+          z: 0
+      speed_mps: 1.5
+      heading: 2.7797970664156555
+    type: PEDESTRIAN
+    id: 2

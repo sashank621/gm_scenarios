@@ -1,0 +1,15 @@
+scenario_configs:
+- config_key: vehicle
+  configs:
+  - config_value: t1_legacy_model
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/vehicle_shape.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/extra_data_uc_config.inc.yaml
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/t1_legacy_model.inc.yaml
+  - config_value: t1_carsim_model
+    include:
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/vehicle_shape.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/extra_data_uc_config.inc.yaml
+    - file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/t1_carsim_model.inc.yaml

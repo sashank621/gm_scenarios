@@ -1,0 +1,7 @@
+plugins:
+- postprocess_plugin:
+    name: "SpectralAnnotations"
+    plugin_server_name: "python_server"
+    config: {}
+
+

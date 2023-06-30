@@ -1,0 +1,5 @@
+plugins:
+- postprocess_plugin:
+    name: "DatagenValidation"
+    plugin_server_name: "python_server"
+    config: {} 

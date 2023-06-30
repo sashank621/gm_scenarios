@@ -1,0 +1,853 @@
+metadata:
+  name: fish-eye camera W pedestrian
+  scenario_version: v0.96
+  author_email: dorin.shani@gm.com
+  description: ""
+include:
+#- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+- file: scenario://workspace/include/annotations_pg.inc.yaml
+- file: scenario://workspace/include/TLV_pg.inc.yaml
+- file: scenario://workspace/include/rear_camera_include_test.inc.yaml
+sim_end:
+  until:
+  - timeout: {secs: 20.0s}
+map:
+  key: sunnyvale
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+spectral:
+  enable: true
+  environment:
+    weather: clearnoon
+    instance_level_labeling: true
+    user_defined_weather:
+      default_weather_string: 'clearnoon'
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {x: 587245.1271340854, y: 4140854.2455332703}}
+      start: {utm: {x: 587279.531127598, y: 4140986.577605673}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 587279.531127598, y: 4140986.577605673}}
+      heading: 1.4
+    behaviors:
+    - path_following:
+        constant_velocity:
+        pose_b_spline:
+          default_tangent_distance: 0.5
+          poses:
+          # - heading: -1.853
+          #   x: 587290.4972044586
+          #   y: 4141039.247007758
+          # - heading: -2.137
+          #   x: 587289.4164184433
+          #   y: 4141034.9787343163
+          # - heading: -2.071
+          #   x: 587285.1107007648
+          #   y: 4141030.767825154
+          # - heading: -1.457
+          #   x: 587285.2222922281
+          #   y: 4141027.3084897907
+          # - heading: -1.488
+          #   x: 587286.1121137758
+          #   y: 4141021.971171859
+          # - heading: -1.647
+          #   x: 587286.2266153982
+          #   y: 4141015.145020287
+          # - heading: -1.96
+          #   x: 587285.1107007648
+          #   y: 4141008.8958983403
+          # - heading: -2.268
+          #   x: 587281.3830941427
+          #   y: 4141003.322670894
+          # - heading: -2.066
+          #   x: 587278.192030038
+          #   y: 4141000.6381300534
+          # - heading: -1.501
+          #   x: 587277.5224812579
+          #   y: 4140996.17447152
+          # - heading: -1.364
+          #   x: 587278.7309880607
+          #   y: 4140992.8906250675
+          - heading: -1.672
+            x: 587279.531127598
+            y: 4140986.577605673
+          - heading: -2.002
+            x: 587277.2992983313
+            y: 4140978.7662032396
+          - heading: -2.106
+            x: 587271.2733593112
+            y: 4140968.611380076
+        reverse: true
+    initial_velocity_mps: $initial_velocity_mps_sweep
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_a
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_a
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587265
+          y: 4140978.7043624404
+          z: 0
+      speed_mps: 1.5
+      heading: -1.8234825438084252
+    type: PEDESTRIAN
+    id: 1
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_b
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_b
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587267.9639092055
+          y: 4140978.5597550394
+          z: 0
+      speed_mps: 1.5
+      heading: 1.3138937304464147
+    type: PEDESTRIAN
+    id: 2
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_c
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_c
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587274.2746853832
+          y: 4140972.5080558774
+          z: 0
+      speed_mps: 1.5
+      heading: 0.8050616066250202
+    type: PEDESTRIAN
+    id: 3
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_d
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_d
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587273.3179745239
+          y: 4140978.8035298586
+          z: 0
+      speed_mps: 1.5
+      heading: -1.8287599360472373
+    type: PEDESTRIAN
+    id: 4
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_a
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_c
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587265.9865678756
+          y: 4140974.373640667
+          z: 0
+      speed_mps: 1.5
+      heading: -1.3820408369739177
+    type: PEDESTRIAN
+    id: 5
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_b
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_d
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587275.2106909436
+          y: 4140970.4629694684
+          z: 0
+      speed_mps: 1.5
+      heading: 1.975882033825819
+    type: PEDESTRIAN
+    id: 6
+- obstacle:
+   # behaviors:
+   # - wait: {4}
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_c
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_a
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587268.8326378748
+          y: 4140974.06885835
+          z: 0
+      speed_mps: 1.5
+      heading: 5.725427654279226
+    type: PEDESTRIAN
+    id: 7
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_d
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_b
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587274.6252945567
+          y: 4140976.457035082
+          z: 0
+      speed_mps: 1.5
+      heading: 0.8050616066250202
+    type: PEDESTRIAN
+    id: 8
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_a
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_b
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587251.1267906162
+          y: 4140908.2517190394
+          z: 0
+      speed_mps: 1.5
+      heading: 0.674235559669742
+    type: PEDESTRIAN
+    id: 9
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_b
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_c
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587265.8011651639
+          y: 4140918.7606048225
+          z: 0
+      speed_mps: 1.5
+      heading: 2.0930675696968315
+    type: PEDESTRIAN
+    id: 10
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_c
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_d
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587253.5263837911
+          y: 4140905.405553964
+          z: 0
+      speed_mps: 1.5
+      heading: 0.8050616066250202
+    type: PEDESTRIAN
+    id: 11
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_d
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_a
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587257.5440207607
+          y: 4140897.416112726
+          z: 0
+      speed_mps: 1.5
+      heading: -1.1244035066849927
+    type: PEDESTRIAN
+    id: 12
+- obstacle:
+    behaviors: []
+    spectral_model: GENERIC_PEDESTRIAN
+    spectral_asset:
+      pedestrian_customization:
+        pedestrian_selector: $pedestrian_selector_sweep_d
+        top_color:
+          r: 1.0
+          g: 0.0
+          b: 0.0
+        bottom_color:
+          r: 0.0
+          g: 0.0
+          b: 1.0
+        idle_state: $idle_state_sweep_a
+    model:
+      static:
+        point:
+        - x: 0.0
+          y: 0.35
+        - x: 0.2
+          y: 0.25
+        - x: 0.2
+          y: -0.25
+        - x: 0.0
+          y: -0.35
+        - x: -0.2
+          y: -0.25
+        - x: -0.2
+          y: 0.25
+    initial_state:
+      point:
+        utm:
+          x: 587260.6232710707
+          y: 4140934.838375038
+          z: 0
+      speed_mps: 1.5
+      heading: 0.8050616066250202
+    type: PEDESTRIAN
+    id: 13
+parameter_distributions:
+- var: initial_velocity_mps_sweep
+  uniform:
+    min_value: -0.2
+    max_value: -0.5
+# - list:
+#     values:
+#     - LIGHT
+#     - MEDIUM
+#     - DARK
+#     - MEDIUMDARK
+#     - MEDIUMLIGHT
+#     var: skin_color_preset_sweep
+# - list:
+#     values:
+#     - 1.7
+#     - 1.82
+#     - 1.85
+#     var: height_sweep
+- var: idle_state_sweep_a
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- var: pedestrian_selector_sweep_a
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+- var: idle_state_sweep_b
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- var: pedestrian_selector_sweep_b
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+- var: idle_state_sweep_c
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- var: pedestrian_selector_sweep_c
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+- var: idle_state_sweep_d
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+- var: pedestrian_selector_sweep_d
+  num_list:
+    values:
+    - 0
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 8
+    - 9
+    - 10
+    - 11
+    - 12
+    - 13
+    - 14
+# - list:
+#     values:
+#     - 0
+#     - 1
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     var: idle_state_sweep_a
+# - list:
+#     values:
+#     - 0
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     - 6
+#     - 8
+#     - 9
+#     - 10
+#     - 11
+#     - 12
+#     - 13
+#     - 14
+#     var: pedestrian_selector_sweep_a
+# - list:
+#     values:
+#     - 0
+#     - 1
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     var: idle_state_sweep_b
+# - list:
+#     values:
+#     - 0
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     - 6
+#     - 8
+#     - 9
+#     - 10
+#     - 11
+#     - 12
+#     - 13
+#     - 14
+#     var: pedestrian_selector_sweep_b
+# - list:
+#     values:
+#     - 0
+#     - 1
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     var: idle_state_sweep_c
+# - list:
+#     values:
+#     - 0
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     - 6
+#     - 8
+#     - 9
+#     - 10
+#     - 11
+#     - 12
+#     - 13
+#     - 14
+#     var: pedestrian_selector_sweep_c
+# - list:
+#     values:
+#     - 0
+#     - 1
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     var: idle_state_sweep_d
+# - list:
+#     values:
+#     - 0
+#     - 2
+#     - 3
+#     - 4
+#     - 5
+#     - 6
+#     - 8
+#     - 9
+#     - 10
+#     - 11
+#     - 12
+#     - 13
+#     - 14
+#     var: pedestrian_selector_sweep_d
+parameter_sampling:
+  random:
+    vars:
+    - initial_velocity_mps_sweep
+    - idle_state_sweep_a
+    - pedestrian_selector_sweep_a
+    - idle_state_sweep_b
+    - pedestrian_selector_sweep_b
+    - idle_state_sweep_c
+    - pedestrian_selector_sweep_c
+    - idle_state_sweep_d
+    - pedestrian_selector_sweep_d
+    num_samples: 5
+  seed: 42

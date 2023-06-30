@@ -1,0 +1,18 @@
+experiment:
+  perception_flow: ""
+
+default:
+  module_manager: NullModuleManager
+  plugins:
+    # - SimPubSubRecordPlugin:
+    #     pb_recorder_path: ../../../simulation/resources/sim_scenarios/content_test_scenarios/cepton_static_test_tracks/include/recorder_config.json  
+    - SimulationDump
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+  before_start: [
+    # SimPubSubRecordPlugin,
+  ]
+  after_stop: [
+    OnStopModuleStatusPlugin,
+    # SimPubSubRecordPlugin
+  ]

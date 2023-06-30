@@ -1,0 +1,39 @@
+map:
+  key: 1000m
+scenario_configs:
+- config_key: map
+  configs:
+  - config_value: default
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/default.inc.yaml
+  - config_value: loc_sb
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/default.inc.yaml
+    - file: scenario://workspace/sim_scenarios/include/map_configs/loc_sb_key.inc.yaml
+  - config_value: deprecated_m2_with_subdivion
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/m2_with_subdivion_route.inc.yaml
+  - config_value: hd_oval_speed_limits
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/hd_oval_speed_limits.inc.yaml
+  - config_value: 90kph_oval
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/90kph_oval.inc.yaml
+  - config_value: hacker_gr
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/Hacker_GR.inc.yaml
+  - config_value: isr_ofek_hwy
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/ofek_hwy.inc.yaml
+  - config_value: isr_ofek_urban
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/ofek_urban.inc.yaml
+  - config_value: se_mi_1000_miles
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/SE_MI_1000_MILES.inc.yaml
+  - config_value: 68_mile_md
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/68_MILE_MD.inc.yaml
+  - config_value: rnt
+    include:
+    - file: scenario://workspace/sim_scenarios/include/map_configs/RNT.inc.yaml

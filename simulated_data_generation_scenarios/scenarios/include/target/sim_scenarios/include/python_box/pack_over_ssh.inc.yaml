@@ -1,0 +1,36 @@
+experiment:
+  perception_flow: 'debug_flow/perception_simulation_MOT_360_MLT.yml'
+  semantic_localization: 'sl_sim_conf.json'
+  isp_configuration: 'isp_config_smooth_only.json'
+
+
+environment:
+#  MAKE SURE THAT REMOTE PATH IS VALID
+  VALIDATION_OL_ALTERNATIVE_ULTRACRUISE_WORKDIR: '/home/escalade/UC-MASTER-NIGHTLY.1193'
+
+default:
+  module_manager: RemoteModuleManager
+  module_start_time: 5
+  affinity: sim
+  simulated_clock_enabled: enable
+  modules:
+    - ActorProvider
+    - Pose
+    - SceneStatic
+    - SemanticLocalization
+    - SenseVehicleMotion
+    - PerceptionMapAssociation
+    - MapServices
+    - LbaMain
+    - PerceptionTrackingMOTMain
+    - Perception
+    - IntersectionROI
+    - ControlClient
+    - SvmConvertorModule
+    - Isp
+    - FmsClient
+
+
+  plugins:
+    - PubSubManagerOverEthernetPlugin
+    - OnStopModuleStatusPlugin

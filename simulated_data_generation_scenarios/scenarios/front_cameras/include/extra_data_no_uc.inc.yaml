@@ -1,0 +1,12 @@
+#Without this file UC-build won't work.
+include:
+- file: scenario://workspace/datagen/front_cameras/include/extra_data_noise_config.inc.yaml
+extra_data:
+   uc_config_path: "sim_config/uc_config_no_uc.yaml"
+   plugins: "simulated_data_generation_scenarios/scenarios/front_cameras/include/NoUc.inc.yaml"
+   enable_noise: "false"
+integration_options:
+  time_synchronization_mode: BETWEEN_CONVERT_FROM_SIMIAN_CALLS
+  actor_reporting_version:
+    minor: 1
+  

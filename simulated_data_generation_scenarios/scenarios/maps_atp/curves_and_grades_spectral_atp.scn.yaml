@@ -1,0 +1,53 @@
+metadata:
+  name: curves_and_grades_spectral_front
+  scenario_version: v0.96
+  description: ''
+  author_email: tom.alon@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 2s
+map:
+  key: Curves_and_grades_200M
+include:
+- file: scenario://workspace/datagen/front_cameras/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/spectral.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/camera.inc.yaml
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 585829.8759009553
+          y: 4137150.531244669
+      heading: 0.7709857138021605
+    initial_velocity_mps: 10
+    behaviors:
+    - smooth_lane_keeping:
+        params:
+          distance: 10
+        constant_velocity:
+    - smooth_lane_keeping:
+        params:
+          distance: 100
+        motion_profile:
+          phases:
+          - hold_velocity:
+              distance: 100
+extra_data:
+  simian_driver: "true"
+#  datagen:
+#    write_tlvs:
+#      topics:
+#      - GPS_DATA_SERVICE
+#      - IMU_DATA_SERVICE
+#      - CAMERA_G1_8MB_IMAGE_EXTWIDE_FRONT_WS
+#      - CAMERA_G1_8MB_IMAGE_NARROW_FRONT_WS
+#      path: ~/recordings/curves_front_camera_test/$
+

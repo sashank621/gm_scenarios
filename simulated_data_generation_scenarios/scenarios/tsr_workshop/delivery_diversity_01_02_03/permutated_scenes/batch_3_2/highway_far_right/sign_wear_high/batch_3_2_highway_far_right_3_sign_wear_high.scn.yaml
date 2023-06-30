@@ -1,0 +1,1813 @@
+agents:
+- ego:
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity: null
+        params:
+          distance: 500
+    initial_position:
+      heading: 0.7850000000785671
+      point:
+        utm:
+          x: 500011.3871185829
+          y: 4499994.414244599
+          z: 0
+    initial_velocity_mps: 15
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 55
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 1
+    initial_state:
+      pose_spec:
+        px: 500017.2678447853
+        py: 4500023.898258222
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5344631382013483
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 2
+    initial_state:
+      pose_spec:
+        px: 500024.3417274764
+        py: 4500030.966510034
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.255011298668082
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 3
+    initial_state:
+      pose_spec:
+        px: 500032.6889090519
+        py: 4500039.3070471715
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4750640208745525
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 4
+    initial_state:
+      pose_spec:
+        px: 500043.9123313296
+        py: 4500050.521535496
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.6414567323162252
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 5
+    initial_state:
+      pose_spec:
+        px: 500055.70208865555
+        py: 4500062.301908061
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5598166147836903
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 6
+    initial_state:
+      pose_spec:
+        px: 500067.4918459815
+        py: 4500074.082280626
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.209682216652934
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 7
+    initial_state:
+      pose_spec:
+        px: 500079.28160330746
+        py: 4500085.86265319
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.266044879976151
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 110
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 8
+    initial_state:
+      pose_spec:
+        px: 500091.0713606334
+        py: 4500097.643025755
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5849974675728307
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 9
+    initial_state:
+      pose_spec:
+        px: 500102.8611179594
+        py: 4500109.42339832
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.578507412439151
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 10
+    initial_state:
+      pose_spec:
+        px: 500114.6508752853
+        py: 4500121.203770884
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.485670400943296
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 11
+    initial_state:
+      pose_spec:
+        px: 500126.4406326113
+        py: 4500132.984143449
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4061795927891008
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 12
+    initial_state:
+      pose_spec:
+        px: 500138.23038993723
+        py: 4500144.764516014
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.149287161071162
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 13
+    initial_state:
+      pose_spec:
+        px: 500150.0201472632
+        py: 4500156.544888578
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5160560417773468
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 14
+    initial_state:
+      pose_spec:
+        px: 500161.80990458914
+        py: 4500168.325261143
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.310696575642047
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 100
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 15
+    initial_state:
+      pose_spec:
+        px: 500173.5996619151
+        py: 4500180.105633708
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4530968169775664
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 16
+    initial_state:
+      pose_spec:
+        px: 500185.38941924105
+        py: 4500191.886006272
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.473306137463862
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 75
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 17
+    initial_state:
+      pose_spec:
+        px: 500197.179176567
+        py: 4500203.666378837
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3221746296437384
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 75
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 18
+    initial_state:
+      pose_spec:
+        px: 500208.96893389296
+        py: 4500215.446751402
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.506447389745827
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 60
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 19
+    initial_state:
+      pose_spec:
+        px: 500220.7586912189
+        py: 4500227.227123966
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2810664918901327
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 30
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 20
+    initial_state:
+      pose_spec:
+        px: 500232.54844854487
+        py: 4500239.007496531
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.6188805459228823
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 75
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 21
+    initial_state:
+      pose_spec:
+        px: 500244.3382058708
+        py: 4500250.787869096
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.309840751636957
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 22
+    initial_state:
+      pose_spec:
+        px: 500256.1279631968
+        py: 4500262.5682416605
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.186921673288296
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 23
+    initial_state:
+      pose_spec:
+        px: 500268.1509543943
+        py: 4500274.110478802
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3909914939072063
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 24
+    initial_state:
+      pose_spec:
+        px: 500280.17394559184
+        py: 4500285.652715943
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.447153949081586
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 75
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 25
+    initial_state:
+      pose_spec:
+        px: 500292.1969367894
+        py: 4500297.194953084
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2605077792579626
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 110
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 26
+    initial_state:
+      pose_spec:
+        px: 500304.2199279869
+        py: 4500308.737190225
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.136076498050773
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 27
+    initial_state:
+      pose_spec:
+        px: 500316.24291918444
+        py: 4500320.279427366
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.351893803606987
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 28
+    initial_state:
+      pose_spec:
+        px: 500328.265910382
+        py: 4500331.8216645075
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.407816856459656
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 29
+    initial_state:
+      pose_spec:
+        px: 500340.2889015795
+        py: 4500343.363901649
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4786020985114923
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 75
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 30
+    initial_state:
+      pose_spec:
+        px: 500352.31189277704
+        py: 4500354.90613879
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.395468804204828
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 31
+    initial_state:
+      pose_spec:
+        px: 500033.73799768224
+        py: 4500010.2445384525
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.1768806677844785
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 45
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 32
+    initial_state:
+      pose_spec:
+        px: 500046.1172923917
+        py: 4500022.613979123
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2305493807830006
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 33
+    initial_state:
+      pose_spec:
+        px: 500066.2778580614
+        py: 4500042.758496786
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.6004202237123484
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 34
+    initial_state:
+      pose_spec:
+        px: 500083.9625647892
+        py: 4500060.429126315
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.49849026034481
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 35
+    initial_state:
+      pose_spec:
+        px: 500101.647271517
+        py: 4500078.099755844
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.248348588969918
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 36
+    initial_state:
+      pose_spec:
+        px: 500119.3319782448
+        py: 4500095.770385373
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.536832896417838
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 37
+    initial_state:
+      pose_spec:
+        px: 500137.0166849726
+        py: 4500113.441014903
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.426961232367304
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 38
+    initial_state:
+      pose_spec:
+        px: 500154.7013917004
+        py: 4500131.111644432
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4826770466282704
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 75
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 39
+    initial_state:
+      pose_spec:
+        px: 500172.3860984282
+        py: 4500148.782273961
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.596171900140889
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 40
+    initial_state:
+      pose_spec:
+        px: 500190.070805156
+        py: 4500166.4529034905
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.0789264985066818
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 41
+    initial_state:
+      pose_spec:
+        px: 500207.7555118838
+        py: 4500184.12353302
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4112815416789437
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 60
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 42
+    initial_state:
+      pose_spec:
+        px: 500225.4402186116
+        py: 4500201.794162549
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.216340257001151
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 100
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 43
+    initial_state:
+      pose_spec:
+        px: 500243.1249253394
+        py: 4500219.464792078
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.409969556047034
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          cracking_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 44
+    initial_state:
+      pose_spec:
+        px: 500260.8096320672
+        py: 4500237.135421608
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.0790087663063463
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 60
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 45
+    initial_state:
+      pose_spec:
+        px: 500278.494338795
+        py: 4500254.806051137
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.628346589004093
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          peeling_amount: 0.35
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 46
+    initial_state:
+      pose_spec:
+        px: 500296.5288977296
+        py: 4500272.119476102
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.0866825578398824
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          dirt_amount: 0.35
+        maximum_speed: 45
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 47
+    initial_state:
+      pose_spec:
+        px: 500314.56345666415
+        py: 4500289.432901068
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3976537084747
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 48
+    initial_state:
+      pose_spec:
+        px: 500332.94065422233
+        py: 4500306.38219633
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3691046968144835
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        material:
+          rust_amount: 0.35
+        maximum_speed: 60
+        post: MESH_8FT
+        preset: MAXKMH_CAD_BLACK_01
+    id: 49
+    initial_state:
+      pose_spec:
+        px: 500351.3178517805
+        py: 4500323.331491593
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.622675838321878
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+extra_data:
+  VIN_identifier: VIN_Simulation_En7
+  labels_as_proto: 'true'
+  tlv_time_shift_type: current_time
+include:
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST_include_spectral_fm.inc.yaml
+- file: scenario://workspace/datagen/include/target/sensor_config_fm_target_v2.0.inc.yaml
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/include/target/local_working_directory_extra_data.inc.yaml
+map:
+  key: right_curve_flat_newlanes
+metadata:
+  author_email: eli.alkhazov@gm.com
+  description: ''
+  name: batch_3_2_highway_far_right_3_sign_wear_high
+  scenario_version: v0.96
+plugins:
+- postprocess_plugin:
+    config:
+      logs_output: /home/yzc210/datagen/logs.txt
+      move:
+        output_path: /data/transfer/simulations/data_generation_processing
+      postprocess_annotations: None
+      postprocess_validation: None
+    name: DatagenPlugin
+    plugin_server_name: python_server
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+sim_end:
+  until:
+  - timeout:
+      secs: 20s
+spectral:
+  enable: true
+  environment:
+    instance_level_labeling: true
+    user_defined_weather:
+      atmosphere:
+        cloud_density: 0.1
+        fog_density: 0.01
+        precipitation: 0.0
+        scattered_light_scalar: 1.0
+      datetime:
+        date:
+          day: 21
+          month: 9
+        time_of_day: 1200
+        time_zone: -7.0
+      daylight_savings:
+        enable_daylight_savings: false
+        end_day: 1
+        end_month: 11
+        start_day: 8
+        start_month: 3
+        switch_hour: 128
+      location:
+        lat: 37.0
+        lng: -122.0
+      sun:
+        illuminance: 110000
+      world_surface:
+        amount_of_driving: 0.0
+        blend_snow: 0.0
+        puddle_spread: 0.0
+        snow_depth: 0.0
+        water_level: 0.0
+    weather: USER
+trip_agent:
+  behavior:
+  - generate_route:
+      dest:
+        utm:
+          x: 500371.835397263
+          y: 4500353.978422227
+          z: 0
+      start:
+        utm:
+          x: 500011.2043179419
+          y: 4499994.231589469
+          z: 0

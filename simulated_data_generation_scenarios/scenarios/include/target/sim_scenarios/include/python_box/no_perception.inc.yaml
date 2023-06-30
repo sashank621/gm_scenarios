@@ -1,0 +1,63 @@
+experiment:
+  perception_flow: 'debug_flow/perception_simulation_MOT_360_MLT.yml'
+  semantic_localization: 'sl_sim_conf.json'
+
+default:
+  module_manager: LocalModuleManager
+  module_start_time: 5
+  affinity: sim
+  simulated_clock_enabled: enable
+  modules:
+    - ActorProvider
+    - Pose
+    - SceneStatic
+    - SemanticLocalization
+    - SenseVehicleMotion
+    - PerceptionMapAssociation
+    - MapServices
+    - LbaMain
+    - ControlClient
+    - IntersectionROI
+    - SvmConvertorModule
+    - FmsClient
+    - LocalizationStateMonitor
+
+  modules_stop_order:
+    - ActorProvider
+    - Pose
+    - SceneStatic
+    - SemanticLocalization
+    - SenseVehicleMotion
+    - PerceptionMapAssociation
+    - MapServices
+    - LbaMain
+    - IntersectionROI
+    - ControlClient
+    - SvmConvertorModule
+    - FmsClient
+    - LocalizationStateMonitor
+
+  plugins:
+    - SimPubSubRecordPlugin:
+        pb_recorder_path: sim_config/pb_recorder/recorder_config.json
+    - NoiseHandlerPlugin:
+        enable_noise: !parameterised ${python_box_enable_noise}
+        noise_config:  !parameterised ${python_box_noise_config}
+    - SimulationDump
+    - AraLoggerDaemonPlugin
+    - SimulationSanityPlugin
+    - OnStopModuleStatusPlugin
+
+  plugin-order:
+    before_start: [
+      SimTasksetAffinityPlugin,
+      SimPubSubRecordPlugin,
+      NoiseHandlerPlugin,
+    ]
+    after_stop: [
+      OnStopModuleStatusPlugin,
+      NoiseHandlerPlugin,
+      SimPubSubRecordPlugin,
+      SimTasksetAffinityPlugin,
+    ]
+

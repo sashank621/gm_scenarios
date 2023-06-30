@@ -1,0 +1,70 @@
+{
+    "repository": "closed_loop_scenarios",
+    "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/diversity_golden_scenes/golden_diversity_highway_center_left.scn.yaml",
+    "destination_dir": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/permutated_scenes/batch_1_3/highway_center_left",
+    "destination_filename": "batch_1_3_highway_center_left",
+    "parent_dir_prefix": "hcl13",
+    "timestamp_destination": false,
+    "total_num_of_scenes": 150,
+    "sign_type_perm": {
+        "sign_type_dist": {
+            "STOP_USA_CAD": 13,
+            "YIELD_USA_01": 4,
+            "YIELD_USA_02": 4,
+            "YIELD_USA_03": 4,
+            "SPEEDLIMIT_USA:30": 10,
+            "SPEEDLIMIT_USA:45": 5,
+            "SPEEDLIMIT_USA:55": 15,
+            "SPEEDLIMIT_USA:60": 10,
+            "SPEEDLIMIT_USA:75": 10,
+            "SPEEDLIMIT_USA:85": 15,
+            "SPEEDLIMIT_USA:90": 10
+        }
+    },
+    "sign_yaw_perm": {
+        "yaw_change_std": 0.3,
+        "yaw_change_max": 0.5
+    },
+    "batch_distributions": {
+        "cloudy": {
+            "type": "weather",
+            "value": "cloudy",
+            "weight": 9
+        },
+        "fog_light": {
+            "type": "weather",
+            "value": "fog_light",
+            "weight": 9
+        },
+        "fog_medium": {
+            "type": "weather",
+            "value": "fog_medium",
+            "weight": 5
+        },
+        "rain_light": {
+            "type": "weather",
+            "value": "rain_light",
+            "weight": 9
+        },
+        "rain_medium": {
+            "type": "weather",
+            "value": "rain_medium",
+            "weight": 5
+        },
+        "snow_light": {
+            "type": "weather",
+            "value": "snow_light",
+            "weight": 8
+        },
+        "snow_medium": {
+            "type": "weather",
+            "value": "snow_medium",
+            "weight": 5
+        }
+    },
+    "post_height_dist": {
+        "MESH_7FT": 1,
+        "MESH_7_5FT": 1,
+        "MESH_8FT": 1
+    }
+}

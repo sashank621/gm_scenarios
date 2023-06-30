@@ -1,0 +1,149 @@
+include:
+- file: scenario://workspace/datagen/ysat_scene/include/fisheye.inc.yaml
+- file: scenario://workspace/datagen/ysat_scene/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/ysat_scene/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/ysat_scene/include/vehicle_shape.inc.yaml
+metadata:
+  name: parking_lot_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: applied_gm@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 4s
+spectral:
+  enable: true
+  environment:
+    weather: CLEARNOON
+  label_requests:
+    - request_name: parking
+      parking_space:
+        search_radius: 150.0 # [m]
+
+map:
+  key: parking_lot
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+extra_data:
+    simian_driver: "true"
+    # datagen:
+    #   write_tlvs:
+    #     topics: 
+    #       - "GPS_DATA_SERVICE"
+    #       - "IMU_DATA_SERVICE"
+    #       - "CAMERA_YSAT_2MP_IMAGE_FISHEYE_GRILL_FRONT"
+    #       - "CAMERA_YSAT_2MP_IMAGE_FISHEYE_LIFT_GATE"
+    #       - "CAMERA_YSAT_2MP_IMAGE_FISHEYE_MIRROR_LEFT"
+    #       - "CAMERA_YSAT_2MP_IMAGE_FISHEYE_MIRROR_RIGHT"
+    #     path: "/home/pzy2rg/my_tlvs_folder/$"
+    # enable_label_writing: '/home/pzy2rg/my_tlvs_folder/output.zip'
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 596949.9859085511
+          y: 4133162.490047845
+      heading: 0.025
+    initial_velocity_mps: 5
+    behaviors:
+    - path_following:
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+        pose_b_spline:
+          actor_relative_poses:
+          - heading: -0.5347468155477784
+            x: 11.188399053993635
+            y: 0.04176083439961076
+            tangent_distance: 2.388480820636311
+          - heading: -1.334
+            x: 15.175332655780949
+            y: -5.316225768532604
+          - heading: -1.44
+            x: 17.494264419889078
+            y: -24.549718636553735
+          - heading: -1.447
+            x: 19.961063532158732
+            y: -41.75682381540537
+          - heading: -1.541
+            x: 26.32503499556333
+            y: -95.76684478763491
+          - heading: -2.85
+            x: 21.714893443277106
+            y: -101.50581724848598
+          - heading: 2.987
+            x: -1.3437242027139291
+            y: -104.08368553919718
+          - heading: 2.622
+            x: -17.551867099595256
+            y: -95.37499873619527
+          - heading: 2.598
+            x: -34.56299222493544
+            y: -85.09670029906556
+          - heading: 2.599
+            x: -52.6624516119482
+            y: -74.17599880602211
+          - heading: 2.186
+            x: -63.51202105963603
+            y: -67.6396060618572
+          - heading: 1.071
+            x: -62.26814669277519
+            y: -60.59752880549058
+          - heading: 1.017
+            x: -40.831611237023026
+            y: -26.09810455655679
+          - heading: 1.027
+            x: -29.108505909563974
+            y: -6.922453699633479
+          default_tangent_distance: 3
+    - path_following:
+        constant_velocity:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - heading: 0.7661745843923948
+            x: 596922.9986779875
+            y: 4133158.567841406
+            tangent_distance: 4.589387375526566
+          - heading: 2.604
+            x: 596918.8964528264
+            y: 4133163.670056922
+          - heading: 3.097
+            x: 596911.6940523674
+            y: 4133165.302511988
+          - heading: -3.061
+            x: 596905.4149970361
+            y: 4133164.265476187
+          - heading: -2.504
+            x: 596901.2595518396
+            y: 4133164.4581486206
+          - heading: -1.994
+            x: 596899.1868070004
+            y: 4133159.650199178
+          - heading: -2.079
+            x: 596896.6613055321
+            y: 4133154.238410318
+          - heading: -2.117
+            x: 596892.0913504941
+            y: 4133146.902429862
+          - heading: -2.086
+            x: 596883.793274241
+            y: 4133133.0723027736
+          - heading: -2.114
+            x: 596878.7422713044
+            y: 4133123.331082824
+          - heading: -2.528
+            x: 596873.3304824437
+            y: 4133115.754578419
+          - heading: 2.958
+            x: 596866.1147639627
+            y: 4133114.4316966976
+          - heading: 2.598
+            x: 596859.7408793045
+            y: 4133118.2800798877
+

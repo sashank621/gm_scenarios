@@ -1,0 +1,127 @@
+spectral:
+  enable: true
+  use_spectral_instance: true
+  disable_thumbnail: true
+  save_outputs: true
+  spectral_instances:
+  - name: spectral_instance_0
+    gpu_device_id: 3 # use GPU with ID 1
+    sensor_names:
+    - camera_4mb_image_extwide_front_ws
+    container_configuration:
+      cpus: 7
+      cpuset_cpus: [7, 8, 9, 10, 11, 12, 13]
+  - name: spectral_instance_1
+    gpu_device_id: 4 # use GPU with ID 2
+    sensor_names:
+    - camera_4mb_image_narrow_front_ws
+    container_configuration:
+      cpus: 7
+      cpuset_cpus: [0, 1, 2, 3, 4, 5, 6]
+  - name: spectral_instance_2
+    gpu_device_id: 5 # use GPU with ID 3
+    sensor_names:
+    - lidar_point_cloud_vlp32_lf
+    container_configuration:
+      cpus: 7
+      cpuset_cpus: [14, 15, 16, 17, 18, 19, 20]
+vehicle:
+  sensors:
+    sensor_models:
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        name: camera_4mb_image_extwide_front_ws
+        standard_params:
+          field_of_view:
+            az: 1.780700568766369
+            el: 0.8611257732223909
+          frame_rate: 10
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+#            chromatic_aberration: 0.1
+#            f_number: 1.8
+#            focal_length: 10
+#            lens_flare: 1.0
+#            spot_size: 0.01
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    - camera_model:
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.255812317267427
+          py: 0.3434305487190518
+          pz: 1.5143393947476027
+          rpy:
+            pitch: 0.00501781839273328
+            roll: -0.020929225618077918
+            yaw: -0.032263429846304974
+        name: camera_4mb_image_narrow_front_ws
+        standard_params:
+          field_of_view:
+            az: 0.4795647061183972
+            el: 0.24248568949689836
+          frame_rate: 10
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+#            chromatic_aberration: 0.1
+#            f_number: 1.8
+#            focal_length: 10
+#            lens_flare: 1.0
+#            spot_size: 0.01
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    - lidar_model:
+        format:
+          data: ROS_TOPIC
+          intensity:
+            log_scale: false
+            quantization: 8.0
+            range:
+              max: 0.5
+              min: 0.01
+            units: REFLECTIVITY_SCALED
+          semantic_segmentation: true
+        library:
+          model: ultra_puck
+          vendor: velodyne
+        mount:
+          px: 2.2570254310199194
+          py: 0.06889827872316044
+          pz: 1.8492424663375406
+          rpy:
+            pitch: 0.01551154813950585
+            roll: -0.005232587718811766
+            yaw: -0.018355149344242785
+        name: lidar_point_cloud_vlp32_lf
+        standard_params:
+          detector_params:
+            range:
+              max: 90
+              min: 0
+          frame_rate: 20.0

@@ -1,0 +1,8 @@
+spectral:
+  enable: true
+  disable_thumbnail: true
+  save_outputs: true
+  sensor_model_plugins:
+  - sensor_name: "LIDAR_POINT_CLOUD_CEPTON"
+    plugin_name: "ExampleSensorModelCpp"
+    plugin_server_name: "cepton_plugin_server"

@@ -1,0 +1,21 @@
+traffic_signs:
+- lanes:
+  - '190445825'
+  name: SIGN_190447065
+  pose:
+    px: 341492.1085654479
+    py: 4716949.700826926
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes:
+  - '190521345'
+  name: SIGN_190558509
+  pose:
+    px: 341499.80541320186
+    py: 4716927.8443971705
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP

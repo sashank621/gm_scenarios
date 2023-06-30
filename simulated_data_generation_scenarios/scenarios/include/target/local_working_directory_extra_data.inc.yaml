@@ -1,0 +1,3 @@
+extra_data:
+  enable_label_writing: '/home/yzc210/datagen_working_directory/output.zip'
+  override_tlvs_output_path: '/home/yzc210/datagen_working_directory'

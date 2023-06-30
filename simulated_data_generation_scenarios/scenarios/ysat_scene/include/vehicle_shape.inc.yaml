@@ -1,0 +1,30 @@
+vehicle:
+    shape:
+        front_edge_to_center: 3.788
+        back_edge_to_center: 1.002
+        left_edge_to_center: 0.9725
+        right_edge_to_center: 0.9725
+        height: 1.478
+    external: {}
+    mesh_name: applied:car
+    wheels: # should be move to the configuration group
+    - name: "wheel_fr"
+      radius: 0.405   # [m]
+      mount:
+        px: 3.445    # [m]
+        py: -0.9315    # [m]
+    - name: "wheel_fl"
+      radius: 0.405   # [m]
+      mount:
+        px: 3.445     # [m]
+        py: 0.9315     # [m]
+    - name: "wheel_rr"
+      radius: 0.405  # [m]
+      mount:
+        px: 0       # [m]
+        py: -0.9315    # [m]
+    - name: "wheel_rl"
+      radius: 0.405  # [m]
+      mount:
+        px: 0       # [m]
+        py: 0.9315      # [m]

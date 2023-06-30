@@ -1,0 +1,34 @@
+{
+    "total signs": 23,
+    "input yaml path": "/home/zzdsfk/projects/uc_workspace/ultracruise/simulated_data_generation_scenarios/scripts/yaml_parsing/tsr_delivery_02_base_scene_3.scn.yaml",
+    "output yaml path": "/home/zzdsfk/projects/uc_workspace/ultracruise/simulated_data_generation_scenarios/scripts/yaml_parsing/tsr_perm_output/",
+    "signs": [
+            "STOP",
+            "YIELD",
+            "NO_PASSING_ZONE",
+            "SIGN_10_MPH",
+            "SIGN_15_MPH",
+            "SIGN_20_MPH",
+            "SIGN_25_MPH",
+            "SIGN_30_MPH",
+            "SIGN_35_MPH",
+            "SIGN_40_MPH",
+            "SIGN_45_MPH",
+            "SIGN_50_MPH",
+            "SIGN_55_MPH",
+            "SIGN_60_MPH",
+            "SIGN_65_MPH",
+            "SIGN_70_MPH",
+            "SIGN_75_MPH",
+            "SIGN_80_MPH"
+        ],
+    "distribution": [4, 12, 4, 4, 8, 4, 4, 4, 4, 4, 8, 4, 4, 4, 6, 6, 6, 6],
+    "num_sign_perms": 10,
+    "yaw_change_std": 1.5708,
+    "num_yaw_perms": 2
+
+}
+
+
+
+

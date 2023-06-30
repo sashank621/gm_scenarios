@@ -1,0 +1,1708 @@
+agents:
+- ego:
+    behaviors:
+    - smooth_lane_keeping:
+        constant_velocity: null
+        params:
+          distance: 500
+    initial_position:
+      heading: 0.7850000000785671
+      point:
+        utm:
+          x: 500008.5598178583
+          y: 4499997.243797676
+          z: 0
+    initial_velocity_mps: 15
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 1
+    initial_state:
+      pose_spec:
+        px: 500017.2678447853
+        py: 4500023.898258222
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4396457445421866
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 2
+    initial_state:
+      pose_spec:
+        px: 500024.3417274764
+        py: 4500030.966510034
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.347141415820752
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7_5FT
+        preset: YIELD_USA_02
+    id: 3
+    initial_state:
+      pose_spec:
+        px: 500032.6889090519
+        py: 4500039.3070471715
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.178579006733879
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 4
+    initial_state:
+      pose_spec:
+        px: 500043.9123313296
+        py: 4500050.521535496
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.6473920960720663
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 5
+    initial_state:
+      pose_spec:
+        px: 500055.70208865555
+        py: 4500062.301908061
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5634625725629596
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 6
+    initial_state:
+      pose_spec:
+        px: 500067.4918459815
+        py: 4500074.082280626
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5054853873338994
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 7
+    initial_state:
+      pose_spec:
+        px: 500079.28160330746
+        py: 4500085.86265319
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.247918683968785
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 75
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 8
+    initial_state:
+      pose_spec:
+        px: 500091.0713606334
+        py: 4500097.643025755
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2794659456134974
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 9
+    initial_state:
+      pose_spec:
+        px: 500102.8611179594
+        py: 4500109.42339832
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.545274123091285
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7FT
+        preset: STOP_USA_CAD
+    id: 10
+    initial_state:
+      pose_spec:
+        px: 500114.6508752853
+        py: 4500121.203770884
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4391615636331427
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 11
+    initial_state:
+      pose_spec:
+        px: 500126.4406326113
+        py: 4500132.984143449
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2820098990912796
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 75
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 12
+    initial_state:
+      pose_spec:
+        px: 500138.23038993723
+        py: 4500144.764516014
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.1272106108257165
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7FT
+        preset: STOP_USA_CAD
+    id: 13
+    initial_state:
+      pose_spec:
+        px: 500150.0201472632
+        py: 4500156.544888578
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5710262738411145
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 45
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 14
+    initial_state:
+      pose_spec:
+        px: 500161.80990458914
+        py: 4500168.325261143
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.325594958401256
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 15
+    initial_state:
+      pose_spec:
+        px: 500173.5996619151
+        py: 4500180.105633708
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.5277664896387915
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 16
+    initial_state:
+      pose_spec:
+        px: 500185.38941924105
+        py: 4500191.886006272
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.22164907367583
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 17
+    initial_state:
+      pose_spec:
+        px: 500197.179176567
+        py: 4500203.666378837
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.39569412171421
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 18
+    initial_state:
+      pose_spec:
+        px: 500208.96893389296
+        py: 4500215.446751402
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.604690950394936
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 19
+    initial_state:
+      pose_spec:
+        px: 500220.7586912189
+        py: 4500227.227123966
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.1633363554117433
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 20
+    initial_state:
+      pose_spec:
+        px: 500232.54844854487
+        py: 4500239.007496531
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.097699899658225
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 21
+    initial_state:
+      pose_spec:
+        px: 500244.3382058708
+        py: 4500250.787869096
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.6142659737354443
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 22
+    initial_state:
+      pose_spec:
+        px: 500256.1279631968
+        py: 4500262.5682416605
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.1614956104930187
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 23
+    initial_state:
+      pose_spec:
+        px: 500268.1509543943
+        py: 4500274.110478802
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3764976324026343
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_8FT
+        preset: STOP_USA_CAD
+    id: 24
+    initial_state:
+      pose_spec:
+        px: 500280.17394559184
+        py: 4500285.652715943
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.118583017722041
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 30
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 25
+    initial_state:
+      pose_spec:
+        px: 500292.1969367894
+        py: 4500297.194953084
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.219468304574247
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 26
+    initial_state:
+      pose_spec:
+        px: 500304.2199279869
+        py: 4500308.737190225
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4541093878531193
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 27
+    initial_state:
+      pose_spec:
+        px: 500316.24291918444
+        py: 4500320.279427366
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3976752999243622
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 28
+    initial_state:
+      pose_spec:
+        px: 500328.265910382
+        py: 4500331.8216645075
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2248637534309985
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 29
+    initial_state:
+      pose_spec:
+        px: 500340.2889015795
+        py: 4500343.363901649
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3196072754473787
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 45
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 30
+    initial_state:
+      pose_spec:
+        px: 500352.31189277704
+        py: 4500354.90613879
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.210699620645084
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 75
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 31
+    initial_state:
+      pose_spec:
+        px: 500033.7379976823
+        py: 4500010.2445384525
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.296865962070697
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 30
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 32
+    initial_state:
+      pose_spec:
+        px: 500046.1172923918
+        py: 4500022.613979123
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4413501460697997
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 33
+    initial_state:
+      pose_spec:
+        px: 500066.2778580615
+        py: 4500042.758496786
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3518399572014945
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 34
+    initial_state:
+      pose_spec:
+        px: 500083.9625647893
+        py: 4500060.429126315
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.134947646393593
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 55
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 35
+    initial_state:
+      pose_spec:
+        px: 500101.6472715171
+        py: 4500078.099755844
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.422646940109869
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 36
+    initial_state:
+      pose_spec:
+        px: 500119.3319782449
+        py: 4500095.770385373
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.293555123280766
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 45
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 37
+    initial_state:
+      pose_spec:
+        px: 500137.0166849727
+        py: 4500113.441014903
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.180881564907952
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 38
+    initial_state:
+      pose_spec:
+        px: 500154.7013917005
+        py: 4500131.111644432
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.078045783694932
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 39
+    initial_state:
+      pose_spec:
+        px: 500172.3860984283
+        py: 4500148.782273961
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.4148079836037004
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 60
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 40
+    initial_state:
+      pose_spec:
+        px: 500190.0708051561
+        py: 4500166.4529034905
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.544275180044912
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 41
+    initial_state:
+      pose_spec:
+        px: 500207.7555118839
+        py: 4500184.12353302
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.131116202092086
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7FT
+        preset: SPEEDLIMIT_USA
+    id: 42
+    initial_state:
+      pose_spec:
+        px: 500225.4402186117
+        py: 4500201.794162549
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.179575472308062
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 75
+        post: MESH_8FT
+        preset: SPEEDLIMIT_USA
+    id: 43
+    initial_state:
+      pose_spec:
+        px: 500243.1249253395
+        py: 4500219.464792078
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.405492975688885
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 85
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 44
+    initial_state:
+      pose_spec:
+        px: 500260.8096320673
+        py: 4500237.135421608
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.491726752104874
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 30
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 45
+    initial_state:
+      pose_spec:
+        px: 500278.4943387951
+        py: 4500254.806051137
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.60564947746435
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        maximum_speed: 90
+        post: MESH_7_5FT
+        preset: SPEEDLIMIT_USA
+    id: 46
+    initial_state:
+      pose_spec:
+        px: 500296.52889772964
+        py: 4500272.119476102
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.0955014936033862
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7FT
+        preset: YIELD_USA_02
+    id: 47
+    initial_state:
+      pose_spec:
+        px: 500314.5634566642
+        py: 4500289.432901068
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.1897325072431326
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7_5FT
+        preset: STOP_USA_CAD
+    id: 48
+    initial_state:
+      pose_spec:
+        px: 500332.9406542224
+        py: 4500306.38219633
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.3421406409235996
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      sign_configuration:
+        post: MESH_7FT
+        preset: STOP_USA_CAD
+    id: 49
+    initial_state:
+      pose_spec:
+        px: 500351.31785178056
+        py: 4500323.331491593
+        rpy:
+          pitch: 0
+          roll: 0
+          yaw: -2.2767895927597137
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_SIGN
+    type: UNKNOWN_UNMOVABLE
+extra_data:
+  VIN_identifier: VIN_Simulation_En7
+  labels_as_proto: 'true'
+  tlv_time_shift_type: current_time
+include:
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/uc_channels_MUST_include_spectral_fm.inc.yaml
+- file: scenario://workspace/datagen/include/target/sensor_config_fm_target_v2.0.inc.yaml
+- file: scenario://workspace/datagen/include/target/sim_scenarios/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/include/target/local_working_directory_extra_data.inc.yaml
+map:
+  key: right_curve_flat_newlanes
+metadata:
+  author_email: eli.alkhazov@gm.com
+  description: ''
+  name: batch_1_3_highway_center_right_11_snow_light
+  scenario_version: v0.96
+plugins:
+- postprocess_plugin:
+    config:
+      logs_output: /home/yzc210/datagen/logs.txt
+      move:
+        output_path: /data/transfer/simulations/data_generation_processing
+      postprocess_annotations: None
+      postprocess_validation: None
+    name: DatagenPlugin
+    plugin_server_name: python_server
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+sim_end:
+  until:
+  - timeout:
+      secs: 20s
+spectral:
+  enable: true
+  environment:
+    instance_level_labeling: true
+    user_defined_weather:
+      atmosphere:
+        cloud_density: 0.22
+        fog_density: 0.01
+        precipitation: 0
+        scattered_light_scalar: 1.0
+      datetime:
+        date:
+          day: 21
+          month: 9
+        time_of_day: 1200
+        time_zone: -7.0
+      daylight_savings:
+        enable_daylight_savings: false
+        end_day: 1
+        end_month: 11
+        start_day: 8
+        start_month: 3
+        switch_hour: 128
+      location:
+        lat: 37.0
+        lng: -122.0
+      sun:
+        illuminance: 55000
+      world_surface:
+        amount_of_driving: 0
+        blend_snow: 0.4
+        puddle_spread: 0
+        snow_depth: 0.4
+        water_level: 0
+    weather: USER
+trip_agent:
+  behavior:
+  - generate_route:
+      dest:
+        utm:
+          x: 500371.835397263
+          y: 4500353.978422227
+          z: 0
+      start:
+        utm:
+          x: 500008.36699014134
+          y: 4499997.051123451
+          z: 0

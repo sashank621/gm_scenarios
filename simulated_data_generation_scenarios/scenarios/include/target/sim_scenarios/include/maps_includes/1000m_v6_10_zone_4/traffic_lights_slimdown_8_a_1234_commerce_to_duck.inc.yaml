@@ -1,0 +1,89 @@
+traffic_lights:
+  blocks:
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_186578438_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_red
+      - bulb_state_name: STATE_ON
+        name: BULB_186578438_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_186578438_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_186578438_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_186578438
+  bulbs:
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 186578438
+    id_str: 186578438_red
+    lanes: []
+    name: BULB_186578438_red
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 289884.2505172417
+          y: 4719149.6744140275
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 186578438
+    id_str: 186578438_yellow
+    lanes: []
+    name: BULB_186578438_yellow
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 289884.2505172417
+          y: 4719149.6744140275
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 186578438
+    id_str: 186578438_green
+    lanes: []
+    name: BULB_186578438_green
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 289884.2505172417
+          y: 4719149.6744140275
+          z: 8

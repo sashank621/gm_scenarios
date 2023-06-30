@@ -1,0 +1,46 @@
+metadata:
+  name: cepton_test_scenario
+  scenario_version: v0.96
+sim_end:
+  until:
+  - timeout: {secs: 2s}
+map:
+  key: test_tracks
+include:
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/cepton.inc.yaml
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/spectral.inc.yaml
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/cepton_static_test_tracks/include/camera.inc.yaml
+projection_settings:
+  utm:
+    north: true
+    zone: 17
+## Don't forget to run simian with 'wait_for_cepton_server':
+## python3 launch_simian.py --simian_version "gm_adp_v1.37.21-gm.4" --port=8887 --wait_for_cepton_serv
+## Don't forget to build plugin server:
+## ~/projects/sim_workspace/ultracruise/data_gen_infra/sensor_plugin_server/build_and_update.sh
+# extra_data:
+#   datagen:
+#     write_tlvs:
+#       topics: 
+#         - "GPS_DATA_SERVICE"
+#         - "IMU_DATA_SERVICE"
+#         - "LIDAR_B1_POINT_DATA_WS"
+#       path: "~/my_tlvs_folder/$"
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 280129.0970734057
+          y: 4717991.9108084375
+          z: 262.851
+      heading: 0.09834546101317487
+    initial_velocity_mps: 0
+    behaviors:
+    - smooth_lane_keeping:
+        params:
+          distance: 10
+        constant_velocity:

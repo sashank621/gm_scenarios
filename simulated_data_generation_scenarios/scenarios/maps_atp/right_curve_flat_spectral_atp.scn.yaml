@@ -1,0 +1,49 @@
+metadata:
+  name: right_curve_flat_spectral_atp
+  scenario_version: v0.96
+  description: ''
+  author_email: tom.alon@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 2s
+map:
+  key: right_curve_flat
+include:
+- file: scenario://workspace/datagen/front_cameras/include/vehicle_shape.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/spectral.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/front_cameras/include/camera.inc.yaml
+projection_settings:
+  utm:
+    north: true
+    zone: 17
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          y: 4500775.090214474
+          x: 500893.0912367188
+      heading: 0.6149514924112678
+    initial_velocity_mps: 10
+    behaviors:
+    - smooth_lane_keeping:
+        params:
+          distance: 100
+        motion_profile:
+          phases:
+          - hold_velocity:
+              distance: 100
+extra_data:
+  simian_driver: 'true'
+#  datagen:
+#    write_tlvs:
+#      topics:
+#      - GPS_DATA_SERVICE
+#      - IMU_DATA_SERVICE
+#      - CAMERA_G1_8MB_IMAGE_EXTWIDE_FRONT_WS
+#      - CAMERA_G1_8MB_IMAGE_NARROW_FRONT_WS
+#      path: ~/recordings/curves_front_camera_test/$
+

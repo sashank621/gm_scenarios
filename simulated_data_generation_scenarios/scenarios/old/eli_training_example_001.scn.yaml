@@ -1,0 +1,117 @@
+metadata:
+  name: "Eli_training_example_001"
+  scenario_version: v0.96
+  author_email: eli.alkhazov@gm.com
+  description: "Eli training"
+sim_end:
+  end_if:
+    timeout_s: 20
+map:
+  key: sunnyvale
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+trip_agent:
+  behavior:
+  - generate_route:
+      dest:
+        utm:
+          x: 587238.1233942489
+          y: 4140864.984209765
+          z: 0
+      start: {utm: {x: 587257.7874043882, y: 4140944.7599677737}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 587257.7874043882, y: 4140944.7599677737}}
+      heading: -6.130610544440496
+- obstacle:
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 587273.2858266542
+              y: 4140911.004213141
+        - point:
+            utm:
+              x: 587232.8572393007
+              y: 4140921.55816888
+        - point:
+            utm:
+              x: 587211.433483452
+              y: 4140927.047553569
+        - point:
+            utm:
+              x: 587211.5504401186
+              y: 4140927.0175360604
+    - wait: {}
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    initial_state:
+      point:
+        utm:
+          x: 587290.5788344584
+          y: 4140905.5629590857
+          z: 0
+      speed_mps: 10
+      heading: 2.81751686919095
+    type: VEHICLE
+    id: 1
+- obstacle:
+    behaviors:
+    - lane_change:
+        constant_velocity:
+        geometric:
+          center:
+            lateral_offset: 2
+            longitudinal_offset: 40
+          endpoint:
+            lateral_offset: 4
+            longitudinal_offset: 80
+    name: Sedan-2
+    model:
+      static:
+        height: 1.4279999732971191
+        point:
+        - x: 2.40825009346
+          y: 0.91599994897
+        - x: 2.40825009346
+          y: -0.91599994897
+        - x: -2.40825009346
+          y: -0.91599994897
+        - x: -2.40825009346
+          y: 0.91599994897
+    initial_state:
+      point:
+        utm:
+          x: 587163.63320435
+          y: 4140913.1205423675
+          z: 0
+      speed_mps: 7
+      heading: -0.2621379376344892
+    type: VEHICLE
+    id: 2

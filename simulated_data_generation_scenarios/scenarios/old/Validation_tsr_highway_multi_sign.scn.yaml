@@ -1,0 +1,2294 @@
+include:
+- file: scenario://workspace/include/occlusion-solved_sensors_with_en9_ctm_2_cameras_4mb_1_lidar.inc.yaml
+#- file: scenario://workspace/include/sensors_with_en9_ctm_2_cameras_4mb_1_lidar.scn.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+#- file: scenario://workspace/ysat_fisheye_2-1m.inc.yaml
+#- file: scenario://workspace/updated_ysat_fisheye_2-1.inc.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml
+metadata:
+  name: no_tree_tsr_test
+  scenario_version: v0.96
+  author_email: daniel.prigan@gm.com
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 18s}
+map:
+  key: right_curve_flat
+spectral:
+  enable: true
+  environment:
+    lane_degradation_factor: 0.5  #$lane_degradation # affect precentage = 0.8
+    instance_level_labeling: true
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+
+trip_agent:
+  behavior:
+  - generate_route:
+      start: {utm: {x: 500013, y: 4499996}}
+      dest: {utm: {x: 500268, y: 4500251}}
+      
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 500013, y: 4499996}}
+      heading: !math "pi / 4"
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point: {utm: {x: 500013, y: 4499996}}
+        - point: {utm: {x: 500268, y: 4500251}}
+    initial_velocity_mps: 20
+
+
+
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 1
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 2
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 3
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 4
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 5
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 6
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 7
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 8
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +1*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +1*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "0*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 9
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 10
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 11
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 12
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 13
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 14
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 15
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 16
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +2*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +2*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "1*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 17
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 18
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 19
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 20
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 21
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 22
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 23
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 24
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +3*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +3*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "2*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 25
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 26
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 27
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 28
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 29
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 30
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 31
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 32
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +4*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +4*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "3*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 33
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 34
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 35
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 36
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 37
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 38
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 39
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 40
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +5*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +5*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "4*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 41
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 42
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 43
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 44
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 45
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 46
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 47
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 48
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +6*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +6*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "5*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 49
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 50
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 51
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 52
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 53
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 54
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 55
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 56
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +7*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +7*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "6*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 57
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 58
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 59
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 60
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 61
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 62
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 63
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 64
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +8*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +8*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "7*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 65
+    initial_state:
+      pose_spec:
+        px: !math "(-2+0)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+0)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 66
+    initial_state:
+      pose_spec:
+        px: !math "(-2+1)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+1)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 67
+    initial_state:
+      pose_spec:
+        px: !math "(-2+2)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+2)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 68
+    initial_state:
+      pose_spec:
+        px: !math "(-2+3)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+3)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 69
+    initial_state:
+      pose_spec:
+        px: !math "(-2+4)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+4)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 70
+    initial_state:
+      pose_spec:
+        px: !math "(-2+5)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+5)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 71
+    initial_state:
+      pose_spec:
+        px: !math "(-2+6)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+6)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: STOP
+    id: 72
+    initial_state:
+      pose_spec:
+        px: !math "(-2+7)*(-sqrt(2)*2) + 500013 +9*(40 / sqrt(2))"
+        py: !math "(-2+7)*(sqrt(2)*2) + 4499996 +9*(40 / sqrt(2))"
+        rpy:
+          pitch: 0.0
+          roll: 0.0
+          yaw: !math "8*pi*20/180 + -pi*80/180 + pi/4 - pi"
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    type: UNKNOWN_UNMOVABLE
+
+
+

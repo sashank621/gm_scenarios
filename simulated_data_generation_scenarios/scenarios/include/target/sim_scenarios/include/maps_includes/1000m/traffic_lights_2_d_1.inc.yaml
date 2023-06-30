@@ -1,0 +1,371 @@
+traffic_lights:
+  blocks:
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_190551573_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_red
+      - bulb_state_name: STATE_ON
+        name: BULB_190551573_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_190551573_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_190551573_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_190551573
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_190512916_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_red
+      - bulb_state_name: STATE_ON
+        name: BULB_190512916_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_190512916_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_190512916_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_190512916
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_191282111_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_red
+      - bulb_state_name: STATE_ON
+        name: BULB_191282111_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282111_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_191282111_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_191282111
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_191282112_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_red
+      - bulb_state_name: STATE_ON
+        name: BULB_191282112_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_191282112_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_191282112_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_191282112
+  bulbs:
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190551573
+    id_str: 190551573_red
+    lanes:
+    - '190514689'
+    - '190514690'
+    name: BULB_190551573_red
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337431.06581940874
+          y: 4716779.036686935
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190551573
+    id_str: 190551573_yellow
+    lanes:
+    - '190514689'
+    - '190514690'
+    name: BULB_190551573_yellow
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337431.06581940874
+          y: 4716779.036686935
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190551573
+    id_str: 190551573_green
+    lanes:
+    - '190514689'
+    - '190514690'
+    name: BULB_190551573_green
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337431.06581940874
+          y: 4716779.036686935
+          z: 8
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190512916
+    id_str: 190512916_red
+    lanes:
+    - '190480129'
+    - '190480130'
+    name: BULB_190512916_red
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337437.8106946028
+          y: 4716784.726349809
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190512916
+    id_str: 190512916_yellow
+    lanes:
+    - '190480129'
+    - '190480130'
+    name: BULB_190512916_yellow
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337437.8106946028
+          y: 4716784.726349809
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 190512916
+    id_str: 190512916_green
+    lanes:
+    - '190480129'
+    - '190480130'
+    name: BULB_190512916_green
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 337437.8106946028
+          y: 4716784.726349809
+          z: 8
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282111
+    id_str: 191282111_red
+    lanes:
+    - '191248641'
+    - '191248642'
+    name: BULB_191282111_red
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 281733.68585837126
+          y: 4719786.017792891
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282111
+    id_str: 191282111_yellow
+    lanes:
+    - '191248641'
+    - '191248642'
+    name: BULB_191282111_yellow
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 281733.68585837126
+          y: 4719786.017792891
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282111
+    id_str: 191282111_green
+    lanes:
+    - '191248641'
+    - '191248642'
+    name: BULB_191282111_green
+    pose:
+      heading: 3.14
+      point:
+        utm:
+          x: 281733.68585837126
+          y: 4719786.017792891
+          z: 8
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282112
+    id_str: 191282112_red
+    lanes:
+    - '186293762'
+    - '186293761'
+    name: BULB_191282112_red
+    pose:
+      heading: 6.28
+      point:
+        utm:
+          x: 281733.592085329
+          y: 4719792.571303251
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282112
+    id_str: 191282112_yellow
+    lanes:
+    - '186293762'
+    - '186293761'
+    name: BULB_191282112_yellow
+    pose:
+      heading: 6.28
+      point:
+        utm:
+          x: 281733.592085329
+          y: 4719792.571303251
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 191282112
+    id_str: 191282112_green
+    lanes:
+    - '186293762'
+    - '186293761'
+    name: BULB_191282112_green
+    pose:
+      heading: 6.28
+      point:
+        utm:
+          x: 281733.592085329
+          y: 4719792.571303251
+          z: 8

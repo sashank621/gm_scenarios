@@ -1,0 +1,47 @@
+{
+    "repository": "closed_loop_scenarios",
+    "template_yaml_path": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/diversity_golden_scenes/golden_diversity_highway_center_right.scn.yaml",
+    "destination_dir": "scenarios/Datagen_TSR_delivery/delivery_diversity_01_02_03/permutated_scenes/batch_2_2/highway_center_right",
+    "destination_filename": "batch_2_2_highway_center_right",
+    "timestamp_destination": false,
+    "total_num_of_scenes": 25,
+    "sign_type_perm": {
+        "sign_type_dist": {
+            "MAXKMH_CAD:30": 10,
+            "MAXKMH_CAD:45": 5,
+            "MAXKMH_CAD:55": 15,
+            "MAXKMH_CAD:60": 10,
+            "MAXKMH_CAD:75": 10,
+            "MAXKMH_CAD:85": 15,
+            "MAXKMH_CAD:100": 5,
+            "MAXKMH_CAD:110": 5
+        }
+    },
+    "sign_yaw_perm": {
+        "yaw_change_std": 0.3,
+        "yaw_change_max": 0.5
+    },
+    "batch_distributions": {
+        "sign_wear_low": {
+            "type": "sign wear",
+            "value": 0.15,
+            "weight": 14
+        },
+        "sign_wear_medium": {
+            "type": "sign wear",
+            "value": 0.25,
+            "weight": 7
+        },
+        "sign_wear_high": {
+            "type": "sign wear",
+            "value": 0.35,
+            "weight": 4
+        }
+    },
+    "post_height_dist": {
+        "MESH_7FT": 1,
+        "MESH_7_5FT": 1,
+        "MESH_8FT": 1
+    },
+    "random_seed": 378460
+}

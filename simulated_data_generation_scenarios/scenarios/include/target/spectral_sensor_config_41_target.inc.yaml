@@ -1,0 +1,211 @@
+spectral:
+  enable: true
+  label_requests:
+  - request_name: semantic_images
+    semantic_image: {}
+  - request_name: actor labels
+    actor: {}
+
+vehicle:
+  sensors:
+    sensor_models:
+    - camera_model:
+        fidelity:
+          disable_motion_blur: true
+          bloom:
+            level: LOW
+          super_sampling: 2.0
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 1.9671563176463
+          py: -0.10508203694231931
+          pz: 1.449129435472988
+          quaternion:
+            qw: 0.9999729608349087
+            qx: 0.0014560899872085075
+            qy: 0.002308262540907462
+            qz: 0.006828566837743851
+        name: camera_g1_8mb_image_extwide_front_ws
+        standard_params:
+          field_of_view:
+            az: 1.733425103990766
+            el: 0.7627504272014397
+          rendered_field_of_view: 2.154
+          frame_rate: 2
+          lens_params:
+            center_position:
+              x: 0.0013522554485555505
+              y: -0.2859837110481587
+          sensor_params:
+            resolution:
+              x: 3946
+              y: 1412
+            type: VISIBLE
+    - camera_model:
+        fidelity:
+          disable_motion_blur: true
+          bloom:
+            level: LOW
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.2583135388682463
+          py: -0.0818153690988163
+          pz: 1.4649917022423473
+          quaternion:
+            qw: 0.9998757422122109
+            qx: 0.0049235293295927535
+            qy: 0.01418551998166609
+            qz: -0.004798960030113791
+        name: camera_g1_8mb_image_narrow_front_ws
+        standard_params:
+          rendered_field_of_view: 0.5398811282264511
+          field_of_view:
+            az: 0.4882437467053002
+            el: 0.24398756157524507
+          frame_rate: 2
+          lens_params:
+            center_position:
+              x: 0.026933333333333365
+              y: -0.05416164241164245
+          sensor_params:
+            resolution:
+              x: 3900
+              y: 1924
+            type: VISIBLE
+    # - camera_model:
+    #     fidelity:
+    #       enable_cubemap: true
+    #     format:
+    #       data: ROS_TOPIC
+    #     library:
+    #       model: generic
+    #       vendor: applied
+    #     mount:
+    #       px: -0.9880335379699561
+    #       py: -0.20422293875113026
+    #       pz: 1.456787539950386
+    #       quaternion:
+    #         qw: 0.9517495224145095
+    #         qx: 0.003901389841467817
+    #         qy: -0.30681752245327204
+    #         qz: -0.004542428501805565
+    #     name: camera_ysat_2mp_image_fisheye_lift_gate
+    #     standard_params:
+    #       field_of_view:
+    #         az: 3.3700562526758504
+    #         el: 2.5884978136327894
+    #       frame_rate: 10
+    #       lens_params:
+    #         center_position:
+    #           x: 0.0
+    #           y: 0.0
+    #         projection: EQUIDISTANT
+    #       sensor_params:
+    #         resolution:
+    #           x: 1620
+    #           y: 1280
+    #         type: VISIBLE
+    # - camera_model:
+    #     fidelity:
+    #       enable_cubemap: true
+    #     format:
+    #       data: ROS_TOPIC
+    #     library:
+    #       model: generic
+    #       vendor: applied
+    #     mount:
+    #       px: 2.158696115424293
+    #       py: 1.0451897161360582
+    #       pz: 1.1966068241457286
+    #       quaternion:
+    #         qw: 0.662250917280999
+    #         qx: -0.1917802374749053
+    #         qy: 0.17406196886922837
+    #         qz: 0.7030977841437931
+    #     name: camera_ysat_2mp_image_fisheye_mirror_left
+    #     standard_params:
+    #       field_of_view:
+    #         az: 3.3759903721326308
+    #         el: 2.5919884721367787
+    #       frame_rate: 10
+    #       lens_params:
+    #         center_position:
+    #           x: 0.0
+    #           y: 0.0
+    #         projection: EQUIDISTANT
+    #       sensor_params:
+    #         resolution:
+    #           x: 1620
+    #           y: 1280
+    #         type: VISIBLE
+    # - camera_model:
+    #     fidelity:
+    #       enable_cubemap: true
+    #     format:
+    #       data: ROS_TOPIC
+    #     library:
+    #       model: generic
+    #       vendor: applied
+    #     mount:
+    #       px: 1.9344705843822108
+    #       py: -1.1921148571827749
+    #       pz: 1.1679604323236952
+    #       quaternion:
+    #         qw: 0.673380947446422
+    #         qx: 0.18233785311278997
+    #         qy: 0.18134108816377356
+    #         qz: -0.6931279944439962
+    #     name: camera_ysat_2mp_image_fisheye_mirror_right
+    #     standard_params:
+    #       field_of_view:
+    #         az: 3.3824480903650094
+    #         el: 2.5961772623415653
+    #       frame_rate: 10
+    #       lens_params:
+    #         center_position:
+    #           x: 0.0
+    #           y: 0.0
+    #         projection: EQUIDISTANT
+    #       sensor_params:
+    #         resolution:
+    #           x: 1620
+    #           y: 1280
+    #         type: VISIBLE
+    # - lidar_model:
+    #     format:
+    #       data: ROS_TOPIC
+    #       intensity:
+    #         log_scale: false
+    #         quantization: 8.0
+    #         range:
+    #           max: 0.5
+    #           min: 0.01
+    #         units: REFLECTIVITY_SCALED
+    #       semantic_segmentation: true
+    #     library:
+    #       model: ultra_puck
+    #       vendor: velodyne
+    #     mount:
+    #       px: 2.131859534263611
+    #       py: -0.1038784980773926
+    #       pz: 1.8040605783462524
+    #       quaternion:
+    #         qw: 0.9998810532778535
+    #         qx: 0.002598030840146974
+    #         qy: 0.012548345988158552
+    #         qz: -0.008583038196648587
+    #     name: lidar_point_cloud_vlp32_lf
+    #     standard_params:
+    #       detector_params:
+    #         range:
+    #           max: 90
+    #           min: 0
+    #       frame_rate: 20.0

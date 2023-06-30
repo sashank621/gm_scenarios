@@ -1,0 +1,4 @@
+spectral:
+  enable: true
+#  disable_thumbnail: true
+  save_outputs: true

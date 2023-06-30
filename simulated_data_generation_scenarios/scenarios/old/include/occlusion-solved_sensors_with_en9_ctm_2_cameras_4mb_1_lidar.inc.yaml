@@ -1,0 +1,166 @@
+spectral:
+  label_requests:
+  - request_name: semantic_images
+    semantic_image: {}
+  - request_name: actor_2d
+    bounding_box_2d:
+      object_type: ALL_ACTORS
+  - request_name: traffic_sign_2d
+    bounding_box_2d:
+      object_type: TRAFFIC_SIGN_FACES
+  - request_name: actor_3d
+    bounding_box_3d:
+      object_type: ALL_ACTORS
+  - request_name: traffic_sign_3d
+    bounding_box_3d:
+      object_type: TRAFFIC_SIGN_FACES
+
+vehicle:
+  sensors:
+    sensor_models:
+ #------------------------Camera 1------------------------------
+    - camera_model: &CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_MODEL
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.2425063629974993
+          py: 0.3216280998601793
+          pz: 1.523043467244407
+          rpy:
+            pitch: 0.017344830077504383
+            roll: 0.010859461602926458
+            yaw: -0.0009087966103769717
+        name: CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_rgb
+        standard_params: 
+        # system_params:
+        #   exposure:
+        #     auto_exposure: true
+          field_of_view:
+            az: 1.4050218067328895
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params: 
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    # - camera_model:
+    #     <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_MODEL
+    #     name: CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_semantic
+    #     standard_params:
+    #       <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_STD_PARAMS
+    #       sensor_params:
+    #         <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_SENSOR_PARAMS
+    #         type: SEMANTIC_SEGMENTATION
+    # - camera_model:
+    #     <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_MODEL
+    #     name: CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_actor
+    #     standard_params:
+    #       <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_STD_PARAMS
+    #       sensor_params:
+    #         <<: *CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS_SENSOR_PARAMS
+    #         type: ACTOR_CAMERA
+    #     format:
+    #       data: PROTO_MSG
+ #------------------------Camera 2------------------------------
+    - camera_model: &CAMERA_4MB_IMAGE_NARROW_FRONT_WS_MODEL
+        format:
+          data: ROS_TOPIC
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2.255812317267427
+          py: 0.3434305487190518
+          pz: 1.5143393947476027
+          rpy:
+            pitch: 0.00501781839273328
+            roll: -0.020929225618077918
+            yaw: -0.032263429846304974
+        name: CAMERA_4MB_IMAGE_NARROW_FRONT_WS_rgb
+        standard_params: 
+        #   system_params:
+        #   exposure:
+        #     auto_exposure: true
+          field_of_view:
+            az: 0.4795647061183972
+          frame_rate: 4
+          lens_params:
+            center_position:
+              x: 0.0
+              y: 0.0
+            projection:
+          sensor_params:
+            resolution:
+              x: 2688
+              y: 1520
+            type: VISIBLE
+    # - camera_model:
+    #     <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_MODEL
+    #     name: CAMERA_4MB_IMAGE_NARROW_FRONT_WS_semantic
+    #     standard_params:
+    #       <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_STD_PARAMS
+    #       sensor_params:
+    #         <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_SENSOR_PARAMS
+    #         type: SEMANTIC_SEGMENTATION
+    # - camera_model:
+    #     <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_MODEL
+    #     name: CAMERA_4MB_IMAGE_NARROW_FRONT_WS_actor
+    #     standard_params:
+    #       <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_STD_PARAMS
+    #       sensor_params:
+    #         <<: *CAMERA_4MB_IMAGE_NARROW_FRONT_WS_SENSOR_PARAMS
+    #         type: ACTOR_CAMERA
+    #     format:
+    #       data: PROTO_MSG
+ #------------------------Lidar v32------------------------------
+
+    - lidar_model:
+        format:
+          data: ROS_TOPIC
+          intensity:
+            log_scale: false
+            quantization: 8.0
+            range:
+              max: 0.5
+              min: 0.01
+            units: REFLECTIVITY_SCALED
+          semantic_segmentation: true
+        library:
+          model: ultra_puck
+          vendor: velodyne
+        mount:
+          px: 2.2570254310199194
+          py: 0.06889827872316044
+          pz: 1.8492424663375406
+          rpy:
+            pitch: 0.01551154813950585
+            roll: -0.005232587718811766
+            yaw: -0.018355149344242785
+        name: LIDAR_POINT_CLOUD_VLP32_LF
+        standard_params:
+          detector_params:
+            range:
+              max: 90
+              min: 0
+          frame_rate: 20.0
+          points_per_second: 597504
+          
+ #------------------------Meta Data Sensor------------------------------
+    # - metadata_model:
+    #     name: 'meta0'
+    #     frame_rate: 4
+    #     requested_metadata:
+    #     - bounding_box_3d:
+    #         request_name: 'actor_bboxes'
+    #         object_type: SIMIAN_ACTORS
+    #     - bounding_box_3d:
+    #         request_name: 'traffic_sign_face_bboxes'
+    #         object_type: TRAFFIC_SIGN_FACES

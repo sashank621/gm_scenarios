@@ -1,0 +1,13 @@
+{
+    "total signs": 139,
+    "input yaml path": "~/projects/uc_workspace/ultracruise/simulated_data_generation_scenarios/src/yaml_parsing/TSR_3D_weather_sweep.yaml",
+    "outpot yaml path": "~/projects/uc_workspace/ultracruise/simulated_data_generation_scenarios/src/yaml_parsing/tsr_perm_output",
+    "signs": ["STOP" ,"YIELD" ,"NO_PASSING_ZONE", "SIGN_10_MPH","SIGN_15_MPH", "SIGN_20_MPH", "SIGN_25_MPH", "SIGN_30_MPH",  "SIGN_35_MPH", "SIGN_40_MPH", "SIGN_45_MPH", "SIGN_50_MPH", "SIGN_55_MPH", "SIGN_60_MPH", "SIGN_65_MPH"],
+    "distrebution": [5,30,5,5,5,5,5,5,5,5,5,5,5,5,5,5],
+    "num_perm": 5
+
+}
+
+
+
+

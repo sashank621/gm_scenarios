@@ -1,0 +1,80 @@
+include:
+- file: scenario://workspace/datagen/lvm_golden_scene/include/fisheye.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/extra_data_no_uc.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/uc_channels_MUST.inc.yaml
+- file: scenario://workspace/datagen/lvm_golden_scene/include/vehicle_shape.inc.yaml
+metadata:
+  name: parking_lot_demo
+  scenario_version: v0.96
+  description: ''
+  author_email: applied_gm@gm.com
+sim_end:
+  until:
+  - timeout:
+      secs: 20s
+spectral:
+  enable: true
+  label_requests:
+  - request_name: parking
+    parking_space:
+      search_radius: 150.0
+  - request_name: semantic_images
+    semantic_image: {}
+  environment:
+    weather: CLEARNOON
+map:
+  key: parking_lot
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+extra_data:
+  simian_driver: 'true'
+  VIN_identifier: VIN_Simulation_En7
+  labels_as_proto: 'true'
+  tlv_time_shift_type: current_time
+  enable_label_writing: /data/simulations/maor_tlvs/lvm_golden_scene/lvm_golden_scene_5_new/output.zip
+  override_tlvs_output_path: /data/simulations/maor_tlvs/lvm_golden_scene/lvm_golden_scene_5_new
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          x: 597092.1876405999
+          y: 4133091.659832476
+      heading: 1.7223551916730222
+    initial_velocity_mps: 6
+    behaviors:
+    - path_following:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - x: 597087.1557053841
+            y: 4133128.6769400537
+            heading: 1.645
+          - x: 597088.8496241696
+            y: 4133136.349395729
+            heading: 0.658
+          - x: 597099.5439154594
+            y: 4133138.6717945994
+            heading: -0.103
+            tangent_distance: 3
+          - x: 597104.2941778023
+            y: 4133134.7551192255
+            heading: -1.35
+          - x: 597108.7780804698
+            y: 4133096.492483129
+            heading: -1.564
+          - x: 597105.3202566259
+            y: 4133089.215685419
+            heading: -2.771885646991205
+            tangent_distance: 3
+          - x: 597100.2268556266
+            y: 4133088.054485983
+            heading: -3.0853457505053545
+            tangent_distance: 3
+          - x: 597092.4367463037
+            y: 4133089.4178811423
+            heading: 2.42128607789729
+            tangent_distance: 3
+        constant_velocity:

@@ -1,0 +1,19 @@
+{
+    "version": 1,
+    "configuration": {
+        "topics": [
+            {
+                "domain": "UC_SYSTEM",
+                "topic": "CAMERA_G1_8MB_IMAGE_EXTWIDE_FRONT_WS"
+            },
+            {
+                "domain": "UC_SYSTEM",
+                "topic": "CAMERA_G1_8MB_IMAGE_NARROW_FRONT_WS"
+            },
+            {
+                "domain": "UC_SYSTEM",
+                "topic": "LIDAR_B1_POINT_DATA_WS"
+            }
+        ]
+    }
+}

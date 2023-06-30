@@ -1,0 +1,113 @@
+traffic_lights:
+  blocks:
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_183761200_red
+      name: COLOR_RED_ICON_NONE
+    name: BLOCK_183761200
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_183761199_red
+      name: COLOR_RED_ICON_NONE
+    name: BLOCK_183761199
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_180260567_red
+      name: COLOR_RED_ICON_NONE
+    name: BLOCK_180260567
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_180260568_red
+      name: COLOR_RED_ICON_NONE
+    name: BLOCK_180260568
+  bulbs:
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 183761200
+    id_str: 183761200_red
+    lanes:
+    - '183728385'
+    - '183728386'
+    name: BULB_183761200_red
+    pose:
+      heading: 0.0
+      point:
+        utm:
+          x: 341501.1335082849
+          y: 4716941.233137905
+          z: 10
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 183761199
+    id_str: 183761199_red
+    lanes:
+    - '183728385'
+    - '183728386'
+    name: BULB_183761199_red
+    pose:
+      heading: 0.0
+      point:
+        utm:
+          x: 341500.87881965016
+          y: 4716949.46172521
+          z: 10
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 180260567
+    id_str: 180260567_red
+    lanes:
+    - '180225537'
+    name: BULB_180260567_red
+    pose:
+      heading: 0.0
+      point:
+        utm:
+          x: 341495.46166575945
+          y: 4716948.256572322
+          z: 10
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 180260568
+    id_str: 180260568_red
+    lanes:
+    - '180225537'
+    name: BULB_180260568_red
+    pose:
+      heading: 0.0
+      point:
+        utm:
+          x: 341500.43159758806
+          y: 4716949.866350452
+          z: 10

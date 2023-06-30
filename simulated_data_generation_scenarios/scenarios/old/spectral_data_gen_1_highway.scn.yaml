@@ -1,0 +1,703 @@
+metadata:
+  tags:
+  - spectral
+  - right_curve_flat
+  name: Example highway overpass
+  scenario_version: v0.96
+sim_end:
+  until:
+  - timeout: {secs: 5s}
+map:
+  key: right_curve_flat
+include:
+- file: scenario://workspace/include/vehicle_external.inc.yaml
+- file: scenario://workspace/include/TLA_sensors_for_annotations.inc.yaml
+
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+trip_agent:
+  behavior:
+  - generate_route:
+      dest: {utm: {y: 4501014.618283708, x: 501264.44633508666}}
+      start: {utm: {y: 4500592.246462443, x: 500649.76731600007}}
+environment:
+  weather: clearnoon
+  lane_degradation_factor: 0.2
+  random_seed: false
+  simulate_physics: false
+  instance_level_labeling: true
+  spectral_road_surface_roughness: 0.05
+agents:
+- ego:
+    initial_position:
+      point:
+        utm:
+          y: 4500592.246462443
+          x: 500649.76731600007
+      heading: 0.6733195219994723
+    initial_velocity_mps: 22.0
+    behaviors:
+    - path_following:
+        constant_velocity:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - y: 4500666.306802354
+            x: 500744.72059877793
+            heading: 0.6399384740879785
+            tangent_distance: 8.11719640781452
+          - y: 4500691.924063858
+            x: 500778.7745993878
+            heading: 0.657697091723617
+            tangent_distance: 16.604858918479994
+          - y: 4500728.100486697
+            x: 500828.0104297265
+            heading: 0.6208889634800965
+            tangent_distance: 9.819462251920207
+          - y: 4500782.818170245
+            x: 500903.56088628346
+            heading: 0.6182975589596951
+            tangent_distance: 11.698594146509029
+          - y: 4500831.268371925
+            x: 500973.8636036795
+            heading: 0.588950273185145
+            tangent_distance: 2.5989856052628713
+          - y: 4500894.4384491425
+            x: 501068.20906157704
+            heading: 0.5707984317018095
+            tangent_distance: 11.196077614604054
+          - y: 4501008.23413407
+            x: 501253.6290804345
+            heading: 0.48627026708877613
+            tangent_distance: 8.713171285952358
+    - stop:
+        deceleration: 1.5
+- obstacle:
+    spectral_model: GENERIC_CONVERTIBLE
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500622.365073363
+          x: 500694.35797746025
+      speed_mps: 22.0
+      heading: 0.6630265251667926
+    type: VEHICLE
+    id: 3
+    behaviors:
+    - lane_change:
+        geometric:
+          endpoint:
+            longitudinal_offset: 120
+            lateral_offset: 3
+          center:
+            longitudinal_offset: 60
+            lateral_offset: 2
+    - path_following:
+        constant_velocity:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - y: 4500716.479095807
+            x: 500811.82802680164
+            heading: 0.629
+          - y: 4500731.113551596
+            x: 500831.8120905228
+            heading: 0.63
+          - y: 4500746.218626951
+            x: 500852.65016743046
+            heading: 0.627
+          - y: 4500764.021753164
+            x: 500880.3817216521
+            heading: 0.558
+          - y: 4500784.16402023
+            x: 500911.3043524939
+            heading: 0.579
+          - y: 4500806.424276781
+            x: 500943.86739426595
+            heading: 0.606
+          - y: 4500889.540527764
+            x: 501069.66506430827
+            heading: 0.602
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500610.952092291
+          x: 500666.8878190483
+      speed_mps: 32
+      heading: 0.6685200919362555
+    type: VEHICLE
+    id: 4
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500651.3857776355
+          x: 500718.7169924028
+      speed_mps: 32
+      heading: 0.6559254065978615
+    type: VEHICLE
+    id: 7
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 1.3
+          x: 10.5
+        - y: -1.3
+          x: 10.5
+        - y: -1.3
+          x: -10.5
+        - y: 1.3
+          x: -10.5
+        height: 4.1
+    initial_state:
+      point:
+        utm:
+          y: 4500620.255708348
+          x: 500685.17363422795
+      speed_mps: 22.2
+      heading: 0.6646631735209345
+    type: TRUCK
+    id: 11
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500587.329817932
+          x: 500637.2202692475
+      speed_mps: 31
+      heading: 0.6757860327671983
+    type: VEHICLE
+    id: 12
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 0.45
+          x: 1.6
+        - y: -0.45
+          x: 1.6
+        - y: -0.45
+          x: -1.6
+        - y: 0.45
+          x: -1.6
+        height: 1.65
+    initial_state:
+      point:
+        utm:
+          y: 4500564.384894133
+          x: 500602.4877994496
+      speed_mps: 30
+      heading: 0.6837216635631154
+    type: MOTORCYCLE
+    id: 1
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 1.3
+          x: 10.5
+        - y: -1.3
+          x: 10.5
+        - y: -1.3
+          x: -10.5
+        - y: 1.3
+          x: -10.5
+        height: 4.1
+    initial_state:
+      point:
+        utm:
+          y: 4500640.463366199
+          x: 500717.654030003
+      speed_mps: 16
+      heading: 0.6573657643986737
+    type: TRUCK
+    id: 2
+- obstacle:
+    spectral_model: GENERIC_SPRINTER
+    behaviors:
+    - route_following:
+        tangent_distance: 0.2
+        minimum_attractor_distance: 2
+        waypoints:
+        - point:
+            utm:
+              y: 4500775.80233623
+              x: 500887.17178396723
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+    - path_following:
+        constant_velocity:
+        pose_b_spline:
+          default_tangent_distance: 3
+          poses:
+          - y: 4500807.90014171
+            x: 500934.2689434828
+            heading: 0.595
+          - y: 4500850.89129062
+            x: 500999.7652299261
+            heading: 0.563
+          - y: 4500877.230747151
+            x: 501042.09579680715
+            heading: 0.515
+          - y: 4500891.67775294
+            x: 501065.3955545983
+            heading: 0.547
+          - y: 4500923.757616055
+            x: 501115.07915580133
+            heading: 0.57
+    - route_following:
+        tangent_distance: 0.2
+        minimum_attractor_distance: 2
+        waypoints:
+        - point:
+            utm:
+              y: 4501021.619422571
+              x: 501276.4185716557
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500551.031926538
+          x: 500592.4796892746
+      speed_mps: 27
+      heading: 0.6868244692476142
+    type: VEHICLE
+    id: 5
+- obstacle:
+    behaviors:
+    - lane_keeping: {}
+    model:
+      static:
+        height: 1.65
+        point:
+        - y: 0.45
+          x: 1.6
+        - y: -0.45
+          x: 1.6
+        - y: -0.45
+          x: -1.6
+        - y: 0.45
+          x: -1.6
+    initial_state:
+      point:
+        utm:
+          y: 4500537.479185443
+          x: 500567.6179140424
+      speed_mps: 30
+      heading: 0.6921030842360971
+    type: MOTORCYCLE
+    id: 8
+- obstacle:
+    behaviors:
+    - route_following:
+        tangent_distance: 0.2
+        minimum_attractor_distance: 2
+        waypoints:
+        - point:
+            utm:
+              y: 4501018.518295614
+              x: 501263.18916132854
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500536.1777666025
+          x: 500574.4581745507
+      speed_mps: 27
+      heading: 0.6912990390353198
+    type: VEHICLE
+    id: 9
+- obstacle:
+    behaviors:
+    - route_following:
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              y: 4501024.595647874
+              x: 501281.53026612167
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+        minimum_attractor_distance: 2
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500572.972279369
+          x: 500625.76398277
+      speed_mps: 23
+      heading: 0.679222124020733
+    type: VEHICLE
+    id: 10
+- obstacle:
+    behaviors:
+    - lane_keeping: {}
+    model:
+      static:
+        height: 1.65
+        point:
+        - y: 0.45
+          x: 1.6
+        - y: -0.45
+          x: 1.6
+        - y: -0.45
+          x: -1.6
+        - y: 0.45
+          x: -1.6
+    initial_state:
+      point:
+        utm:
+          y: 4500533.1067274995
+          x: 500566.1647126071
+      speed_mps: 30
+      heading: 0.6928740214896458
+    type: MOTORCYCLE
+    id: 13
+- obstacle:
+    behaviors:
+    - lane_keeping: {}
+    model:
+      static:
+        height: 1.65
+        point:
+        - y: 0.45
+          x: 1.6
+        - y: -0.45
+          x: 1.6
+        - y: -0.45
+          x: -1.6
+        - y: 0.45
+          x: -1.6
+    initial_state:
+      point:
+        utm:
+          y: 4500533.575430922
+          x: 500562.84473003313
+      speed_mps: 30
+      heading: 0.6928740214896458
+    type: MOTORCYCLE
+    id: 14
+- obstacle:
+    behaviors:
+    - lane_keeping: {}
+    model:
+      static:
+        height: 1.65
+        point:
+        - y: 0.45
+          x: 1.6
+        - y: -0.45
+          x: 1.6
+        - y: -0.45
+          x: -1.6
+        - y: 0.45
+          x: -1.6
+    initial_state:
+      point:
+        utm:
+          y: 4500529.450085731
+          x: 500561.74773588625
+      speed_mps: 30
+      heading: 0.6937791200652219
+    type: MOTORCYCLE
+    id: 15
+- obstacle:
+    behaviors: []
+    model:
+      static:
+        point:
+        - y: 0.35
+          x: 0.0
+        - y: 0.25
+          x: 0.2
+        - y: -0.25
+          x: 0.2
+        - y: -0.35
+          x: 0.0
+        - y: -0.25
+          x: -0.2
+        - y: 0.25
+          x: -0.2
+        height: 1.65
+    initial_state:
+      point:
+        utm:
+          y: 4500646.656165999
+          x: 500732.12657852465
+      speed_mps: 1.5
+      heading: 0
+    type: PEDESTRIAN
+    id: 17
+- obstacle:
+    behaviors: []
+    model:
+      static:
+        point:
+        - y: 0.35
+          x: 0.0
+        - y: 0.25
+          x: 0.2
+        - y: -0.25
+          x: 0.2
+        - y: -0.35
+          x: 0.0
+        - y: -0.25
+          x: -0.2
+        - y: 0.25
+          x: -0.2
+        height: 1.65
+    initial_state:
+      point:
+        utm:
+          y: 4500644.606914905
+          x: 500730.13125509094
+      speed_mps: 1.5
+      heading: 0
+    type: PEDESTRIAN
+    id: 18
+- obstacle:
+    behaviors: []
+    model:
+      static:
+        point:
+        - y: 0.35
+          x: 0.0
+        - y: 0.25
+          x: 0.2
+        - y: -0.25
+          x: 0.2
+        - y: -0.35
+          x: 0.0
+        - y: -0.25
+          x: -0.2
+        - y: 0.25
+          x: -0.2
+        height: 1.65
+    initial_state:
+      point:
+        utm:
+          y: 4500643.145475308
+          x: 500728.0658256988
+      speed_mps: 1.5
+      heading: 0
+    type: PEDESTRIAN
+    id: 19
+- obstacle:
+    spectral_model: GENERIC_PICKUP_BLACK
+    behaviors:
+    - route_following:
+        tangent_distance: 0.2
+        minimum_attractor_distance: 2
+        waypoints:
+        - point:
+            utm:
+              y: 4501031.472650214
+              x: 501301.3956234557
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+    model:
+      static:
+        height: 1.5
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+    initial_state:
+      point:
+        utm:
+          y: 4500609.071254921
+          x: 500677.41790156014
+      speed_mps: 16
+      heading: 0.6671585808021367
+    type: VEHICLE
+    id: 20
+- obstacle:
+    spectral_model: GENERIC_PICKUP_WHITE
+    behaviors:
+    - route_following:
+        tangent_distance: 0.2
+        minimum_attractor_distance: 2
+        waypoints:
+        - point:
+            utm:
+              y: 4501018.518295614
+              x: 501263.18916132854
+        motion_profile:
+          phases:
+          - hold_velocity:
+              duration: 100
+    model:
+      static:
+        point:
+        - y: 0.9
+          x: 2.3
+        - y: -0.9
+          x: 2.3
+        - y: -0.9
+          x: -2.3
+        - y: 0.9
+          x: -2.3
+        height: 1.5
+    initial_state:
+      point:
+        utm:
+          y: 4500567.666644765
+          x: 500612.8584801661
+      speed_mps: 27
+      heading: 0.6817843447563234
+    type: VEHICLE
+    id: 21
+- obstacle:
+    behaviors:
+    - lane_keeping:
+        actions:
+        - duration: 30s
+    model:
+      static:
+        point:
+        - y: 1.3
+          x: 10.5.
+        - y: -1.3
+          x: 10.5
+        - y: -1.3
+          x: -10.5
+        - y: 1.3
+          x: -10.5
+        height: 4.1
+    initial_state:
+      point:
+        utm:
+          y: 4500653.911320649
+          x: 500728.56639393175
+      speed_mps: 22.2
+      heading: 0.6541336407115841
+    type: TRUCK
+    id: 22

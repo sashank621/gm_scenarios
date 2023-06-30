@@ -1,0 +1,7 @@
+extra_data:
+  uc_config_path: "sim_config/uc_config_mot_perfect.yaml"
+  sync_mode: "sim_clock"
+  pb_recorder: ""
+  plugins: simulation/resources/sim_scenarios/include/python_box/no_perception.inc.yaml
+  noise_config: "sim_config/noise_config/noise_config_default.json"
+  enable_noise: "true"

@@ -1,0 +1,267 @@
+include:
+#- file: include_sensors.inc.yaml
+#- file: scenario://workspace/spectral_examples/include/spectral_sensors_config.inc.yaml
+#- file: scenario://workspace/first_include_data_gen_.inc.yaml
+#- file: scenario://workspace/data_gen_include_fish_eye.inc.yaml#
+#- file: scenario://workspace/include_4mb_lidar.inc.yaml
+- file: scenario://workspace/include/sensors_with_en9_ctm_2_cameras_4mb_1_lidar.scn.yaml
+metadata:
+  name: home training spectral
+  scenario_version: v0.96
+  author_email: ada.silberstein@gm.com
+  description: ""
+sim_end:
+  until:
+  - timeout: {secs: 5s}
+map:
+  key: sunnyvale
+
+projection_settings:
+  utm:
+    north: true
+    zone: 10
+vehicle:
+  mesh_name: applied:car
+  shape:
+    front_edge_to_center: 3.8
+    back_edge_to_center: 1.072
+    left_edge_to_center: 0.926
+    right_edge_to_center: 0.926
+    height: 1.478
+  external: {}
+spectral:
+  enable: true
+  environment:
+    weather: clearnoon
+    lane_degradation_factor: 0.5  #$lane_degradation # affect precentage = 0.8
+    weather: user
+    user_defined_weather:
+      sun:
+        illuminance: 0.0
+      atmosphere:
+        cloud_density: 0.0
+        fog_density: 0.01
+        precipitation: 0.0
+      world_surface:
+        water_level: 0.0
+        puddle_spread: 0.0
+        blend_snow: 0.0
+        snow_depth: 0.0
+        amount_of_driving: 0.0
+      location:
+        lat: 37.0
+        lng: -122.0
+      datetime:
+        time_of_day: 30
+        date:
+          month: 9
+          day: 21
+        time_zone: -7.0
+      daylight_savings:
+        enable_daylight_savings: True
+        start_month: 3
+        start_day: 8
+        end_month: 11
+        end_day: 1
+        switch_hour: 0200
+
+trip_agent:
+  behavior:
+  - generate_route:
+      dest:
+        utm:
+          x: 587126.64746694
+          y: 4140767.0916708494
+      start: {utm: {x: 587360.691049791, y: 4140871.8983220556}}
+agents:
+- ego:
+    initial_position:
+      point: {utm: {x: 587305.6804474116, y: 4140900.337728679}}
+      heading: 2.827747903155502
+    behaviors:
+    - route_following:
+        constant_velocity:
+        minimum_attractor_distance: 2
+        tangent_distance: 0.2
+        waypoints:
+        - point:
+            utm:
+              x: 587286.9646006542
+              y: 4140906.9080930115
+        - point:
+            utm:
+              x: 587265.4910007402
+              y: 4140919.9161391133
+        - point:
+            utm:
+              x: 587265.4910007402
+              y: 4140940.9767851825
+        - point:
+            utm:
+              x: 587270.3337098822
+              y: 4140959.477477043
+    initial_velocity_mps: 9
+
+
+- obstacle:
+    behaviors: []
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    initial_state:
+      point:
+        utm:
+          x: 587257.3760056895
+          y: 4140927.2112284075
+      speed_mps: 7
+      heading: -1.8273012135909228
+    type: VEHICLE
+    id: 1
+
+- obstacle:
+    behaviors: []
+    model:
+      static:
+        height: 1.5
+        point:
+        - x: 2.3
+          y: 0.9
+        - x: 2.3
+          y: -0.9
+        - x: -2.3
+          y: -0.9
+        - x: -2.3
+          y: 0.9
+    initial_state:
+      point:
+        utm:
+          x: 587245.3963908073
+          y: 4140869.0844619735
+      speed_mps: 7
+      heading: 1.3527395603349515
+    type: VEHICLE
+    id: 2
+
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: YIELD
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0.0
+          pitch: 0.0
+          yaw: -0.3047814355189592
+        px: 587291.5423822626
+        py: 4140907.4067612537
+    type: UNKNOWN_UNMOVABLE
+    id: 3
+
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: YIELD
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0.0
+          pitch: 0.0
+          yaw: -0.44474556437681456
+        px: 587277.4605129001
+        py: 4140912.3629557616
+    type: UNKNOWN_UNMOVABLE
+    id: 4
+
+- static_obstacle:
+    custom_model_description:
+      us_sign_configuration:
+        type: SIGN_40_MPH
+    scaling:
+      x: 1.0
+      y: 1.0
+      z: 1.0
+    spectral_static_model: CUSTOM_US_SIGN
+    model:
+      static:
+        height: 1.134
+        point:
+        - x: -0.018
+          y: -0.406
+        - x: -0.018
+          y: 0.406
+        - x: 0.018
+          y: 0.406
+        - x: 0.018
+          y: -0.406
+    initial_state:
+      pose_spec:
+        rpy:
+          roll: 0.0
+          pitch: 0.0
+          yaw: -1.9049819779789474
+        px: 587268.8068450638
+        py: 4140942.369814257
+    type: UNKNOWN_UNMOVABLE
+    id: 5
+
+
+# parameter_sweeps:
+# - list:
+#     var: weather_sweeps
+#     values:
+#     - hardrainsunset
+#     - clearnoon
+# #- list:
+# #   var: lane_degradation
+#   #  values:
+#   # - 0.1
+#     #- 0.5
+#     #- 1.0
+
+# #CAMERA_4MB_IMAGE_NARROW_FRONT_WS
+# #CAMERA_4MB_IMAGE_EXTWIDE_FRONT_WS
+
+

@@ -1,0 +1,199 @@
+traffic_lights:
+  blocks:
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_187689953_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_red
+      - bulb_state_name: STATE_ON
+        name: BULB_187689953_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689953_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_187689953_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_187689953
+  - block_states:
+    - bulb_states:
+      - bulb_state_name: STATE_ON
+        name: BULB_187689954_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_green
+      name: COLOR_RED_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_red
+      - bulb_state_name: STATE_ON
+        name: BULB_187689954_yellow
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_green
+      name: COLOR_YELLOW_ICON_NONE
+    - bulb_states:
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_red
+      - bulb_state_name: STATE_OFF
+        name: BULB_187689954_yellow
+      - bulb_state_name: STATE_ON
+        name: BULB_187689954_green
+      name: COLOR_GREEN_ICON_NONE
+    name: BLOCK_187689954
+  bulbs:
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689953
+    id_str: 187689953_red
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689953_red
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331834.85092469567
+          y: 4710803.924795901
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689953
+    id_str: 187689953_yellow
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689953_yellow
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331834.85092469567
+          y: 4710803.924795901
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689953
+    id_str: 187689953_green
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689953_green
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331834.85092469567
+          y: 4710803.924795901
+          z: 8
+  - bulb_states:
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_RED
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689954
+    id_str: 187689954_red
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689954_red
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331841.8754811945
+          y: 4710810.61783696
+          z: 10
+  - bulb_states:
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_YELLOW
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689954
+    id_str: 187689954_yellow
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689954_yellow
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331841.8754811945
+          y: 4710810.61783696
+          z: 9
+  - bulb_states:
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_CONSTANT
+      name: STATE_ON
+    - color: COLOR_GREEN
+      icon: ICON_NONE
+      mode: MODE_OFF
+      name: STATE_OFF
+    id: 187689954
+    id_str: 187689954_green
+    lanes:
+    - '187548161'
+    - '187548164'
+    - '187548163'
+    - '187548162'
+    name: BULB_187689954_green
+    pose:
+      heading: 4.7108
+      point:
+        utm:
+          x: 331841.8754811945
+          y: 4710810.61783696
+          z: 8

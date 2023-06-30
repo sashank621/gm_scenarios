@@ -1,0 +1,23 @@
+    
+vehicle:
+  sensors:
+    sensor_models:
+    - lidar_model:
+        library:
+          model: generic
+          vendor: applied
+        mount:
+          px: 2
+          py: 0
+          pz: 1.8
+          rpy:
+            roll: 0
+            pitch: -0.3
+            yaw: 0
+        name: LIDAR_POINT_CLOUD_CEPTON
+        standard_params:
+          detector_params:
+            resolution:
+              x: 1
+              y: 1
+          frame_rate: 114

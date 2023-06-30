@@ -1,0 +1,1270 @@
+traffic_signs:
+- lanes: []
+  name: SIGN_186576408
+  pose:
+    px: 286833.49633661733
+    py: 4718905.743340464
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577519
+  pose:
+    px: 287364.6838397821
+    py: 4718069.132527386
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577743
+  pose:
+    px: 286940.3006615594
+    py: 4718377.17038223
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_188658504
+  pose:
+    px: 296473.39099828625
+    py: 4716007.765804741
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186576848
+  pose:
+    px: 286946.07804009476
+    py: 4718059.038668531
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_192867130
+  pose:
+    px: 284660.8919807934
+    py: 4710055.346292567
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_192867131
+  pose:
+    px: 284656.014993853
+    py: 4710042.414188085
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186579789
+  pose:
+    px: 286839.65582173737
+    py: 4718375.429129363
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579789
+  pose:
+    px: 286839.65582173737
+    py: 4718375.429129363
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579789
+  pose:
+    px: 286839.65582173737
+    py: 4718375.429129363
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579789
+  pose:
+    px: 286839.65582173737
+    py: 4718375.429129363
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580750
+  pose:
+    px: 286730.4683362529
+    py: 4719082.288831352
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580810
+  pose:
+    px: 286738.34807757795
+    py: 4718378.210352173
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_192069617
+  pose:
+    px: 279109.092769268
+    py: 4711408.424737081
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_192069617
+  pose:
+    px: 279109.092769268
+    py: 4711408.424737081
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186560852
+  pose:
+    px: 287059.36757440673
+    py: 4718299.149304181
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188677962
+  pose:
+    px: 291574.1938260821
+    py: 4718295.884810968
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661526
+  pose:
+    px: 291564.2893780083
+    py: 4718592.684192489
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661526
+  pose:
+    px: 291564.2893780083
+    py: 4718592.684192489
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661526
+  pose:
+    px: 291564.2893780083
+    py: 4718592.684192489
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186646067
+  pose:
+    px: 286755.77657653973
+    py: 4718917.38202345
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_192015734
+  pose:
+    px: 278362.76572767715
+    py: 4720500.398593601
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186561884
+  pose:
+    px: 287177.19858932006
+    py: 4718283.670436707
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186629937
+  pose:
+    px: 286748.94145347254
+    py: 4718496.459386478
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186642230
+  pose:
+    px: 286748.6191879814
+    py: 4718739.022610522
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186642230
+  pose:
+    px: 286748.6191879814
+    py: 4718739.022610522
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186642230
+  pose:
+    px: 286748.6191879814
+    py: 4718739.022610522
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186642230
+  pose:
+    px: 286748.6191879814
+    py: 4718739.022610522
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186625585
+  pose:
+    px: 286748.94145347254
+    py: 4718496.459386478
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563439
+  pose:
+    px: 287364.6838397821
+    py: 4718069.132527386
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186643266
+  pose:
+    px: 287578.5576257479
+    py: 4718298.955638533
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188676886
+  pose:
+    px: 291658.8600816901
+    py: 4718555.740029662
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563345
+  pose:
+    px: 286630.9180060328
+    py: 4719080.567661815
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563394
+  pose:
+    px: 287578.5576257479
+    py: 4718298.955638533
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563398
+  pose:
+    px: 287600.5409677568
+    py: 4718309.396207426
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186629912
+  pose:
+    px: 286833.49633661733
+    py: 4718905.743340464
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186561362
+  pose:
+    px: 287019.30511382286
+    py: 4718285.762514256
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186577256
+  pose:
+    px: 286838.680182403
+    py: 4718653.7484152345
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_191672124
+  pose:
+    px: 285852.4414944077
+    py: 4709663.728414255
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191672124
+  pose:
+    px: 285852.4414944077
+    py: 4709663.728414255
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191672125
+  pose:
+    px: 285848.1444158111
+    py: 4709650.037492059
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191672125
+  pose:
+    px: 285848.1444158111
+    py: 4709650.037492059
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_192523664
+  pose:
+    px: 278370.46219606936
+    py: 4720528.913187093
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186626900
+  pose:
+    px: 287059.36757440673
+    py: 4718299.149304181
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661533
+  pose:
+    px: 291417.8986447302
+    py: 4718556.247080494
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186629657
+  pose:
+    px: 286730.4731819352
+    py: 4718905.768992723
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186629496
+  pose:
+    px: 286750.35717612563
+    py: 4718650.078635009
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186625841
+  pose:
+    px: 286748.94145347254
+    py: 4718496.459386478
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577223
+  pose:
+    px: 287013.13459371665
+    py: 4718361.432426498
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579262
+  pose:
+    px: 287026.13460964675
+    py: 4718739.432718461
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186626618
+  pose:
+    px: 287388.6748487134
+    py: 4718080.027872355
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186576664
+  pose:
+    px: 286833.49633661733
+    py: 4718905.743340464
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186578767
+  pose:
+    px: 286940.3006615594
+    py: 4718377.17038223
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186629059
+  pose:
+    px: 287022.7308930932
+    py: 4719107.594709532
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188725549
+  pose:
+    px: 293179.01759137376
+    py: 4717568.934746639
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_191478656
+  pose:
+    px: 284624.5964242438
+    py: 4710029.243973753
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191478656
+  pose:
+    px: 284624.5964242438
+    py: 4710029.243973753
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191478657
+  pose:
+    px: 284636.9223160843
+    py: 4710023.38263737
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_191478657
+  pose:
+    px: 284636.9223160843
+    py: 4710023.38263737
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_190970202
+  pose:
+    px: 279133.64284399763
+    py: 4711371.689025064
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661576
+  pose:
+    px: 291119.01154391625
+    py: 4717669.467273995
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190971651
+  pose:
+    px: 284647.53830464964
+    py: 4709642.219379394
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_190971652
+  pose:
+    px: 284637.27962607966
+    py: 4709632.0903638685
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186580850
+  pose:
+    px: 286850.9828101104
+    py: 4718636.740775531
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577405
+  pose:
+    px: 286937.4834617534
+    py: 4718639.639671081
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188661611
+  pose:
+    px: 291468.9566564619
+    py: 4717560.322618556
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188677911
+  pose:
+    px: 291654.8599681281
+    py: 4718587.765607047
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188677911
+  pose:
+    px: 291654.8599681281
+    py: 4718587.765607047
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188677911
+  pose:
+    px: 291654.8599681281
+    py: 4718587.765607047
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188677911
+  pose:
+    px: 291654.8599681281
+    py: 4718587.765607047
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563286
+  pose:
+    px: 287010.6806286984
+    py: 4718499.97852937
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563286
+  pose:
+    px: 287010.6806286984
+    py: 4718499.97852937
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188660013
+  pose:
+    px: 293179.01759137376
+    py: 4717568.934746639
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188660013
+  pose:
+    px: 293179.01759137376
+    py: 4717568.934746639
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190643043
+  pose:
+    px: 278509.564096295
+    py: 4715497.79415981
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186629077
+  pose:
+    px: 286620.8242484269
+    py: 4717452.660091076
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188216142
+  pose:
+    px: 291123.21926383924
+    py: 4717554.582706949
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644858
+  pose:
+    px: 286731.5507942034
+    py: 4718641.128194568
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186645475
+  pose:
+    px: 286648.0477094488
+    py: 4718896.492927265
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644453
+  pose:
+    px: 286526.7312751117
+    py: 4717201.712016826
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644453
+  pose:
+    px: 286526.7312751117
+    py: 4717201.712016826
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644453
+  pose:
+    px: 286526.7312751117
+    py: 4717201.712016826
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644453
+  pose:
+    px: 286526.7312751117
+    py: 4717201.712016826
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563900
+  pose:
+    px: 287581.9645998431
+    py: 4718313.022410741
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186564412
+  pose:
+    px: 287581.9645998431
+    py: 4718313.022410741
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188217111
+  pose:
+    px: 291654.8599681281
+    py: 4718587.765607047
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186627784
+  pose:
+    px: 286651.91375148733
+    py: 4719092.163764713
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186627620
+  pose:
+    px: 286619.023722973
+    py: 4718909.196444854
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186627705
+  pose:
+    px: 286204.0270021534
+    py: 4717996.665201316
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186562326
+  pose:
+    px: 286856.52283093036
+    py: 4718372.0512440745
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580332
+  pose:
+    px: 286834.37206939125
+    py: 4718638.653609975
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580840
+  pose:
+    px: 286838.680182403
+    py: 4718653.7484152345
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_193977957
+  pose:
+    px: 278325.22901579976
+    py: 4718075.026311975
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186562913
+  pose:
+    px: 287277.66692344967
+    py: 4718285.657707376
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186563954
+  pose:
+    px: 286850.9828101104
+    py: 4718636.740775531
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580805
+  pose:
+    px: 287581.9690644892
+    py: 4718742.978132612
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580805
+  pose:
+    px: 287581.9690644892
+    py: 4718742.978132612
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186562528
+  pose:
+    px: 286948.20878519566
+    py: 4718077.189295243
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580307
+  pose:
+    px: 287037.0617834356
+    py: 4718300.427073492
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186562518
+  pose:
+    px: 287010.6806286984
+    py: 4718499.97852937
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188137422
+  pose:
+    px: 291705.45312024344
+    py: 4718676.1040367205
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186578455
+  pose:
+    px: 286657.41254892433
+    py: 4718375.014858274
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579308
+  pose:
+    px: 286834.37206939125
+    py: 4718638.653609975
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186561081
+  pose:
+    px: 286966.1460803537
+    py: 4718072.314981081
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186562016
+  pose:
+    px: 286948.20878519566
+    py: 4718077.189295243
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190150507
+  pose:
+    px: 279102.90420209826
+    py: 4710968.940186652
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190150507
+  pose:
+    px: 279102.90420209826
+    py: 4710968.940186652
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190150508
+  pose:
+    px: 279102.43354813143
+    py: 4710957.636652283
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190150508
+  pose:
+    px: 279102.43354813143
+    py: 4710957.636652283
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_193819477
+  pose:
+    px: 281782.6146477961
+    py: 4710425.019173662
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_193819476
+  pose:
+    px: 281762.16509995336
+    py: 4710430.333482454
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190033079
+  pose:
+    px: 301157.96133635455
+    py: 4704551.858232575
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_190033080
+  pose:
+    px: 301152.20709244505
+    py: 4704543.597032728
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186629943
+  pose:
+    px: 286653.4398480002
+    py: 4718915.1824227115
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186580680
+  pose:
+    px: 286651.91375148733
+    py: 4719092.163764713
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579965
+  pose:
+    px: 286937.4834617534
+    py: 4718639.639671081
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190183309
+  pose:
+    px: 279095.08583214926
+    py: 4711382.120595451
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190183310
+  pose:
+    px: 279115.31777809793
+    py: 4711374.898615477
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186645263
+  pose:
+    px: 285691.0860337482
+    py: 4717225.228863911
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190184360
+  pose:
+    px: 285154.82835493766
+    py: 4710915.431180145
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190184360
+  pose:
+    px: 285154.82835493766
+    py: 4710915.431180145
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190184361
+  pose:
+    px: 285146.506046215
+    py: 4710905.113955925
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190184361
+  pose:
+    px: 285146.506046215
+    py: 4710905.113955925
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186578886
+  pose:
+    px: 286752.95678001834
+    py: 4719093.745991089
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579481
+  pose:
+    px: 286748.56684902235
+    py: 4719080.292170658
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186579737
+  pose:
+    px: 286748.56684902235
+    py: 4719080.292170658
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186564449
+  pose:
+    px: 287277.66692344967
+    py: 4718285.657707376
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186564407
+  pose:
+    px: 286653.4398480002
+    py: 4718915.1824227115
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186629863
+  pose:
+    px: 287045.8011300893
+    py: 4718282.918930804
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186625814
+  pose:
+    px: 286930.8823628247
+    py: 4718908.216497491
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577392
+  pose:
+    px: 287377.2811337456
+    py: 4718287.976033611
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186577904
+  pose:
+    px: 287377.2811337456
+    py: 4718287.976033611
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186578250
+  pose:
+    px: 286738.34807757795
+    py: 4718378.210352173
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188675857
+  pose:
+    px: 292420.7984195017
+    py: 4719139.326191726
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186646313
+  pose:
+    px: 286854.26350634947
+    py: 4718917.942872365
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190216188
+  pose:
+    px: 282085.22548470466
+    py: 4710726.041646173
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_186644188
+  pose:
+    px: 286738.4652971686
+    py: 4718518.729853153
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_194164117
+  pose:
+    px: 278469.77587186644
+    py: 4714881.613202403
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_GIVE_WAY
+- lanes: []
+  name: SIGN_186645467
+  pose:
+    px: 286736.8781189579
+    py: 4718761.783263301
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_188675391
+  pose:
+    px: 291611.71121864003
+    py: 4719142.916951186
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP
+- lanes: []
+  name: SIGN_190445524
+  pose:
+    px: 285100.8835860608
+    py: 4710919.14660498
+    pz: 2
+    rpy:
+      yaw: 0.0
+  sign_type: TYPE_STOP

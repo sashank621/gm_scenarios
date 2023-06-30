@@ -1,0 +1,32 @@
+
+
+{
+	"driving_metrics": {
+		"max_speed": 9.0,
+		"distance_traveled": 253.0
+	},
+	"navigation_mode": {
+		"percentage": {
+			"6": 100.0
+		}
+	},
+	"junctions": ["cross_roads", "traffic_signals"],
+	"roads": [ "tertiary", "secondary"],
+	"time_of_day": "Day time",
+	"Mobileye": {
+		"stop_sign": true,
+		"stop_marking": false,
+		"relative_cut_in": false,
+		"relative_cut_out": false,
+		"width_info": {
+			"threshold": 2.39,
+			"wide_target": false
+		}
+	},
+	"weather": {
+		"temp_celsius": 13.0,
+		"sky": "rain",
+		"visibility": 2.0,
+		"cloud_cover": 0.4
+	}
+}
